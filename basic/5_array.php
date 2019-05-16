@@ -72,6 +72,7 @@
    }
     // echo taozi(1);
   //  递推实现
+
    $yestoday =1;  //前一天的桃子数，已知第十天的1个
    for($i=9;$i>=1;--$i){
       $result = ($yestoday+1)*2;
@@ -79,6 +80,9 @@
    }
    echo $result;
  
+
+
+
   ?>
 </body>
 </html>
