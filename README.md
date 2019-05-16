@@ -288,8 +288,28 @@ basics 目录为学习php基础知识
             3 可以对值变量加上引用符号& 来实现引用传值
             4 正常循环时，默认是在原数组上进行遍历，但在遍历过程中试图改变数组（或者改变数组的值，或者增减数组）或对数组进行某种指针操作，则此时 forEach内部会先将该数组拷贝一份，原来数组就会去实现改变，二新拷贝的数组任然进行循环
             5 如果遍历中值变量使用的是引用传值，则如论如何都在原数组上进行操作。
-        数组排序思想介绍
+
+        数组函数    
+            指针函数： key() ,current(), next() ,prev(), reset(), end() ,each()
+            单元操作函数： array_pop(), array_push(), array_shift(), array_unshift(), array_slice(), array_splice()
+            排序函数： sort() , asort() , ksort(),usort(),rsort(),krsort(),shuffle()
+            查找函数: in_array(), array_key_exists(),array_search()
+            其他函数： count(),array_reverse(),array_merge(),array_sum(),array_map(),array_walk(),range(),array_keys()array_value()
+
+         数组排序思想介绍
             冒泡排序：
                 
 
-            选择排序：    
+            选择排序： 
+
+        按值查找： 找到val  返回val
+        顺序查找 ： 找到val  返回下标，   找不到返回false;
+        二分查找:
+            1 针对已经排序的数组（已经排好序了）
+            2 是连续的索引数组   ru:0 1 2 3...
+
+            思路：
+            第一次循环完，第二次从中间找，第三次再从中间找....不断的缩小范围
+
+
+            

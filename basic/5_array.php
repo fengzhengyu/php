@@ -70,9 +70,14 @@
      if($n == 10) return 1;
     return (taozi($n+1)+1)*2;
    }
-    echo taozi(1);
+    // echo taozi(1);
   //  递推实现
-
+   $yestoday =1;  //前一天的桃子数，已知第十天的1个
+   for($i=9;$i>=1;--$i){
+      $result = ($yestoday+1)*2;
+      $yestoday = $result;
+   }
+   echo $result;
  
   ?>
 </body>
