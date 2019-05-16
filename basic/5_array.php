@@ -73,7 +73,14 @@
     echo taozi(1);
   //  递推实现
 
- 
+   $yestoday = 1;
+   for($i=9;$i>=1;--$i){
+
+    $result = ($yestoday+1)*2;
+    $yestoday = $result;
+   }
+   echo $result;
+
   ?>
 </body>
 </html>
