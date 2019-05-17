@@ -139,9 +139,12 @@
     其他操作：
       show tables; 
       desc 表名；
-      show create table 表名      
-      create table 表名2 like 表名1；
-      rename table 表名1 to 表名2；
+      show create table 表名       显示某表的的创建语句
+      rename table 表名1 to 表名2；   重命名表名
+      create table 表名2 like 表名1；   从已知表复制表结构
+      create table 表名2 select * from 表名1 where 1<>1；   从已知表复制表结构  （**这种会丢失数据，推荐上一种）
+      create [unique | fulltext] index 索引名 on 表名（字段1，字段2，....）；创建索引 这里省略unique 和fulltext就是普通索引，这里在系统上映射了一条 alert table 的添加索引语句
+      drop  index 索引名 on 表名；删除索引 此语句同样被映射为一条 alert table 的删除索引语句
   - 视图
     什么是视图：
       就是一条预先存储的select 语句（并给定一个名字），以后后续 方便查询
@@ -155,71 +158,164 @@
       遵循一个大原则： 一种数据存入一个表中（不要将多种数据混在一个表中）
 # 数据插入   
   3种语法形式：
-  形式一： insert into 表名 [字段1，字段2，字段3，...] values (数据1，数据2，数据3，...)，（...），...；
-  形式二： insert into 表名 set 字段1 =表达式1，字段2=表达式2， 字段3= 表达式3，...；
-  形式三： insert into 表名 [(字段1，字段2，...)] select 字段1，字段2， .... from 其他表
+    形式一： insert into 表名 [字段1，字段2，字段3，...] values (数据1，数据2，数据3，...)，（...），...；
+    形式二： insert into 表名 set 字段1 =表达式1，字段2=表达式2， 字段3= 表达式3，...；
+    形式三： insert into 表名 [(字段1，字段2，...)] select 字段1，字段2， .... from 其他表
+
+    说明：
+      形式一和形式三可以一次性插入多条数据，且形式三的数据来源是由其中 select语句所获取的 
+      形式一和形式三的字段部分可以省略（但严重不推荐），此时值列表必须完全对应每一个字段
+      不管哪种类型，字段与值必须 “一一对应”关系，数量、顺序、类型都应该对应
+      字符串类型和时间类型，如果是字面量，通常需要用单引号引起来，
+      语句中所给定的字段顺序，可以不是表中的顺序
+      有的字段通常无需插入数据，比如 auto_increment属性字段，或类型为 timestamp的字段
+      载入文本数据： load data infile 语句； 要求该记事本的数据“比较整齐”，一行文本对应一行数据
+      完整复制一个表（包括表结构，表数据）： create table 新表名 select * from 原表名
+
+# 删除数据
+    delete from  表名 [where条件] [order 排序] [limit 限定]；
+
+    解释：
+      1 以行为单位
+      2 通常 where 条件通常写上，不写就全删了
+      3 order 和 limit，通常不要
+        order 用于设定删除数据的先后数据
+        limit 用于设定的顺序下，删除指定某行
+   其他删除语句：
+    truncate table 表名； 用于删除整个表（结构）并重新创建该表
+     1 删除表 数据结构都没了
+     2 重新创建表 全新表
+     3 跟 delete 语句 不带where 有什么却别？
+      主要影响是auto_increment 这类型字段，truncate 结果重新计算，delete 还能继续增长     
+# 修改数据
+  基本语法：
+    update 表名 set 字段1=值1，字段2=值2，... [where ] [order ] [limit];
+
+    解释：
+      1 以行为单位
+      2 where 在应用中通常都写
+      3 order 和 limit，通常不要
+      5 字段值 可以是表达式，直接值，函数。直接值字符串加引号
+# 查询数据
+  # 基本查询
+    语法形式：
+      select [all | distinct] 字段表达式列表 [from 子句] [where 子句] [group by 子句]] [having 子句] [order 自己] [limit 子句];
+      解释： 
+        1 作用是从数据源中取出 一定数据，并作为该语句的返回结果
+        2 总会返回数据，直接量 函数 计算等
+
+        【all | distinct】用于设定所select出来的数据是否允许出现重复行（完全相同的数据）
+          all :允许
+          distinct : 不容许
+        from 子句：
+          就是指定数据的数据源 ，其实就是表 ，可以是一个表名，也可以是多个表，---多表查询
+        where 子句：
+          相当于php或js中的  if语句 ，其结果是布尔值
+            算数运算符
+            比较运算符 >,>= <=<,=,<>这是不等于 
+            逻辑运算符  and(与) or（或） not（非） 
+            布尔值 空值
+            between语法  字段名 between 小值 and 大值；
+            in 语法   字段名 bin（值1，值2,...）；
+            like 语法  字段名 like ‘字符’  即所谓模糊查找
+              要查找的字符中，有两个特殊含义的字符
+              1 % ： 表示任意个数的任意字符
+              2 _ : 表示一个任意字符 
+              实际应用中 通常是 like  '%关键字%'；
+
+
+          例如：
+            where 1; where 1=1 ; 都是true,反之就是false
+        group by  分组子句：
+          形式:  group by 字段1 排序1，字段2 排序2，...；
+          含义： 就是将数据以某个字段值为依据，分到不同的组别里
+          注意：
+            1 数据结果只能是组， -- 没有数据本身的个体
+            2 数据可能会丢失很多特征，比如没有性别身高姓名年龄等
+            3 实际上结果只剩 组作为整体的信息，
+            依赖的函数：
+            count(*)   统计一组中的数量
+            min()      该字段在该组的最小值
+            max()      该字段在该组的最大值
+            sum()      该字段在该组的总和
+            avg()      该字段在该组的平均值
+        having 子句
+          形式： 与where 子句完全一样
+                where 是针对字段都值进行条件判断
+                having是只针对group by 以后的 “组 ”数据进行条件判断
+                  不能使用 ：字段名 >10 但可以使用 count(字段名) >10
+
+
+
+    
+      orderby 子句
+        order by 字段1 排序方式1，字段2 排序方式2，。。。。
+        排序方式： asc 默认 desc
+
+      limit 子句
+        limit 起始行号 获取出的行数；
+        常用用于翻页，原理如下：
+          $pageSize =10; //认为设定一次取10行
+          $page =1;    //默认为第一页
+          if(!empty($_GET['page'])){ //传来的页码存在
+            $page = $_GET['page'];
+          }
+          $start = ($page -1)* $pageSize;
+          $sql = "select * from tabl limit  $start $pageSize";
+  # 连接查询
+    基本含义： 将两个表的所有行数据，进行“两两横向对接”，对接后，形成字段更多的行。
+    连接语法的基本形式：
+      from tab1（左表）[连接方式] join  tab2 （右表）[on 条件] ； //[]里的表示可以省略
+    交叉连接：
+      from tab1（左表）[cross] join  tab2 （右表）;
+    内连接：
+      from tab1（左表）[inner] join  tab2 （右表）on 条件;
+    
+    左（外）连接： 
+      from tab1（左表）left join  tab2 （右表）on 条件;
+        内连接加上左边满足不了条件的其他数据
+    右（外）连接：
+      from tab1（左表）right join  tab2 （右表）on 条件;
+        内连接加上右边满足不了条件的其他数据
+    全（外）连接： 
+      mysql 中不支持该语法，但可以通过以下办法实现 ：
+            select * from ftab1 left join  tab2  on 条件
+            union
+            select * from ftab1 left join  tab2  on 条件
+
+    连接查询举例：
+
+  # 子查询
+    什么叫子查询： 一个select 语句中又“内嵌”了select语句
+    子查询分类结果： 表子查询、行子查询、列子查询、标量子查询
+    使用场合分：
+      用于 select 部分的“输出结果”
+      用于 from 子句的数据源
+      用于 where 子句的判断依据
+      自查询作为数据来源（from子句）必须给起一个别名
+      
+    常见的子查询及相关关键字：
+      使用 in 子查询
+      使用 any 子查询
+      使用 all 子查询
+      使用 some 子查询
+      使用 exists 子查询
+      使用 not exists 子查询
+  #联合查询
+    基本含义： 将两个输出字段一致的 select查询结果数据以“层叠”合并的方式获得一个更多行的数据结果
+    语法形式:
+    select 语句1
+    union
+    sleect 语句2
+# mysql 数据控制语言（DCL）
+  数据控制 其实就是“分配权限' --- 就涉及到用户
+  主要两个问题：
+    用户管理：
+
+    权限分配：
+      有哪些权限
       
 
-# 基本查询
-  orderby 子句
-    order by 字段1 排序方式1，字段2 排序方式2，。。。。
-    排序方式： asc 默认 desc
 
-   limit 子句
-    limit 起始行号 获取出的行数；
-    常用用于翻页，原理如下：
-      $pageSize =10; //认为设定一次取10行
-      $page =1;    //默认为第一页
-      if(!empty($_GET['page'])){ //传来的页码存在
-        $page = $_GET['page'];
-      }
-      $start = ($page -1)* $pageSize;
-      $sql = "select * from tabl limit  $start $pageSize";
-# 连接查询
-  基本含义： 将两个表的所有行数据，进行“两两横向对接”，对接后，形成字段更多的行。
-  连接语法的基本形式：
-    from tab1（左表）[连接方式] join  tab2 （右表）[on 条件] ； //[]里的表示可以省略
-  交叉连接：
-    from tab1（左表）[cross] join  tab2 （右表）;
-  内连接：
-    from tab1（左表）[inner] join  tab2 （右表）on 条件;
-   
-  左（外）连接： 
-    from tab1（左表）left join  tab2 （右表）on 条件;
-      内连接加上左边满足不了条件的其他数据
-  右（外）连接：
-     from tab1（左表）right join  tab2 （右表）on 条件;
-      内连接加上右边满足不了条件的其他数据
-  全（外）连接： 
-    mysql 中不支持该语法，但可以通过以下办法实现 ：
-          select * from ftab1 left join  tab2  on 条件
-          union
-          select * from ftab1 left join  tab2  on 条件
-
-  连接查询举例：
-
-# 子查询
-  什么叫子查询： 一个select 语句中又“内嵌”了select语句
-  子查询分类结果： 表子查询、行子查询、列子查询、标量子查询
-  使用场合分：
-    用于 select 部分的“输出结果”
-    用于 from 子句的数据源
-    用于 where 子句的判断依据
-    自查询作为数据来源（from子句）必须给起一个别名
-    
-  常见的子查询及相关关键字：
-    使用 in 子查询
-    使用 any 子查询
-    使用 all 子查询
-    使用 some 子查询
-    使用 exists 子查询
-    使用 not exists 子查询
-#联合查询
-  基本含义： 将两个输出字段一致的 select查询结果数据以“层叠”合并的方式获得一个更多行的数据结果
-  语法形式:
-   select 语句1
-   union
-   sleect 语句2
-   
 
 
