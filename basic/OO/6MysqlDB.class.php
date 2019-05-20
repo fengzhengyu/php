@@ -3,6 +3,7 @@
     // 定义一个类，该类用于连接数据库
     // 并连接数据库后返回资源（或失败终止）
 
+    // 优化
     class MysqlDB{
         public $host;
         public $port;
