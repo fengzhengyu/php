@@ -6,7 +6,7 @@ create table `match`(
   t1_score int comment '球队一进球',
   t2_score int comment '球队二进球',
   m_time int comment '比赛时间 时间戳'
-) charset=utf8;
+);
 insert into `match` values 
 (null,3,4,1,2,unix_timestamp('2015-01-31 17:00:00')),
 (null,1,2,2,3,unix_timestamp('2015-01-30 17:00:00')),
@@ -21,7 +21,7 @@ insert into `match` values
 create table `team`(
   t_id int unsigned primary key auto_increment,
   t_name varchar(20)
-) charset=utf8;
+);
 
 insert into `team` values 
 (1,'伊拉克'),
@@ -38,7 +38,7 @@ create table `player` (
   p_id int  unsigned primary key auto_increment,
   p_name varchar(20),
   t_id int unsigned comment '球队ID'
-) charset=utf8;
+);
 
 insert into `player` values 
 (null,'张帆林',5),
