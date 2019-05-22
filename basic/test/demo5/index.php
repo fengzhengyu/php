@@ -16,13 +16,17 @@
 
 
 // 定义常量存储分发参数，防止参数被修改
-define('CONTROLLER',isset($_GET['c'])?$_GET['c']: 'Match');
-define('ACTION',isset($_GET['a'])?$_GET['a']: 'list');
+$default_platform = 'test'; //平台分发
+define('PLATFORM',isset($_GET['p'])?$_GET['p']: $default_platform);
+$default_controller = 'Match';
+define('CONTROLLER',isset($_GET['c'])?$_GET['c']: $default_controller);
+$default_action = 'list';
+define('ACTION',isset($_GET['a'])?$_GET['a']: $default_action);
 
 
 $controller_name = CONTROLLER .'Controller';
 // 引入控制器
-require './'.$controller_name.'.class.php';
+require './application/' . PLATFORM . '/Controller/'.$controller_name.'.class.php';
 
 // 实例化
 $controller = new $controller_name(); //可变量

@@ -18,11 +18,11 @@
       </tr>
       <?php foreach($match_list as $row) :?>
         <tr>
-          <td><a href="index.php?c=Team&a=team&id=100"><?php echo $row['t1_name'];?></a></td>
+          <td><a href="index.php?p=test&c=Team&a=team&id=100"><?php echo $row['t1_name'];?></a></td>
           <td><?php echo $row['t1_score'];?>：<?php echo $row['t2_score'];?></td>
           <td><?php echo $row['t2_name'];?></td>
           <td><?php echo date('Y-m-d H:i', $row['m_time']);?></td>
-          <td><a href="index.php?c=Match&a=remove&id=10">删除</a></td>
+          <td><a href="index.php?p=test&c=Match&a=remove&id=10">删除</a></td>
         </tr>
        <?php endforeach?>
         

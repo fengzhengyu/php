@@ -22,7 +22,7 @@ define('ACTION',isset($_GET['a'])?$_GET['a']: 'list');
 
 $controller_name = CONTROLLER .'Controller';
 // 引入控制器
-require './'.$controller_name.'.class.php';
+require './application/test/Controller/'.$controller_name.'.class.php';
 
 // 实例化
 $controller = new $controller_name(); //可变量
