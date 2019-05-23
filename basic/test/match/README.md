@@ -326,3 +326,17 @@ index.php?c=controller&a=action  是单入口模式
       session.destroy()   数据区
       unset($_ESSION)  销毁变量
       setcookie('PHPSESSID','',time()-1) 销毁cookie中的session-id
+  重写session 的存储机制
+    目的：
+      1 便于管理大量的 session 数据
+      2 便于web服务器集群共享session 数据
+    方案：
+      入库 入内存
+    实现过程：
+      定义（实现）自定义的相关的存储处理函数
+      将其设置为session机制存储的 函数（告诉给session机制，使用我们的函数完成存储处理）    
+
+      6个处理函数
+
+      设置session 的存储机制函数：
+        session_set_save_handler(开始处理器，结束处理器，读处理器，写处理器，删除处理器，垃圾处理处理器);
