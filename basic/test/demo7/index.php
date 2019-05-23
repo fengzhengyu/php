@@ -47,11 +47,11 @@ define('FRAMEWORK_PATH',ROOT_PATH .'framework/');  // 框架目录
 
 
 // 定义常量存储分发参数，防止参数被修改
-$default_platform = 'test'; //平台分发
+$default_platform = 'admin'; //平台分发
 define('PLATFORM',isset($_GET['p'])?$_GET['p']: $default_platform);
-$default_controller = 'Match';
+$default_controller = 'Admin';
 define('CONTROLLER',isset($_GET['c'])?$_GET['c']: $default_controller);
-$default_action = 'list';
+$default_action = 'login';
 define('ACTION',isset($_GET['a'])?$_GET['a']: $default_action);
 
 // 当前平台的常量

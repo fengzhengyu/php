@@ -197,5 +197,132 @@ index.php?c=controller&a=action  是单入口模式
   先确定的根目录
   根据根目录确定目录常量
   
+# 项目中跳转
+  直接跳转：
+    header('Location: URL地址');
+  延迟跳转  
+  header('Refresh:秒数;url=地址');
+  
+  跳转是在控制器里，多次调用，所以需要在控制器基础类 封装；
 
+# 会话技术 
 
+  cookie:
+    允许服务器端脚本在浏览器端存储数据的一种技术，（可见cookie是浏览器技术）
+
+    基本操作：
+      设置:  （增删改）  函数
+        setcookie($key,$value);
+
+      获取： （查）
+        获取浏览器请求时携带的 cookie 数据
+        使用超全局数组变量，$_COOKIE 完成对cookie 数据的获取
+        PHP核心，在初始化阶段，会将所有请求的cookie数据，整理到$_COOKIE变量中，供脚本使用
+    有效期
+      默认： 临时cookie （浏览器关闭也就没了）
+      支持设置有效期：
+        setcookie（）的第三个参数可以对有效期进行设置，有效期采用一个时间戳进行表示！
+      删除cookie
+         setcookie（$key,'',time()-1）的第三个参数 time()-1
+      PHP_INT_MAX： 逻辑上表示永久有效的cookie
+    有效路径
+      默认： 
+        cookie 在当前路径及后代路劲有效
+      Tip:  路径，不是代码所在文件的本地磁盘路径，而是url请求的路径关系
+      Tip: 不同路径，下同名的cookie可以同时存储于浏览器端
+      浏览器发出请求时，会先查找当前目录内有效的cookie，再向上查找，将所有有效的cookie都携带到服务器端，服务器$_COOKIE时，会出现重写效果，才出现的保留。
+
+      可以通过setCookie()第四个参数进行修改：
+        通常设置为/表示，站点根目录有效，也就是整站有效。
+
+    有效域
+      默认：
+        cookie 仅仅在当前域名下有效
+      可以通过设置，使用cookie的有效域，扩展到某一级域名下的所有子域
+        
+      setCookie()第五个参数 放个域名 第四个参数为空，
+    是否仅安全传输
+      https://  加密的http协议
+      默认：
+        cookie不论浏览器发出是http还是HTTPS都会将有效的cookie携带到服务器
+        如果将 第六个参数 设置为 true，表示，激活仅安全连接传输，此时浏览器在向服务器发出请求时，如果请求协议为http,就不会向服务器发送这些设置为仅安全连接传输的cookie数据。
+
+    HTTPonly
+      默认：
+        浏览器存储的cookie是可以被其他脚本所处理的 
+      通过第7个参数，设置为 httponly 特性，表示仅仅在http请求中使用！  true /false
+    语法注意：
+      cookie 值： 仅仅支持字符串类型，对象需要转换为字符串类型
+      cookie 键： 支持键是数组，但取值不是数组类型
+      cookie设定的时候，当前代码不能取值输出
+      类似于header（） ，setcookie()前也不能有任何输出
+
+  session：
+    将会话数据，存储于服务器端，同时使会话数据可以区分浏览器
+    为每个会话技术建立独立的会话数据区，每个会话数据区存在唯一标识，同时浏览器端存储该唯一标识，做配对使用！    
+
+    session 原理：
+      存储于浏览器的session-id，就是一个普通cookie变量（在session的机制中尤为特殊的含义）
+
+      每个会话，所生成存储于服务器端的session数据区
+      默认，一文件的形式，存储于服务器端操作系统的临时文件
+    有效期：
+      会话周期结束
+    有效路径
+      整站有效  
+    有效域：
+      当前域下有效
+    是否仅安全连接传输
+      默认值： 否
+    是否仅为http使用
+      没法测   
+    以上session 数据的特征，都是由 浏览器cookie中所存储的session-id变量的特征所导致的 
+    可见，如果需要更改session数据的属性，则需要更改存储sessionid的cookie 变量PHPSESSID的属性
+    php.ini 中存在该属性的配置：
+      有效期 ：
+        ; Lifetime in seconds of cookie or, if 0, until browser is restarted.
+        ; http://php.net/session.cookie-lifetime
+        session.cookie_lifetime = 0
+      有效路径：  
+        ; The path for which the cookie is valid.
+        ; http://php.net/session.cookie-path
+        session.cookie_path = /
+      有效域：
+        ; The domain for which the cookie is valid.
+        ; http://php.net/session.cookie-domain
+        session.cookie_domain =
+
+      仅安全输出   
+        ; http://php.net/session.cookie-secure
+        ;session.cookie_secure =
+      httponly
+        ; http://php.net/session.cookie-httponly
+        session.cookie_httponly =   
+    如果需要对默认属性修改，办法如下：
+      A计划：
+        更改php.ini 配置文件即可（不建议）
+      B计划：
+        通过脚本中，使用函数 ini_set()来进行配置的修改，仅在，设置后的脚本周期内有效，要保证在开启session前，设置完毕       
+      C计划：(推荐)
+        使用特定功能函数： 
+          session_set_cookie_params(有效期，有效路径，有效域，是否仅安全传输，是否httponly)  完成配置
+    注意： 选项的设置是针对cookie中的 sessionid ，因此是针对所有session数据的 
+
+    Tip: session 属性通常都会保持其默认值，不建议修改      
+
+    session使用语法问题:
+      session数据类型可以是所有类型  
+      $_session数组元素的下标，只能是字符串
+      session_start() 类似于header（） 函数，前面不能有输出
+
+    session 数据区
+      在脚本周期结束后，持久存储当前会话session数据的区域
+      在脚本周期内，使用$_SEESION这个变量管理的会话session数据
+    session销毁
+      函数：
+      session_destory(); 删除当前session 对应的数据区，关闭session机制
+      注意： $_SESSION变量，在销毁之后，是不会自动消，但是结束不完成写操作，本周期，就不能获取到存储的数据了
+    如何完整的删除与当前session相关的全部数据？
+      session.destroy()   数据区
+      unset($_ESSION)  销毁变量
+      setcookie('PHPSESSID','',time()-1) 销毁cookie中的session-id

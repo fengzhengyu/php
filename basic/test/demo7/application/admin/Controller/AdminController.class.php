@@ -12,14 +12,20 @@
       // 获取表单数据
       $admin_name = $_POST['username'];
       $admin_pass = $_POST['password'];
+     
 
       // 从数据库中验证管理员信息是否存在合法
       $m_admin = Factory::M('AdminModel');
       if($m_admin->check($admin_name,$admin_pass)){
-        echo '登录成功 ，跳转后台首页';
+
+        // 设置登录标志
+        session_start();
+        $_SESSION['is_login'] = 'yes';
+        
+        $this->_jump('index.php?p=admin&c=Manage&a=index');
       }else{
         
-        echo '非法，提示： 跳转登录页';
+        $this->_jump('index.php?p=admin&c=Admin&a=login','管理员信息非法');
       
       }
       
