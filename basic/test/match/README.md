@@ -340,3 +340,65 @@ index.php?c=controller&a=action  是单入口模式
 
       设置session 的存储机制函数：
         session_set_save_handler(开始处理器，结束处理器，读处理器，写处理器，删除处理器，垃圾处理处理器);
+
+    创建 session 表
+    对应session 文件
+    create table `session`(
+      session_id varchar(40) not null default '',
+      session_text text,
+      last_time int not null default 0,
+      primary key(session_id)
+    ) charset=utf8 engine=myisam;
+
+    读操作：
+
+    写操作：
+      insert into .. ON duplicate key update
+      replace 语法与insert一致，存在则替换，不存在则插入
+    垃圾回收：
+      如何区别垃圾数据区？
+        phpsession 机制设置session数据区的最大有效期，某条session记住，在最后一次处理后，如果超过了多久之后没有被使用，则视为垃圾数据
+        该时间 默认是1440s 可以被配置 php.ini session.gc_maxlifetime=1440 
+        同时需要记录每个session数据区的最后处理时间。
+        增加字段 last_time 
+          alter table `session` add column last_time int not null default 0;
+
+      如何执行删除？
+        在开启session机制的过程中，有概率的执行垃圾回收操作。
+        默认的概率为 1/1000
+
+        可以被配置 php.ini
+          session.gc_probability =1
+          session.gc_devisor = 1000
+
+           1558666779 last<
+           1558666906 -1440now
+    开始
+      session开启是，最早执行的一个存储机制相关方法，用于初始化数据存储的相关操作
+    结束
+      在session机制关闭时，执行的一个方法，最后一个执行的存储操作的 ，用于收尾工作
+
+    注意：
+      先执行 session_set_save_handler()在session_start()  
+      保证session 不自动开启
+      可以通过配置 .htaccess
+        php_flag session.auto_start 0;  不自动开启
+      建议重置session 存储机制，应该将其该为user 表示用于自定义
+  项目中的session 入库
+    以框架基础代码中 扩展工具类的角色，出现在项目中 !     
+
+    增加相应的 目录常量
+      采用面向对象的编程思想完成
+      工具类：
+      要求：
+        增加session 入库工具类（完成其自动加载）
+        入库操作尤其工具类对象的方法充当
+        在实例化该工具类对象时，完成设置session 处理器，并开启session
+
+      使用项目中统一的DAO完成数据库操作
+
+  session 数据持久化    ?
+    浏览器端 session-id
+      session_set_cookie_params(3600)
+    服务器端session数据区
+      ini_set('session.gc_maxlifetime','3600')

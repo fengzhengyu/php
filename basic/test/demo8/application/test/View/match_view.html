@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>比赛列表</title>
+</head>
+<body>
+
+    <table>
+      <tr>
+      <th>球队一</th>
+      <th>球队比分</th>
+      <th>球队二</th>
+      <th>比赛时间</th>
+      <th>操作</th>
+      </tr>
+      <?php foreach($match_list as $row) :?>
+        <tr>
+          <td><a href="index.php?p=test&c=Team&a=team&id=100"><?php echo $row['t1_name'];?></a></td>
+          <td><?php echo $row['t1_score'];?>：<?php echo $row['t2_score'];?></td>
+          <td><?php echo $row['t2_name'];?></td>
+          <td><?php echo date('Y-m-d H:i', $row['m_time']);?></td>
+          <td><a href="index.php?p=test&c=Match&a=remove&id=10">删除</a></td>
+        </tr>
+       <?php endforeach?>
+        
+    </table>
+</body>
+</html>

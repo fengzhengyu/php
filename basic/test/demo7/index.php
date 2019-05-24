@@ -1,10 +1,11 @@
 <?php
 /**
- *目录常量
+ *目录基础常量  
  */ 
 define('ROOT_PATH',getcwd().'/'); //根目录
 define('APPLICATION_PATH',ROOT_PATH .'application/'); //应用程序目录
 define('FRAMEWORK_PATH',ROOT_PATH .'framework/');  // 框架目录
+define('TOOL_PATH',FRAMEWORK_PATH .'tool/');  // 工具类目录
 
 /***
  * 自动加载函数
@@ -20,7 +21,8 @@ define('FRAMEWORK_PATH',ROOT_PATH .'framework/');  // 框架目录
       'Controller'=> FRAMEWORK_PATH . 'Controller.class.php',
       'Model'=> FRAMEWORK_PATH .'Model.class.php',
       'Factory'=> FRAMEWORK_PATH .'Factory.class.php',
-      'MysqlDB'=> FRAMEWORK_PATH .'MysqlDB.class.php'
+      'MysqlDB'=> FRAMEWORK_PATH .'MysqlDB.class.php',
+      'SessionDB'=> TOOL_PATH .'SessionDB.class.php',
     );
     // 判断是否为核心类
     if(isset($framework_class_list[$class_name])){

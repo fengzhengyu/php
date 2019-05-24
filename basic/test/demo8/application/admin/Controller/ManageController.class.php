@@ -12,6 +12,12 @@
   
         $this->_jump('index.php?p=admin&c=Admin&a=login','请先登录！');
       }
-      echo '首台首页';
+      // echo '首台首页';
+      require CURRENT_VIEW_PATH . 'index.html';
+    }
+
+    // 顶部 
+    public function  topAction(){
+      require CURRENT_VIEW_PATH . 'top.html';
     }
   }
