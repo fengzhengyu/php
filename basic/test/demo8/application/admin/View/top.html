@@ -5,11 +5,11 @@
 
     </div>
     <div class="admin">
-      <p class="admin-name"> 登录人:张三</p>
+      <p class="admin-name"> 登录人:<?php echo $_SESSION['admin']['admin_name']?></p>
       <p>|</p>
       <p class="admin-name">登录身份: 超级管理员</p>
       <p>|</p>
-      <p>安全退出</p>
+      <p onclick="location.href='index.php?p=admin&c=Admin&a=login'">安全退出</p>
 
     </div>
 

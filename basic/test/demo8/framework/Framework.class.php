@@ -73,6 +73,7 @@ class Framework {
         'Factory'=> FRAMEWORK_PATH .'Factory.class.php',
         'MysqlDB'=> FRAMEWORK_PATH .'MysqlDB.class.php',
         'SessionDB'=> TOOL_PATH .'SessionDB.class.php',
+        'Captcha' => TOOL_PATH . 'Captcha.class.php'
       );
       // 判断是否为核心类
       if(isset($framework_class_list[$class_name])){

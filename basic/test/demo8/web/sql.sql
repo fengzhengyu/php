@@ -30,3 +30,33 @@ insert into demo_admin values
         last_time int not null default 0,
         primary key(session_id)
       ) charset=utf8 engine=myisam;
+
+
+-- 商品表
+    create table demo_goods(
+      goods_id int unsigned not null auto_increment,
+      goods_name varchar(32) not null default '' comment '名称',
+      goods_price decimal(10,2) not null default 0  comment '价格',
+      -- category_id int unsigned comment '当前商品所属类型的id,典型的多对一的关系，再多的这，建立关联字段',
+      -- brand_id int unsigned  comment '当前商品所属品牌的id',
+
+      goods_image varchar(255) not null default '' comment '当前商品图片',
+      goods_cover varchar(255) not null default '' comment '当前商品封面图',
+      goods_desc text comment '描述',
+      goods_number int unsigned not null default 0 comment '库存',
+      goods_status int unsigned not null default 0 comment '上架状态 0是false 1 是true',
+      goods_recommend set('精品','新品','热销') not null default '' comment '商品推荐属性使用集合存储',
+      create_admin_id int unsigned not null  comment '添加商品的管理员',
+      primary key ( goods_id)
+    );
+
+  -- 分类表
+  create table demo_category(
+    category_id int unsigned not null auto_increment,
+    primary key(category_id)
+  );
+  -- 品牌表
+   create table demo_brand(
+   brand_id int unsigned not null auto_increment,
+    primary key(brand_id)
+  );

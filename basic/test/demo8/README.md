@@ -43,3 +43,7 @@
 
   tip：
     php中魔术引号（magic quotes） ,php中自动求情数据（get post ）增加转义的一种防止SQL注入机制  5.4已经没有了
+
+# 平台控制器
+    class PlatformController extends Controlle
+    后台的控制器都继承 平台控制器： class AdminController extends PlatformController ...
