@@ -48,7 +48,7 @@ insert into demo_admin values
       goods_recommend set('精品','新品','热销') not null default '' comment '商品推荐属性使用集合存储',
       create_admin_id int unsigned not null  comment '添加商品的管理员',
       primary key ( goods_id)
-    );
+    ) charset=utf8;
 
   -- 分类表
   create table demo_category(

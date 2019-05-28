@@ -47,3 +47,33 @@
 # 平台控制器
     class PlatformController extends Controlle
     后台的控制器都继承 平台控制器： class AdminController extends PlatformController ...
+
+# 表前缀 模型-前缀处理
+  真实表名 = 前缀（项目）+逻辑表名（功能）
+  前缀通过配置文件配置
+  逻辑表名： 模型类自身来确定
+    application.config.php  app配置
+    模型类中增加属性： _logic_table
+    拼凑真实表名
+      基础模型中，增加初始化真实表名方法
+
+# 上传文件
+  $_POST 只存 字符串，
+  加enctype="multipart/form-data"> 
+  服务器在接受到的文件类型的表单数据后：
+    将文件，存储于上传零时目录
+    该文件可以通过php.ini 配置 upload_tmp_dir
+    默认服务器操作系统临时目录
+    然后
+     move_uploaded_file(当前文件,目标目录);
+# 项目中使用上传文件
+  工具类 UploadImage
+
+# 目录操作
+  创建目录        mkdir(目录地址，权限，是否递归创建=false ))  第二个参数以后是可选
+  删除目录        rmdir(目录地址)  不支持递归删除 仅仅可以删除空目录
+  移动（改名）    rename(旧地址，新地址)
+  获取目录内容（文件）
+    打开目录  opendir(目录地址) //返回 目录句柄 php程序与目录的联系
+    读文件    readdir(目录句柄) // 第一次 . 第二次.. 读不到false，配合循环就能读取全部文件
+    关闭目录  closedir(录句柄)  //读完记得关闭

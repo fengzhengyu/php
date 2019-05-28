@@ -11,6 +11,8 @@
     ),
     'app'   => array( //应用程序组
       'default_platform' => 'admin',
+      'table_prefix' => 'demo_'
+
 
     ),
     'admin'   => array( //后台组
