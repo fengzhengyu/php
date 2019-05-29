@@ -58,8 +58,8 @@
     }
     // list page
     public function listAction(){
-      echo 'list page';
-      
+      // echo 'list page';
+      require CURRENT_VIEW_PATH . 'goods_list.html';
     }
 
   }

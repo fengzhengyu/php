@@ -1,0 +1,41 @@
+
+请求头
+
+  # 可以接受的内容类型
+  Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3
+
+  # 可以接受的数据编码类型（压缩编码）
+  Accept-Encoding: gzip, deflate
+
+  # 可以接受的语言
+  Accept-Language: zh-CN,zh;q=0.9
+
+  # 以下两都是缓存，版本迭代导致的两个
+  Cache-Control: no-cache
+  Pragma: no-cache
+  # tcp连接类型  keep-alive保持激活 保持可连接的时间段
+  Connection: keep-alive
+
+  # 携带的cookie数据
+  Cookie: PHPSESSID=pe4t3psuh0kg5jtd00rhft1jh4
+
+  #主机 用于标识一台服务器上的其中一个虚拟主机
+  Host: php.com
+
+  # 来源
+  Referer: http://php.com/basic/test/example/
+
+  # 请求安全级别
+  Upgrade-Insecure-Requests: 1
+  #用户代理
+  User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36
+
+  注意语法格式：
+    使用冒号分离 标识符与冒号之间不能有空格
+    每个头站一行，行结尾，使用CRLF(回车换行 \r\n)
+    空行表示头部结束
+
+请求主体：
+请求的主要用户数据
+  就是post 数据
+  get 没有请求主体

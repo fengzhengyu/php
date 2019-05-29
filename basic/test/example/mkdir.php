@@ -1,6 +1,6 @@
 <?php
 
-  $path = './path/to/some';
+$path ='F:\work\php\basic\test\demo';
   // $result = mkdir($path);
   // var_dump($result); //没有文件 false
 
@@ -15,7 +15,7 @@
   // $path_to ='./aaa';
   // $result = rename($path_from,$path_to); //把to目录 该成 当前下的aaa 目录
 
-  $path =__DIR__;
+  // $path =__DIR__;
   // $dir_handle = opendir($path);
 
   // var_dump(  $dir_handle); //resource(3) of type (stream)
