@@ -15,6 +15,7 @@ class Factory {
       static $model_lsit =array(); //储存已经实例化的模型对象的列表
 
       if(!isset($model_lsit[$model_name])){
+        require './application/' . PLATFORM. '/Model/' . $model_name . '.class.php';
         // 没事实例化的
         $model_lsit[$model_name] = new $model_name;
       }

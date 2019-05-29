@@ -19,5 +19,7 @@
         public function removeAction(){
     
             echo '删除成功页面！';
+            
+           
         }
     }
