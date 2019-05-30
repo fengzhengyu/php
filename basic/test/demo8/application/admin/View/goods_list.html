@@ -9,7 +9,14 @@
   <link rel="stylesheet" href="web/admin/css/index.css">
   <title>Document</title>
   <style>
-
+    .page-wrap{
+      text-align: center;
+    }
+    .page-wrap a.active{
+      background: #2d6dcc;
+      color: #fff;
+    }
+   
   </style>
 </head>
 
@@ -33,7 +40,81 @@
     </div>
     <!--内容  -->
     <div>
-      list page
+      <!--  ["goods_id"]=>
+    string(1) "1"
+    ["goods_name"]=>
+    string(6) "苹果"
+    ["goods_price"]=>
+    string(5) "10.00"
+    ["goods_image"]=>
+    string(0) ""
+    ["goods_cover"]=>
+    string(0) ""
+    ["goods_desc"]=>
+    string(15) "苹果真好吃"
+    ["goods_number"]=>
+    string(3) "999"
+    ["goods_status"]=>
+    string(1) "1"
+    ["goods_recommend"]=>
+    string(6) "新品"
+    ["create_admin_id"]=>
+    string(2) "33" -->
+    <table  class="layui-table" >
+
+      <thead>
+
+          <tr>
+            <th>ID</th>
+            <th>产品名称</th>
+            <th>产品价格</th>
+            <th>产品库存</th>
+            <th>产品状态</th>
+            <th>产品图片</th>
+            <th>产品封面</th>
+            <th>产品详情</th>
+            <th>产品分类</th>
+            <th>管理人</th>
+          </tr>
+        </thead>
+        <tbody>
+            <?php foreach($goods_list as $row) :?>
+            <tr>
+              <td><?php echo $row['goods_id'];?></td>
+              <td><?php echo $row['goods_name'];?></td>
+              <td><?php echo $row['goods_price'];?></td>
+              <td><?php echo $row['goods_number'];?></td>
+              <td><?php echo $row['goods_status']==1?'上架':'下架';?></td>
+              <td><?php echo "<img src='http://php.com/basic/test/demo8/web/upload/".$row['goods_image'] ."'>";?>  </td>
+              <td><?php echo $row['goods_cover'];?></td>
+              <td><?php echo $row['goods_desc'];?></td>
+              <td><?php echo $row['goods_recommend'];?></td>
+              <td><?php echo $_SESSION['admin']['admin_name'];?></td>
+              
+            </tr>
+           <?php endforeach?>
+
+           <tr>
+             <td colspan="10">
+              
+              <div class="page-wrap">
+                  <?php 
+                  echo   '<a href="index.php?p=admin&c=Goods&a=list&page=1&num=3" class="btn">【首页】</a>';
+                  echo '<a href="index.php?p=admin&c=Goods&a=list&page='.($pageNow<=1?1:$pageNow-1).'&num='.$pageSize.'" class="btn">【上一页】</a>';
+                  for($i=1;$i<= $pageCount;$i++){
+                    echo '<a href="index.php?p=admin&c=Goods&a=list&page='.$i.'&num='.$pageSize.'"  style="padding: 5px 10px;" class="'.($pageNow==$i?'active':'').'">'.$i.'</a>';
+                  }
+                  echo '<a href="index.php?p=admin&c=Goods&a=list&page='.($pageNow >= $pageCount?$pageCount:($pageNow+1)).'&num='.$pageSize.'" class="btn">【下一页】</a>';
+               
+                  echo '<a href="index.php?p=admin&c=Goods&a=list&page='.$pageCount.'&num='.$pageSize.'" class="btn">【尾页】</a>';
+                ?>
+              </div>
+              
+            </td>
+           </tr>
+          </tbody>
+    </table>
+
     </div>
 
  

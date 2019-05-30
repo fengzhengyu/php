@@ -58,7 +58,18 @@
     }
     // list page
     public function listAction(){
+      $m_goods = Factory::M('GoodsModel');
       // echo 'list page';
+      // echo '<pre>';
+  
+      $pageSize =isset($_GET['num'])?$_GET['num']:10; //每页显示几条
+      $pageNow =isset($_GET['page'])?$_GET['page']:1; //页码
+ 
+     
+      $pageCount =0;
+
+      $goods_list = $m_goods->listGoods($pageNow,$pageSize,$pageCount);
+      // var_dump(  $goods_list);
       require CURRENT_VIEW_PATH . 'goods_list.html';
     }
 

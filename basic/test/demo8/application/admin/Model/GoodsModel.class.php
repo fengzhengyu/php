@@ -33,4 +33,26 @@ class GoodsModel extends Model
 
     return $this->_dao->query($sql);
   }
+
+  public function listGoods($page,$num,&$count){
+    // ,&$count
+    $sql_count = "select count(*) from $this->_table";
+    $row = $this->_dao->getRow($sql_count );
+    $dataCount = $row['count(*)']; //数据总数
+    $count = ceil($dataCount/$num);
+
+    if($page<1){
+      $page =1;
+    }
+    if($page>$count ){
+      $page = $count ;
+    }
+    // 当前起始位置
+    $start = ($page-1)*$num;
+
+  
+    $sql = "select * from $this->_table order by goods_id desc limit $start,$num ";
+    
+    return $this->_dao->getAll($sql);
+  }
 }
