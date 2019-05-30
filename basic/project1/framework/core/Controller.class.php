@@ -28,11 +28,11 @@ class Controller
 
   // 定义载入辅助函数的方法
   public function helper($helper){
-    require LIB_PATH . "$helper.class.php";
+    require HELPER_PATH . "{$helper}_helper.php";
   }
   // 定义载入工具类方法
   public function library($lib){
-    require LIB_PATH . "$lib.class.php";
+    require LIB_PATH . "{$lib}.class.php";
 
   }
 }

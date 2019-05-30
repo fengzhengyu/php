@@ -11,6 +11,9 @@
     }
 
     public function testAction(){
+      // 载入辅助函数
+      $this->helper('input');
+      f1();
       // 实例化
       $m_goods = new GoodsModel('goods'); //传表名 不要前缀
       echo '<pre>';
