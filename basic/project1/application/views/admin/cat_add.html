@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="public/layui/css/layui.css">
+  <link rel="stylesheet" href="public/admin/css/index.css">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <?php
+  
+    require 'top.html';
+    require 'left.html';
+  ?>
+
+  <div class="admin-body">
+    <!-- 面包屑 -->
+    <div class="crumbs-nav">
+      <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
+        <a href="" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+        <a href="" class="link">商品管理</a>
+        <a href="" class="link"><cite>添加分类</cite></a>
+      </span>
+    </div>
+    <!--内容  -->
+    <div class="add-module-form">
+      <form class="layui-form wrapper" action="index.php?p=admin&c=category&a=insert" method="POST">
+
+      
+        <div class="layui-form-item">
+          <label class="layui-form-label">分类名称</label>
+          <div class="layui-input-block">
+            <input type="text" name="cat_name" required  placeholder="请输入名称号" autocomplete="off"
+              class="layui-input">
+          </div>
+        </div>
+      
+        <div class="layui-form-item">
+          <label class="layui-form-label">上级分类</label>
+          <div class="layui-input-block">
+            <select name="parent_id" lay-filter="aihao" required lay-verify="required">
+              <!-- <option value=""></option> -->
+              <option value="0">顶级分类</option>
+                <?php foreach($cats as $cat) :?>
+                <option value="<?php echo $cat['cat_id']?>"><?php  echo str_repeat("&nbsp;&nbsp;&nbsp;", $cat['level']);?><?php echo $cat['cat_name']?></option>
+                <?php endforeach;?>
+            </select>
+          </div>
+        </div>
+       
+        <div class="layui-form-item">
+          <label class="layui-form-label">数量单位</label>
+          <div class="layui-input-inline">
+  
+            <input type="text" name="unit" required lay-verify="required" placeholder="" autocomplete="off"
+              class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">排序</label>
+          <div class="layui-input-inline">
+  
+            <input type="text" name="cat_order" lay-verify="required|number" autocomplete="off" class="layui-input" value="50">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">是否显示</label>
+          <div class="layui-input-block">
+  
+            <input type="checkbox" name="is_show" lay-skin="switch" lay-text="是|否" checked>
+          </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+          <label class="layui-form-label">分类描述</label>
+          <div class="layui-input-block">
+            <textarea name="cat_desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" id="submit">确认添加</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          </div>
+        </div>
+      </form>
+  
+    </div>
+
+  </div>
+
+
+  <script src="public/admin/js/jquery.min.js"></script>
+  <script src="public/layui/layui.js"></script>
+  <script src="public/admin/js/common.js"></script>
+  <script>
+     //Demo
+  layui.use('form', function () {
+    var form = layui.form;
+
+    //监听提交
+    form.on('submit(formDemo)', function (data) {
+      if (data) {
+
+      }
+      layer.msg(JSON.stringify(data.field));
+      // return false;
+    });
+
+
+  });
+
+  </script>
+</body>
+
+</html>

@@ -93,6 +93,9 @@ class Mysql
     }
     return $list;
   }
+  public function getInsertId(){
+    return mysql_insert_id($this->conn);
+  }
 
 
 }

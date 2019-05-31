@@ -6,9 +6,9 @@
     'host'        => 'localhost',
     'user'        => 'root',
     'password'    => 'root',
-    'dbname'      => 'demo7',
+    'dbname'      => 'project1',
     'port'  => '3306',
     'charset'  => 'utf8',
     'port'  => '3306',
-    'prefix'  => 'demo_'
+    'prefix'  => 'p1_'
   );

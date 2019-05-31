@@ -55,11 +55,15 @@ create table goods_type (
 
 
 -- category 表（类别）    
-    create table category ( 
-        cat_id int,
-        cat_name varchar(10),
-        parent_id int ,
-
-
-    );
+    create table p1_category ( 
+        cat_id int unsigned not null auto_increment,
+        cat_name varchar(30) not null,
+        parent_id int unsigned not null default '0' comment '自关联 实现无限极',
+        cat_desc varchar(255) not null default '',
+        cat_order int unsigned not null default '50' comment '排序依据',
+        unit varchar(15) not null default '' comment '分类的单位',
+        is_show int unsigned not null default '1' comment '是否显示',
+        filter varchar(100 ) not null comment '暂时没用',
+        primary key(cat_id)
+    ) charset=utf8;
 

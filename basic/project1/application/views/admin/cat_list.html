@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="public/layui/css/layui.css">
+  <link rel="stylesheet" href="public/admin/css/index.css">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <?php
+  
+    require 'top.html';
+    require 'left.html';
+  ?>
+
+  <div class="admin-body">
+    <!-- 面包屑 -->
+    <div class="crumbs-nav">
+      <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
+        <a href="" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+        <a href="" class="link">商品管理</a>
+        <a href="" class="link"><cite>添加分类</cite></a>
+      </span>
+    </div>
+    <!--内容  -->
+    <table  class="layui-table" >
+
+      <thead>
+
+          <tr >
+            <!-- <th>ID</th> -->
+            <th>分类名称</th>
+            <th>分类数量</th>
+            <th>数量单位</th>
+            <th>是否上架</th>
+            <th>排序</th>
+            <th align="center">操作</th>
+          
+          </tr>
+        </thead>
+        <tbody>
+            <?php foreach($cats as $row) :?>
+            <tr id="<?php echo $row['parent_id'];?>-<?php echo $row['cat_id'];?>" >
+              <!-- <td><?php echo $row['cat_id'];?></td> -->
+              <td><?php  echo str_repeat("&nbsp;&nbsp;&nbsp;", $row['level']);?><?php  echo $row['cat_name'];?></td>
+              <td>0</td>
+              <td><?php echo $row['unit'];?></td>
+              <td><?php echo $row['is_show']==1?'√':'×';?></td>
+             
+              <td><?php echo $row['cat_order'];?></td>
+              <!-- <td><?php echo $row['goods_desc'];?></td>
+              <td><?php echo $row['goods_recommend'];?></td> -->
+              <td>
+                
+              <a href="index.php?p=admin&c=category&a=edit&id=<?php echo $row['cat_id'];?>" class="layui-btn layui-btn-primary layui-btn-sm edit">
+                <i class="layui-icon">&#xe642;</i>
+              </a>
+              <button class="layui-btn layui-btn-primary layui-btn-sm success">
+                <i class="layui-icon">&#xe605;</i>
+              </button>
+
+              <a href="index.php?p=admin&c=category&a=delete&id=<?php echo $row['cat_id'];?>" class="layui-btn layui-btn-primary layui-btn-sm delete">
+                <i class="layui-icon">&#xe640;</i>
+              </a>
+              </td>
+              
+            </tr>
+           <?php endforeach?>
+
+           <tr>
+             <td colspan="7">
+              
+              <!-- <div class="page-wrap">
+                  <?php 
+                  echo   '<a href="index.php?p=admin&c=Goods&a=list&page=1&num=3" class="btn">【首页】</a>';
+                  echo '<a href="index.php?p=admin&c=Goods&a=list&page='.($pageNow<=1?1:$pageNow-1).'&num='.$pageSize.'" class="btn">【上一页】</a>';
+                  for($i=1;$i<= $pageCount;$i++){
+                    echo '<a href="index.php?p=admin&c=Goods&a=list&page='.$i.'&num='.$pageSize.'"  style="padding: 5px 10px;" class="'.($pageNow==$i?'active':'').'">'.$i.'</a>';
+                  }
+                  echo '<a href="index.php?p=admin&c=Goods&a=list&page='.($pageNow >= $pageCount?$pageCount:($pageNow+1)).'&num='.$pageSize.'" class="btn">【下一页】</a>';
+               
+                  echo '<a href="index.php?p=admin&c=Goods&a=list&page='.$pageCount.'&num='.$pageSize.'" class="btn">【尾页】</a>';
+                ?>
+              </div> -->
+              
+            </td>
+           </tr>
+          </tbody>
+    </table>
+
+  </div>
+
+
+  <script src="public/admin/js/jquery.min.js"></script>
+  <script src="public/layui/layui.js"></script>
+  <script src="public/admin/js/common.js"></script>
+  <script>
+     //Demo
+  layui.use('form', function () {
+    var form = layui.form;
+
+    //监听提交
+    form.on('submit(formDemo)', function (data) {
+      if (data) {
+
+      }
+      layer.msg(JSON.stringify(data.field));
+      // return false;
+    });
+
+
+  });
+
+  </script>
+</body>
+
+</html>
