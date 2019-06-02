@@ -96,17 +96,6 @@ class Model {
     }
   }
 
-  /***
-   *  根据主键得到信息
-   * @param $list array 关联数组
-   * @return mixed(混合) 成功返回插入的id 失败返回false
-   * 
-   * */ 
-  public function selectByPk($pk){
-    $sql = "select * from {$this->table} where {$this->fields['pk']} = $pk";
-
-    return $this->db->getRow($sql);
-  }
 
   /**
    * 自动更新数据
@@ -129,13 +118,17 @@ class Model {
     // 去除右边的 ，
     $uplist = rtrim($uplist,',');
     $sql = "UPDATE {$this->table} set {$uplist} WHERE {$where}";
-    return$this->db->query($sql);
-  //   if($this->db->query($sql)){
-  //  // 插入成功 返回最后插入的记录id
-  //     return $this->db->getInsertId();
-  //   }else{
-  //     return false;
-  //   }
+    // return$this->db->query($sql);
+    if($this->db->query($sql)){
+   // 插入成功 返回最后插入的记录id
+      if($row= mysql_affected_rows()){
+        return $row;
+      }else{
+        return false;
+      }
+    }else{
+      return false;
+    }
 
   }
 
@@ -146,19 +139,62 @@ class Model {
    * */ 
   public function delete($pk){
     $where = 0; //条件字符串
+  
     // 判断是数组还是单值
-    if(in_array($pk)){
+    if(is_array($pk)){
       $where = "`{$this->fields['pk']}` in (". implode(',',$pk) .")";
+      
     }else{
       $where = "`{$this->fields['pk']}`=$pk";
-
+     
     }
+   
     // 构造SQL语句
     $sql = "DELETE FROM {$this->table} WHERE $where ";
     if($this->db->query($sql)){
-      return $this->db->getInsertId();
+      if($row= mysql_affected_rows()){
+        return $row;
+      }else{
+        return false;
+      }
     }else{
       return false;
     }
   }
+
+    /***
+   *  根据主键得到信息
+   * @param $list array 关联数组
+   * @return mixed(混合) 成功返回插入的id 失败返回false
+   * 
+   * */ 
+  public function selectByPk($pk){
+    $sql = "select * from {$this->table} where {$this->fields['pk']} = $pk";
+
+    return $this->db->getRow($sql);
+  }
+
+  /** 
+   *  获取总记录数
+   * @param $where string  where条件
+   * @return number  总数
+   * */
+  public function total($where){
+
+    if(empty($where)){
+      $sql = "select count(*) from {$this->table}";
+    }else{
+      $sql = "select count(*) from {$this->table} where $where";
+    }
+
+    return $this->db->getOne($sql);
+  }
+
+   /** 
+   *  分页获取信息
+   * @param $offset int  偏移量
+   * @param $limit int 每次取得记录条数
+   * @param $where string  where条件
+   * @return number  总数
+   * */
 }

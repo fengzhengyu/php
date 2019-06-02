@@ -46,6 +46,8 @@
       require CORE_PATH .'Model.class.php';
       require DB_PATH .'Mysql.class.php';
 
+      require LIB_PATH  . 'Captcha.class.php';
+
       // 载入配置文件 存入全局变量
      $GLOBALS['config'] =  include CONFIG_PATH . 'config.php';
    

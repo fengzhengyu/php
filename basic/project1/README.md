@@ -117,3 +117,89 @@
     商品分类编辑：
       先列出商品分类信息，便于修改
       提交表单，完成更新操作
+
+
+  # 项目安全问题
+    常见问题
+      1 恶意攻击 暴力破解
+      2 SQL 注入
+      3 xss 攻击
+
+     恶意攻击 暴力破解：
+      get 方式恶意攻击  （dos），通常硬件方面 来防止 防火墙
+      post 方式暴力破解  ，从程序的角度防止,最常用的就是增加 验证码
+      这里有一个验证码类 captcha 
+
+     SQL 注入：
+      黑客通过在表单中或者URL中填入特殊的字符，然后向数据如发起请求，拼凑出sql语句，达到攻击目的
+      两个形式：
+        表单中填入特殊的字符
+        URL 携带填入特殊的字符
+        解决 ： addslashes() 对用户名密码转义 url的取值进行转换类型
+        结论： 凡是用户提交的信息，都是態不能相信的 ，都要进行处理，其中之一就是转义
+
+     Xss攻击：
+      跨站脚本攻击
+      XSS是一种经常出现在web应用中的计算机安全漏洞，它允许恶意web用户将代码植入到提供给其它用户使用的页面中。比如这些代码包括HTML代码和客户端脚本。
+      如何防止？
+
+        本质是通过标签（一对尖括号）来达到攻击目的，所以我们需要对尖括号进行 转义 ，这就是php中提到的实体转义
+        htmlspecialchars()和 htmlentities()
+        htmlspecialchars_decode（）将实体转成HTML代码,函数1的反函数 有时候展示不出应有的效果，而是显示出h5代码。多半是需要使用这个函数的  
+  # 出现的错误类型
+    notice ： 注意
+    warning : 提醒 小小 警告
+    fatal error : 致命的错误
+
+    如何避免错误？
+      良好的编码规范 严格区分大小写
+      善于总结 避免同样的错误
+    如何排错？
+      常用 var_dump() 或者 die(exit)
+
+  # 商品类型
+    只需要维护一个字段  type_name
+
+  # 分页分两部分
+    
+    查询数据获取记录
+    使用分页类输出分页信息
+
+  # 商品属性表   
+    create table p1_attribute (
+    attr_id int unsigned not null  auto_increment primary key ,
+    attr_name varchar(50) not null default '',
+    type_id int not null ,
+    attr_type int not null default '1',
+    attr_input_type int not null default '1',
+    attr_value text ,
+    sort_order int not null default '50',
+    foreign key(type_id) references p1_goods_type(type_id) 
+    );
+
+    重点字段说明：
+    type_id: 商品类型id ,表示该属性是哪个类型
+    attr_type: 保存属性的是否可选 唯一属性 单选属性 复选属性
+    attr_input_type: 保存属性值的录入的方式
+    attr_value:   保存属性的可选值，该值 不一定有 ， 手动输入的  和多行文本框 为空
+
+    属性值的录入方式
+      手动输入的        ---文本框
+      下拉列表 选择的     ---下拉列表   如果是这个 必须提供可选择的值，如果该值为空，就没有意义了 
+      多行文本框        ---文本域
+    唯一属性 -- 不能选的  
+    单选属性 -- 例如买手机 选择颜色 只能选一个 
+    复选属性 --  前台买手机 可以多选的属性
+    attr_type和 attr_input_type有什么区别？
+    attr_type 是为普通用户服务的  消费者前台点击选择
+    attr_input_type 是为管理员 录入商品时使用的 
+# 显示商品属性
+  分三步走：
+  A 显示所有属性
+  B 分页显示
+  C 按商品类型显示
+# 商品管理
+  业务逻辑
+    从两个方面来看
+    商品不是独立的，和其他几个模块有联系
+    看表结构

@@ -33,6 +33,11 @@ class Mysql
   // 执行SQL 语句
   public function query($sql)
   {
+    // 记录错误日志
+    // 还可以加开关 开启日志
+    $temp =" [" .date('Y-m_d H:i:s'). "] "  . $sql . PHP_EOL;
+    file_put_contents('log.txt',$temp,FILE_APPEND);
+
 
     $this->sql = $sql;
     $result = mysql_query($this->sql, $this->conn);

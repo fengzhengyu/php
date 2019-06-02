@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="public/layui/css/layui.css">
+  <link rel="stylesheet" href="public/admin/css/index.css">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <?php
+  
+    require 'top.html';
+    require 'left.html';
+  ?>
+
+  <div class="admin-body">
+    <!-- 面包屑 -->
+    <div class="crumbs-nav">
+      <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
+        <a href="" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+        <a href="index.php?p=admin&c=type&a=index" class="link">商品类型</a>
+        <a href="index.php?p=admin&c=type&a=index" class="link"><cite>商品类型列表</cite></a>
+      </span>
+    </div>
+    <!--内容  -->
+    <div class="manage-btn-wrapper">
+      <form action="">
+        <div class="handle-wrap layui-left">
+
+          按商品类型提示：
+         
+          <select name="" id="" class="select-list" onchange="searchAttr(this.value)">
+            <option value="0">所有商品类型</option>
+            <?php foreach($types as $type) :?>
+           
+            <option value="<?php echo $type['type_id'];?>"
+              <?php echo $type['type_id'] == $type_id?'selected':''; ?>
+            ><?php echo $type['type_name'];?></option>
+          
+            <?php endforeach?>
+          </select>
+      
+       
+        </div>
+      </form>
+      <div class="layui-right">
+        <a href="index.php?p=admin&c=attribute&a=add" class="layui-btn layui-btn-sm layui-btn-normal">
+          <i class="layui-icon">&#xe654;</i>
+          添加属性
+        </a>
+      </div>
+
+    </div>
+    <table  class="layui-table" >
+
+      <thead>
+
+          <tr >
+            <th>ID</th>
+            <th>属性名称</th>
+            <th>所属商品类型</th>
+            <th>属性状态</th>
+            <th>属性录入方式</th>
+            <th>可选列表</th>
+          
+          
+            <th align="center">操作</th>
+          
+          </tr>
+        </thead>
+        <tbody>
+            <?php foreach($attr_list as $row) :?>
+            <tr >
+              <td><?php echo $row['attr_id'];?></td>
+              <td><?php echo $row['attr_name'];?></td>
+              <td id="<?php echo $row['type_id'];?>"><?php echo $row['type_name'];?></td>
+              <td><?php echo $row['attr_type'];?></td>
+              <td>
+                <?php 
+                  switch($row['attr_input_type']){
+                    case 0:
+                      echo '手工录入';
+                      break;
+                    case 1:
+                      echo '下拉列表中选择';
+                      break;
+                    case 2:
+                      echo '多行文本';
+                      break;
+                  }
+                
+                ?></td>
+              <td><?php echo $row['attr_value'];?></td>
+             
+              <td>
+                
+              <a href="index.php?p=admin&c=category&a=edit&id=<?php echo $row['cat_id'];?>" class="layui-btn layui-btn-primary layui-btn-sm edit">
+                <i class="layui-icon">&#xe642;</i>
+              </a>
+              <button class="layui-btn layui-btn-primary layui-btn-sm success">
+                <i class="layui-icon">&#xe605;</i>
+              </button>
+
+              <a href="index.php?p=admin&c=category&a=delete&id=<?php echo $row['cat_id'];?>" class="layui-btn layui-btn-primary layui-btn-sm delete">
+                <i class="layui-icon">&#xe640;</i>
+              </a>
+              </td>
+              
+            </tr>
+           <?php endforeach?>
+           <?php if(empty($attr_list)) :?>
+            <tr align="center"><td colspan="7" >暂无数据</td></tr>
+            <?php endif;?>
+           <tr>
+             <td colspan="7">
+              <div class="page">
+                <?php echo $page;?>
+              </div>
+              
+            </td>
+           </tr>
+          </tbody>
+    </table>
+
+  </div>
+
+
+  <script src="public/admin/js/jquery.min.js"></script>
+  <script src="public/layui/layui.js"></script>
+  <script src="public/admin/js/common.js"></script>
+  <script>
+     //Demo
+  layui.use('form', function () {
+    var form = layui.form;
+
+    //监听提交
+    form.on('submit(formDemo)', function (data) {
+      if (data) {
+
+      }
+      layer.msg(JSON.stringify(data.field));
+      // return false;
+    });
+
+
+  });
+  // 商品类型改变 刷新数据
+  function searchAttr(id){
+    console.log(id);
+    if(id == 0){
+      return;
+    }
+    window.location.href = "index.php?p=admin&c=attribute&a=index&id="+ id;
+  }
+  </script>
+</body>
+
+</html>

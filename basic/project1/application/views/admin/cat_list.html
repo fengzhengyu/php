@@ -74,7 +74,9 @@
               
             </tr>
            <?php endforeach?>
-
+           <?php if(empty($cats)) :?>
+            <tr align="center"><td colspan="7" >暂无数据</td></tr>
+            <?php endif;?>
            <tr>
              <td colspan="7">
               

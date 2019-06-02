@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="public/layui/css/layui.css">
+  <link rel="stylesheet" href="public/admin/css/index.css">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <?php
+  
+    require 'top.html';
+    require 'left.html';
+  ?>
+
+  <div class="admin-body">
+    <!-- 面包屑 -->
+    <div class="crumbs-nav">
+      <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
+        <a href="" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+        <a href="index.php?p=admin&c=attribute&a=index" class="link">商品属性</a>
+        <a href="index.php?p=admin&c=attribute&a=add" class="link"><cite>添加属性</cite></a>
+      </span>
+    </div>
+    <!--内容  -->
+    <div class="add-module-form">
+      <form class="layui-form wrapper" action="index.php?p=admin&c=attribute&a=insert" method="POST" >
+
+      
+        <div class="layui-form-item">
+          <label class="layui-form-label">属性名称</label>
+          <div class="layui-input-block">
+            <input type="text" name="attr_name" required  placeholder="请输入属性名称" autocomplete="off"
+              class="layui-input">
+          </div>
+        </div>
+      
+        <div class="layui-form-item">
+          <label class="layui-form-label">所属商品类型</label>
+          <div class="layui-input-block">
+            <select name="type_id" lay-filter="aihao" required lay-verify="required">
+              <!-- <option value=""></option> -->
+              <option value="0">请选择</option>
+                <?php foreach($types as $type) :?>
+                <option value="<?php echo $type['type_id']?>"><?php echo $type['type_name'];?></option>
+                <?php endforeach;?>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">属性是否可选</label>
+          <div class="layui-input-block">
+            <input type="radio" name="attr_type" value="0" title="唯一" checked="" lay-filter="attrType">
+            <input type="radio" name="attr_type" value="1" title="单选" lay-filter="attrType">
+            <input type="radio" name="attr_type" value="2" title="复选" lay-filter="attrType">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label"></label>
+          <div class="layui-input-block">
+           选择单选属性时 ，可以对商品属性设置多个值，同时还能对不同的属性值制定不同的价格。用户购买时需要选定具体是属性值，选择唯一属性值时，商品的该属性值只能设置一个值，用户只能看到该值
+          </div>
+        </div>
+      
+        <div class="layui-form-item">
+          <label class="layui-form-label">该属性值的录入方式</label>
+          <div class="layui-input-block">
+  
+            <input type="radio" name="attr_input_type" value="0" title="手工录入" checked="" lay-filter="inputType">
+            <input type="radio" name="attr_input_type" value="1" title="从下面的的列表中选择（一行表示一个可选值）" lay-filter="inputType">
+            <input type="radio" name="attr_input_type" value="2" title="多行文本框" lay-filter="inputType" >
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">可选值列表</label>
+          <div class="layui-input-block">
+            <textarea placeholder="可选值列表"  class="layui-textarea" disabled name="attr_value" id="attr_value"></textarea>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" id="submit">确认添加</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          </div>
+        </div>
+      </form>
+  
+    </div>
+
+  </div>
+
+
+  <script src="public/admin/js/jquery.min.js"></script>
+  <script src="public/layui/layui.js"></script>
+  <script src="public/admin/js/common.js"></script>
+  <script>
+     //Demo
+  layui.use('form', function () {
+    var form = layui.form;
+
+    //监听提交
+    form.on('submit(formDemo)', function (data) {
+      if (data) {
+
+      }
+      layer.msg(JSON.stringify(data.field));
+      // return false;
+    });
+    form.on('radio(attrType)', function(data){
+    // console.log(data.elem); //得到radio原始DOM对象
+  
+      // console.log(data.value); //被点击的radio的value值
+    });  
+    form.on('radio(inputType)', function(data){
+    // console.log(data.elem); //得到radio原始DOM对象
+      if(data.value == '1'){
+        $('#attr_value').attr('disabled',false);
+       
+      }else{
+       $('#attr_value').attr('disabled',true);
+      }
+     
+    }); 
+
+
+  });
+
+  </script>
+</body>
+
+</html>

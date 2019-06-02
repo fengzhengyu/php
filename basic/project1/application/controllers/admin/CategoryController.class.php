@@ -42,6 +42,13 @@ class CategoryController extends Controller
     $data['is_show'] = $_POST['is_show'] == 'on' ? 1 : 0;
     $data['cat_desc'] = trim($_POST['cat_desc']);
 
+    // 批量转义 防止Xss
+    $this->helper('input');
+    $data =deepslashes($data); //符号转义
+    $data =  deepspecialchars($data);
+
+  
+
       // 2 验证及处理
     if ($data['cat_name'] === "") {
       $this->jump('index.php?p=admin&c=category&a=add', '分类名称不能为空');
@@ -99,8 +106,11 @@ class CategoryController extends Controller
       $this->jump("index.php?p=admin&c=category&a=edit&id={$_POST['cat_id']}", '不能将当前节点作为上级节点');
     }
    
-
-   
+    // 批量转义 防止Xss
+    $this->helper('input');
+    $data =deepslashes($data); //符号转义
+    $data =  deepspecialchars($data);
+  
     if($categoryModel->update($data)){
       $this->jump('index.php?p=admin&c=category&a=index', '更新成功', 2);
     }else{
@@ -110,18 +120,25 @@ class CategoryController extends Controller
 
   //删除分类动作
   public function deleteAction(){
-    echo 'delete';
+   
     // 获取删除id
     $cat_id = $_GET['id']+0;
-
-    // 做一些响应的判断
-
-    // 调用模型 
     $categoryModel = new CategoryModel('category');
+    // 
+    // 删除分类 不是叶子分类（最底层），做一些处理，有两种：
+    // 1 找其子孙分类，将其删除
+    // 2 给出相应的提示 推荐
+    $ids= $categoryModel->getSubIds( $cat_id);
+    if(!empty($ids)){
+      $this->jump("index.php?p=admin&c=category&a=index", '当前分类包含子类，请先删除子类');
+    }
+   
+    // 调用模型 
+ 
     if($categoryModel->delete($cat_id)){
       $this->jump('index.php?p=admin&c=category&a=index', '删除成功', 2);
     }else{
-      $this->jump("index.php?p=admin&c=category&a=edit&id={$cat_id}", '删除失败');
+      $this->jump("index.php?p=admin&c=category&a=index", '删除失败');
     }
   }
   
