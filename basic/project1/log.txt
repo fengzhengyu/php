@@ -941,3 +941,10 @@ XXL')
  [2019-06_02 18:28:57] desc `p1_goods_type`
  [2019-06_02 18:28:57] SELECT * FROM `p1_goods_type` ORDER BY type_id LIMIT 0 , 10
  [2019-06_02 18:28:57] select count(*) from `p1_goods_type`
+ [2019-06_03 19:29:03] set names utf8
+ [2019-06_03 19:29:03] desc `p1_goods_type`
+ [2019-06_03 19:29:03] SELECT * FROM `p1_goods_type` ORDER BY type_id LIMIT 0 , 10
+ [2019-06_03 19:29:03] select count(*) from `p1_goods_type`
+ [2019-06_03 19:29:34] set names utf8
+ [2019-06_03 19:29:34] desc `p1_admin`
+ [2019-06_03 19:29:34] SELECT * FROM  `p1_admin`  where admin_name='admin' AND admin_pass='21232f297a57a5a743894a0e4a801fc3' LIMIT 1
