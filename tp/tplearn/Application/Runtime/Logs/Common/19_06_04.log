@@ -1,0 +1,6 @@
+[ 2019-06-04T21:57:48+08:00 ] ::1 /tplearn/index.php?s=m=home&c=index&a=add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000898s ]
+ERR: 无法加载模块:M=home
+

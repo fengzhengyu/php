@@ -1928,3 +1928,88 @@ XXL')
  [2019-06_04 15:43:43] set names utf8
  [2019-06_04 15:43:43] desc `p1_goods_type`
  [2019-06_04 15:43:43] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_04 20:28:45] set names utf8
+ [2019-06_04 20:28:45] desc `p1_admin`
+ [2019-06_04 20:28:45] SELECT * FROM  `p1_admin`  where admin_name='admin' AND admin_pass='21232f297a57a5a743894a0e4a801fc3' LIMIT 1
+ [2019-06_04 20:28:49] set names utf8
+ [2019-06_04 20:28:49] desc `p1_goods`
+ [2019-06_04 20:28:49] SELECT * FROM `p1_goods`
+ [2019-06_04 20:28:52] set names utf8
+ [2019-06_04 20:28:52] desc `p1_category`
+ [2019-06_04 20:28:52] SELECT * FROM `p1_category`
+ [2019-06_04 20:28:52] set names utf8
+ [2019-06_04 20:28:52] desc `p1_brand`
+ [2019-06_04 20:28:57] set names utf8
+ [2019-06_04 20:28:57] desc `p1_goods`
+ [2019-06_04 20:28:57] SELECT * FROM `p1_goods`
+ [2019-06_04 20:29:00] set names utf8
+ [2019-06_04 20:29:00] desc `p1_category`
+ [2019-06_04 20:29:00] SELECT * FROM `p1_category`
+ [2019-06_04 20:29:04] set names utf8
+ [2019-06_04 20:29:04] desc `p1_category`
+ [2019-06_04 20:29:04] SELECT * FROM `p1_category`
+ [2019-06_04 20:29:07] set names utf8
+ [2019-06_04 20:29:07] desc `p1_brand`
+ [2019-06_04 20:29:08] set names utf8
+ [2019-06_04 20:29:08] desc `p1_brand`
+ [2019-06_04 20:31:48] set names utf8
+ [2019-06_04 20:31:48] desc `p1_category`
+ [2019-06_04 20:31:48] SELECT * FROM `p1_category`
+ [2019-06_04 20:31:52] set names utf8
+ [2019-06_04 20:31:52] desc `p1_category`
+ [2019-06_04 20:31:52] SELECT * FROM `p1_category`
+ [2019-06_04 20:31:52] set names utf8
+ [2019-06_04 20:31:52] desc `p1_brand`
+ [2019-06_04 20:31:52] SELECT * FROM `p1_brand`
+ [2019-06_04 20:31:52] set names utf8
+ [2019-06_04 20:31:52] desc `p1_goods_type`
+ [2019-06_04 20:31:52] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_04 20:31:54] set names utf8
+ [2019-06_04 20:31:54] desc `p1_goods`
+ [2019-06_04 20:31:54] SELECT * FROM `p1_goods`
+ [2019-06_04 20:31:55] set names utf8
+ [2019-06_04 20:31:55] desc `p1_goods`
+ [2019-06_04 20:31:55] SELECT * FROM `p1_goods`
+ [2019-06_04 20:32:09] set names utf8
+ [2019-06_04 20:32:09] desc `p1_category`
+ [2019-06_04 20:32:10] SELECT * FROM `p1_category`
+ [2019-06_04 20:32:13] set names utf8
+ [2019-06_04 20:32:13] desc `p1_brand`
+ [2019-06_04 20:32:13] SELECT * FROM `p1_brand`
+ [2019-06_04 20:32:20] set names utf8
+ [2019-06_04 20:32:20] desc `p1_goods_type`
+ [2019-06_04 20:32:20] SELECT a.*,COUNT(b.attr_name) AS num  FROM `p1_goods_type` AS a
+         LEFT JOIN p1_attribute AS b 
+         ON a.type_id = b.type_id  GROUP BY a.type_id ORDER BY type_id
+         LIMIT 0 , 10
+ [2019-06_04 20:32:20] select count(*) from `p1_goods_type`
+ [2019-06_04 20:32:22] set names utf8
+ [2019-06_04 20:32:22] desc `p1_attribute`
+ [2019-06_04 20:32:22] set names utf8
+ [2019-06_04 20:32:22] desc `p1_goods_type`
+ [2019-06_04 20:32:22] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_04 20:32:22] select a.* ,b.type_name from p1_attribute as a inner join 
+        p1_goods_type as b on a.type_id = b.type_id 
+        where a.type_id = 2 limit 0,15
+ [2019-06_04 20:32:22] select count(*) from `p1_attribute` where type_id=2
+ [2019-06_04 20:32:38] set names utf8
+ [2019-06_04 20:32:38] desc `p1_attribute`
+ [2019-06_04 20:32:38] set names utf8
+ [2019-06_04 20:32:38] desc `p1_goods_type`
+ [2019-06_04 20:32:38] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_04 20:32:38] select a.* ,b.type_name from p1_attribute as a inner join 
+        p1_goods_type as b on a.type_id = b.type_id 
+        where a.type_id = 12 limit 0,15
+ [2019-06_04 20:32:38] select count(*) from `p1_attribute` where type_id=12
+ [2019-06_04 20:32:41] set names utf8
+ [2019-06_04 20:32:41] desc `p1_goods`
+ [2019-06_04 20:32:41] SELECT * FROM `p1_goods`
+ [2019-06_04 20:32:43] set names utf8
+ [2019-06_04 20:32:43] desc `p1_category`
+ [2019-06_04 20:32:43] SELECT * FROM `p1_category`
+ [2019-06_04 20:32:43] set names utf8
+ [2019-06_04 20:32:43] desc `p1_brand`
+ [2019-06_04 20:32:43] SELECT * FROM `p1_brand`
+ [2019-06_04 20:32:43] set names utf8
+ [2019-06_04 20:32:43] desc `p1_goods_type`
+ [2019-06_04 20:32:43] SELECT * FROM `p1_goods_type` ORDER BY type_id
