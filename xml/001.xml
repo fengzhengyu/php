@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class>
+  <stu>
+    <name>李大白</name>
+    <sex>男</sex>
+    <age>18</age>
+  </stu>
+  <stu>
+    <name>杜甫</name>
+    <sex>男</sex>
+    <age>20</age>
+  </stu>
+</class>
