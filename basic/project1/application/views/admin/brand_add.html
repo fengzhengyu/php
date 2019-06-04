@@ -25,50 +25,50 @@
     <!-- 面包屑 -->
     <div class="crumbs-nav">
       <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
-        <a href="" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
-        <a href="" class="link">商品管理</a>
-        <a href="" class="link"><cite>添加分类</cite></a>
+        <a href="index.php?p=admin&c=index&a=index" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+        <a href="index.php?p=admin&c=brand&a=index" class="link">品牌管理</a>
+        <a href="index.php?p=admin&c=brand&a=add" class="link"><cite>添加品牌</cite></a>
       </span>
     </div>
     <!--内容  -->
     <div class="add-module-form">
-      <form class="layui-form wrapper" action="index.php?p=admin&c=category&a=insert" method="POST">
+      <form class="layui-form wrapper" action="index.php?p=admin&c=brand&a=insert" method="POST" enctype="multipart/form-data">
 
       
         <div class="layui-form-item">
-          <label class="layui-form-label">分类名称</label>
+          <label class="layui-form-label">品牌名称</label>
           <div class="layui-input-block">
-            <input type="text" name="cat_name" required  placeholder="请输入名称号" autocomplete="off"
+            <input type="text" name="brand_name" required  placeholder="请输入名称" autocomplete="off"
               class="layui-input">
           </div>
         </div>
-      
         <div class="layui-form-item">
-          <label class="layui-form-label">上级分类</label>
+          <label class="layui-form-label">品牌网址</label>
           <div class="layui-input-block">
-            <select name="parent_id" lay-filter="aihao" required lay-verify="required">
-              <!-- <option value=""></option> -->
-              <option value="0">顶级分类</option>
-                <?php foreach($cats as $cat) :?>
-                <option value="<?php echo $cat['cat_id']?>"><?php  echo str_repeat("&nbsp;&nbsp;&nbsp;", $cat['level']);?><?php echo $cat['cat_name']?></option>
-                <?php endforeach;?>
-            </select>
-          </div>
-        </div>
-       
-        <div class="layui-form-item">
-          <label class="layui-form-label">数量单位</label>
-          <div class="layui-input-inline">
   
-            <input type="text" name="unit" required placeholder="" autocomplete="off"
+            <input type="text" name="brand_url" required placeholder="" autocomplete="off"
               class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">品牌logo</label>
+          <div class="layui-input-block">
+  
+            <input type="file" name="brand_logo" required placeholder="" autocomplete="off"
+              class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+          <label class="layui-form-label">品牌描述</label>
+          <div class="layui-input-block">
+            <textarea name="brand_desc" placeholder="请输入内容" class="layui-textarea"></textarea>
           </div>
         </div>
         <div class="layui-form-item">
           <label class="layui-form-label">排序</label>
           <div class="layui-input-inline">
   
-            <input type="text" name="cat_order" lay-verify="required|number" autocomplete="off" class="layui-input" value="50">
+            <input type="text" name="brand_order" lay-verify="required|number" autocomplete="off" class="layui-input" value="50">
           </div>
         </div>
         <div class="layui-form-item">
@@ -78,12 +78,7 @@
             <input type="checkbox" name="is_show" lay-skin="switch" lay-text="是|否" checked>
           </div>
         </div>
-        <div class="layui-form-item layui-form-text">
-          <label class="layui-form-label">分类描述</label>
-          <div class="layui-input-block">
-            <textarea name="cat_desc" placeholder="请输入内容" class="layui-textarea"></textarea>
-          </div>
-        </div>
+        
         <div class="layui-form-item">
           <div class="layui-input-block">
             <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" id="submit">确认添加</button>
@@ -110,6 +105,7 @@
       if (data) {
 
       }
+      console.log(JSON.stringify(data.field))
       layer.msg(JSON.stringify(data.field));
       // return false;
     });

@@ -33,7 +33,7 @@ class AttributeController extends Controller {
         // 创建模型 
         $attrModel = new AttributeModel('attribute');
         if( $attrModel->insert($data)){
-            $this->jump('index.php?p=admin&c=type&a=index','添加成功',2);
+            $this->jump('index.php?p=admin&c=attribute&a=index&id='.$data['type_id'],'添加成功',2);
         }else{
             $this->jump('index.php?p=admin&c=attribute&a=add','添加失败');
         }
@@ -54,7 +54,7 @@ class AttributeController extends Controller {
         $type_id = $_GET['id'] + 0;
       
         $current = isset($_GET['page'])?$_GET['page'] : 1;  // 当前页
-        $pagesize = 1;  // 每页显
+        $pagesize = 15;  // 每页显
         $offset = ($current-1)*$pagesize;
 
         // 分页获取数据
@@ -68,6 +68,23 @@ class AttributeController extends Controller {
         $p = new Page($total,$pagesize,$current,'index.php',array('p'=>'admin','c'=>'attribute','a'=>'index','id'=>$type_id));
         $page = $p->showPage();
         include  CUR_VIEW_PATH . 'goods_attr_list.html';
+    }
+
+    // 展示商品属性列表
+    public function getAttrListAction(){
+        header('Content-Type:application/json; charset=utf-8');
+        // 获取参数type_id
+        $type_id = $_GET['type_id']+0;
+
+        $attrModel = new AttributeModel('attribute');
+        $attr_list =  $attrModel->getAttrList( $type_id);
+
+        // echo '<pre>';
+        // var_dump($attr_list);
+        // exit(json_encode($attr_list));
+
+        echo $attr_list;
+
     }
 
 }

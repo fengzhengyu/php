@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>局部刷新应用</title>
+</head>
+<body>
+  <form action="reg.php">
+    <ul>
+      <li><label for="">用户名：</label><input type="text" name="username" id="user"><span id="message"></span></li>
+      <li><label for="">密码:</label><input type="password" name="password"></li>
+      <li><label for="">&nbsp;</label><input type="submit" value="注册"></li>
+    </ul>
+  </form>
+  <iframe src="" frameborder="0" id="ifr" width="400px" height="200px" ></iframe>
+  <script>
+   var username =  document.getElementById('user');
+   var iframe =  document.getElementById('ifr');
+   username.onblur = function(){
+    //  向 iframe 发出请求，实际上就是设置起 src 属性
+    iframe.src='doreg.php?username='+username.value;
+   }
+  </script>
+</body>
+</html>

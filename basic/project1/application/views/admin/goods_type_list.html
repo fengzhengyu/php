@@ -31,6 +31,22 @@
       </span>
     </div>
     <!--内容  -->
+    <div class="manage-btn-wrapper">
+      <form action="">
+        <div class="handle-wrap layui-left">
+          <!-- 筛选条件 -->
+      
+        
+        </div>
+      </form>
+      <div class="layui-right">
+        <a href="index.php?p=admin&c=type&a=add" class="layui-btn layui-btn-sm layui-btn-normal">
+          <i class="layui-icon">&#xe654;</i>
+          添加商品类型
+        </a>
+      </div>
+
+    </div>
     <table  class="layui-table" >
 
       <thead>
@@ -49,17 +65,17 @@
               <td><?php echo $row['type_id'];?></td>
              
               <td><?php echo $row['type_name'];?></td>
-              <td>0</td>
+              <td><?php echo $row['num'];?></td>
               <td>
                 
-              <a href="index.php?p=admin&c=attribute&a=edit&id=<?php echo $row['type_id'];?>" class="layui-btn layui-btn-primary layui-btn-sm edit">
+              <a href="index.php?p=admin&c=type&a=edit&id=<?php echo $row['type_id'];?>" class="layui-btn layui-btn-primary layui-btn-sm edit">
                 <i class="layui-icon">&#xe642;</i>
               </a>
               <a href="index.php?p=admin&c=attribute&a=index&id=<?php echo $row['type_id'];?>"  class="layui-btn layui-btn-primary layui-btn-sm success">
                 属性列表
               </a>
 
-              <a href="index.php?p=admin&c=attribute&a=delete&id=<?php echo $row['type_id'];?>" class="layui-btn layui-btn-primary layui-btn-sm delete">
+              <a href="index.php?p=admin&c=type&a=delete&id=<?php echo $row['type_id'];?>" class="layui-btn layui-btn-primary layui-btn-sm delete">
                 <i class="layui-icon">&#xe640;</i>
               </a>
               </td>

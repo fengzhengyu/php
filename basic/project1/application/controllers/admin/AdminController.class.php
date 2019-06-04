@@ -3,6 +3,7 @@
 
     class AdminController extends Controller {
      
+    
 
         //载入登录
         public function loginAction(){
@@ -34,7 +35,7 @@
             $adminModel = new AdminModel('admin');
 
             if($userinfo = $adminModel->checkUser($username,$password)){
-                session_start();
+                // session_start();
                 $_SESSION['admin'] = $userinfo;
                 $this->jump('index.php?p=admin&c=index&a=index', '',0);
              
@@ -48,5 +49,12 @@
         public function captchaAction(){
             $c = new Captcha();
             $c->generate();
+        }
+
+        // 退出登录
+        public function logoutAction(){
+            unset( $_SESSION['admin']);
+
+            $this->jump('index.php?p=admin&c=admin&a=login', '退出成功！');
         }
     }

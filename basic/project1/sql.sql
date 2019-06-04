@@ -28,11 +28,11 @@
         -- foreign key(brand_id) references p1_brand(brand_id) ,
        
     );
--- goods_attr 商品属性关联表 (第三张表) 他的对应goods表 attribute表
-    create table goods_attr (
-        rec_id int primary key ,
-        goods_id  int comment '关联商品表的ID',
-        attr_id  int comment '关联扩展信息表的ID',
+-- goods_attr 商品属性关联表 (第三张表) 他的对应goods表 attribute表    这表最后用
+    create table p1_goods_attr (
+        rec_id int unsigned not null auto_increment primary key ,
+        goods_id  int unsigned comment '关联商品表的ID',
+        attr_id  int unsigned  comment '关联扩展信息表的ID',
         attr_value varchar(100)
     
     );
@@ -58,11 +58,13 @@ create table p1_goods_type (
 -- brand 表（品牌）
 -- 品牌表与商品表的联系 是一对多
   create table p1_brand ( 
-        brand_id int  , 
-        brand_name varchar(30),
-        brand_url varchar(200),
-        brand_logo varchar(200) comment '品牌ID 对应的品牌表',
-        brand_desc text
+        brand_id int unsigned not null auto_increment primary key,
+        brand_name varchar(30) not null default ''  comment '品牌名称',
+        brand_url varchar(200) not null default '' comment '品牌网址',
+        brand_logo varchar(200) not null default '' comment '品牌logo',
+        brand_desc text comment '品牌详情',
+        is_show int unsigned not null default '1' comment '是否显示',
+        brand_order int unsigned not null default '50' comment '排序依据'
     );
 
 

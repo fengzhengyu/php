@@ -87,6 +87,7 @@ class Model {
     // die;
     $sql= "INSERT INTO $this->table ({$field_list}) VALUES ($value_list)";
 
+
     if($this->db->query($sql)){
       // 插入成功 返回最后插入的记录id
       return $this->db->getInsertId();

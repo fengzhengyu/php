@@ -198,8 +198,29 @@
   A 显示所有属性
   B 分页显示
   C 按商品类型显示
+  
+  获得商品属性的数量：
+    对应两个表：
+      p1_goods_type表  
+      p1_attribute 表 中 type_id 关联goods_type表   type_id   多对一
+      sql语句
+        select a.* ,b.attr_name,b.type_id from p1_goods_type as a inner join p1_attribute as b on a.type_id = b.type_id;
+        注意：inner join 如果a.type_id 在b表没有对应的 则不显示 ，用到此时的项目是不合理的，所有用 left join 
+      分组统计：
+         select a.* ,b.attr_name,b.type_id from p1_goods_type as a left join p1_attribute as b on a.type_id = b.type_id group by a.type_id;  
+      统计数量：
+         select a.* ,b.attr_name,b.type_id,count(*) from p1_goods_type as a left join p1_attribute as b on a.type_id = b.type_id group by a.type_id;  
+         注意： count(*) 如果 值为null  也表示数量一 （只要有一条记录就是统计）； count(字段名) 字段有值为null 则不会统计
+      正确：
+        select a.*,count(b.attr_name) from p1_goods_type as a left join p1_attribute as b on a.type_id = b.type_id group by a.type_id;  
+
 # 商品管理
   业务逻辑
     从两个方面来看
     商品不是独立的，和其他几个模块有联系
     看表结构
+  如何实现局部刷新？
+    ajax  
+    iframe
+  GoodsAttrModel 没必要，因为它是关联表 插入借用 基础Model就行  
+

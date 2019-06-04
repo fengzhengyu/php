@@ -32,160 +32,245 @@
     </div>
     <!--内容  -->
     <div class="add-module-form">
-     
-      <form class="layui-form wrapper"  action="index.php?p=admin&c=goods&a=insert" method="POST" >
-          <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
-              <ul class="layui-tab-title">
-                <li class="layui-this" lay-id="111" >通用信息</li>
-                <li lay-id="222" >详情描述</li>
-                <li lay-id="333" >其他信息</li>
-                <li lay-id="444" >商品属性</li>
-                <li lay-id="555" >商品相册</li>
-              </ul>
-              <div class="layui-tab-content" >
-                <div class="layui-tab-item layui-show">
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">商品名称</label>
-                        <div class="layui-input-block">
-                          <input type="text" name="goods_name" autocomplete="off" value="" class="layui-input">
-                        </div>
-                      </div>
-            
-                      <div class="layui-form-item">
-                        <label class="layui-form-label">商品货号</label>
-                        <div class="layui-input-inline">
-                          <input type="text" name="goods_cn" autocomplete="off" value="" class="layui-input">
-                        </div>
-                        <div class="layui-form-mid layui-word-aux">不输入将自动生成唯一的货号</div>
-                      </div>
-                      <div class="layui-form-item">
-                        <label class="layui-form-label">商品品类</label>
-                        <div class="layui-input-block">
-                          <select name="cat_id" lay-filter="aihao" required lay-verify="required">
-                            <option value=""></option>
-                            <option value="0">写作</option>
-                            <option value="1">阅读</option>
-                            <option value="2">游戏</option>
-                            <option value="3">音乐</option>
-                            <option value="4">旅行</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="layui-form-item">
-                          <label class="layui-form-label">商品品牌</label>
-                          <div class="layui-input-block">
-                            <select name="brand_id" lay-filter="aihao" required lay-verify="required">
-                              <option value=""></option>
-                              <option value="0">写作</option>
-                              <option value="1">阅读</option>
-                              <option value="2">游戏</option>
-                              <option value="3">音乐</option>
-                              <option value="4">旅行</option>
-                            </select>
-                          </div>
-                      </div>
-                      <div class="layui-form-item">
-                          <label class="layui-form-label">选择供货商</label>
-                          <div class="layui-input-block">
-                            <select name="brand_id" lay-filter="aihao" required lay-verify="required">
-                              <option value="">不指定属于本店商品</option>
-                              <option value="0">写作</option>
-                              <option value="1">阅读</option>
-                              <option value="2">游戏</option>
-                              <option value="3">音乐</option>
-                              <option value="4">旅行</option>
-                            </select>
-                          </div>
-                      </div>
-                      <div class="layui-form-item">
-                        <label class="layui-form-label">本店售价</label>
-                        <div class="layui-input-inline">
-                          <input type="text" name="shop_price" autocomplete="off" value="" class="layui-input">
-                        </div>
-                      </div>
-                      <div class="layui-form-item">
-                        <label class="layui-form-label">会员价格</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="member_price" autocomplete="off" value="" class="layui-input">
-                        </div>
-                      </div>
-                      <div class="layui-form-item">
-                        <label class="layui-form-label">市场售价</label>
-                        <div class="layui-input-inline">
-                          <input type="text" name="market_price" autocomplete="off" value="" class="layui-input">
-                        </div>
-                      </div>
-                      <div class="layui-form-item">
-                        <label class="layui-form-label">促销价</label>
-                        <div class="layui-input-inline">
-                          <input type="text" name="promote_price" autocomplete="off" value="" class="layui-input">
-                        </div>
-                        <div class="layui-input-inline">
-                            <input type="checkbox" name="is_promote" lay-skin="switch" lay-text="开启|取消" checked>
-                          </div>
-                      </div>
-                      <div class="layui-form-item">
-                        <label class="layui-form-label">促销时间</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="promote_strat_time" id="promoteStratTime" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-input-inline">
-                            <input type="text" name="promote_end_time" id="promoteEndTime" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
-                          </div>
-                      </div>
-                      <div class="layui-form-item">
-                        <label class="layui-form-label">上传商品图片</label>
-                        <div class="layui-input-block">
-                          <input type="file" name="goods_img" >
-                          <input type="text" name="goods_img_url" required lay-verify="required" placeholder="请输入图片地址" autocomplete="off"
-                          class="layui-input">
-                        </div>
-                      </div>
-                      <div class="layui-form-item">
-                          <label class="layui-form-label">上传缩略图</label>
-                          <div class="layui-input-block">
-                            <input type="file" name="goods_thumb" >
-                            <input type="text" name="goods_thumb_url" required lay-verify="required" placeholder="请输入缩略图地址" autocomplete="off"
-                            class="layui-input">
-            
-                          </div>
-                        </div>
-                      <div class="layui-form-item">
-                        <label class="layui-form-label"></label>
-                        <div class="layui-input-block">
-                            <input type="checkbox" name="goods_thumb_status" lay-skin="primary" title="自动生成商品缩略图" checked="">
-                        </div>
-                      </div>
-                   
-                      <div class="layui-form-item">
-                        <div class="layui-input-block">
-                            <!-- <button type="reset" class="layui-btn layui-btn-normal">确认</button> -->
-                          <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" id="submit">确认添加</button>
-                          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                        
-                        </div>
-                      </div>
+
+      <form class="layui-form wrapper" action="index.php?p=admin&c=goods&a=insert" method="POST" style="width:800px;" enctype="multipart/form-data">
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+          <ul class="layui-tab-title">
+            <li class="layui-this" lay-id="111">通用信息</li>
+            <li lay-id="222">详情描述</li>
+            <li lay-id="333">其他信息</li>
+            <li lay-id="444">商品属性</li>
+            <li lay-id="555">商品相册</li>
+          </ul>
+          <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+              <div class="layui-form-item">
+                <label class="layui-form-label">商品名称</label>
+                <div class="layui-input-block">
+                  <input type="text" name="goods_name" required lay-verify="required" autocomplete="off" value=""
+                    class="layui-input">
                 </div>
-                <div class="layui-tab-item">
-                    <div class="layui-form-item layui-form-text">
-                      <label class="layui-form-label">文本域</label>
-                      <div class="layui-input-block">
-                        <textarea name="goods_desc" placeholder="请输入内容" class="layui-textarea"></textarea>
-                      </div>
-                    </div>
-                </div>
-                <div class="layui-tab-item"> <button class="layui-btn site-demo-active" data-type="tabChange">切换到：用户管理</button></div>
-                <div class="layui-tab-item">内容4</div>
-                <div class="layui-tab-item">内容5</div>
               </div>
-            </div> 
+
+              <div class="layui-form-item">
+                <label class="layui-form-label">商品货号</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="goods_cn" autocomplete="off" value="" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">不输入将自动生成唯一的货号</div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">商品分类</label>
+                <div class="layui-input-block">
+                  <select name="cat_id" lay-filter="aihao" required lay-verify="required">
+                    <option value="">选择分类</option>
+                    <?php foreach($cats as $row) :?>
+                    <option value="<?php echo $row['cat_id'];?>">
+                      <?php  echo str_repeat("&nbsp;&nbsp;&nbsp;", $row['level']);?><?php echo $row['cat_name'];?>
+                    </option>
+                    <?php endforeach;?>
+                  </select>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">商品品牌</label>
+                <div class="layui-input-block">
+                  <select name="brand_id" lay-filter="aihao" required lay-verify="required">
+                    <option value="">选择品牌</option>
+                    <?php foreach($brands as $row) :?>
+                    <option value="<?php echo $row['brand_id'];?>"><?php echo $row['brand_name'];?></option>
+                    <?php endforeach;?>
+                  </select>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">选择供货商</label>
+                <div class="layui-input-block">
+                  <select name="belong_id" lay-filter="aihao" required lay-verify="required">
+                    <option value="0">不指定属于本店商品</option>
+                    <option value="1">归属于上海店铺</option>
+
+                  </select>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">本店售价</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="shop_price" required lay-verify="required" autocomplete="off" value=""
+                    class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">会员价格</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="member_price" required lay-verify="required" autocomplete="off" value=""
+                    class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">市场售价</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="market_price" required lay-verify="required" autocomplete="off" value=""
+                    class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">促销价</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="promote_price" required lay-verify="required" autocomplete="off" value=""
+                    class="layui-input">
+                </div>
+                <div class="layui-input-inline">
+                  <input type="checkbox" name="is_promote" lay-skin="switch" lay-text="开启|取消" checked>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">促销时间</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="promote_strat_time" id="promoteStratTime" lay-verify="date"
+                    placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-input-inline">
+                  <input type="text" name="promote_end_time" id="promoteEndTime" lay-verify="date"
+                    placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">上传商品图片</label>
+                <div class="layui-input-block">
+                  <input type="file" name="goods_img" required lay-verify="required">
+                  <input type="text" name="goods_img_url" placeholder="请输入图片地址" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">上传缩略图</label>
+                <div class="layui-input-block">
+                  <input type="file" name="goods_thumb">
+                  <input type="text" name="goods_thumb_url" placeholder="请输入缩略图地址" autocomplete="off"
+                    class="layui-input">
+
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label"></label>
+                <div class="layui-input-block">
+                  <input type="checkbox" name="goods_thumb_status" lay-skin="primary" title="自动生成商品缩略图" checked="">
+                </div>
+              </div>
+
+              <div class="layui-form-item">
+                <div class="layui-input-block">
+                  <!-- <button type="reset" class="layui-btn layui-btn-normal">确认</button> -->
+                  <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">确认添加</button>
+                  <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+
+                </div>
+              </div>
+            </div>
+            <div class="layui-tab-item">
+              <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">文本域</label>
+                <div class="layui-input-block">
+                  <textarea name="goods_desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="layui-tab-item">
+              <div class="layui-form-item">
+                <label class="layui-form-label">商品重量</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="goods_weight" autocomplete="off" value="" class="layui-input">
+                </div>
+                <div class="layui-input-inline">
+                  <select name="goods_unit"  >
+                    <option value="1">kg</option>
+                  </select>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">商品库存数量</label>
+                <div class="layui-input-block">
+                  <input type="text" name="goods_number" autocomplete="off" value="" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">库存警告数量</label>
+                <div class="layui-input-block">
+                  <input type="text" name="goods_number_warning" autocomplete="off" value="" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">加入推荐</label>
+                <div class="layui-input-block">
+                  <input type="checkbox" name="is_best" lay-skin="primary" title="精品">
+                  <input type="checkbox" name="is_new" lay-skin="primary" title="新品">
+                  <input type="checkbox" name="is_hot" lay-skin="primary" title="热销">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">上架</label>
+                <div class="layui-input-block">
+                  <input type="checkbox" name="is_onsale" lay-skin="primary" title="打勾表示允许销售，否则不允许销售" checked="">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">能作为普通商品销售</label>
+                <div class="layui-input-block">
+                  <input type="checkbox" name="is_ordinary" lay-skin="primary" title="打勾表示能作为普通商品销售，否则只能作为配件或赠品销售。" checked>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">商品关键词</label>
+                <div class="layui-input-block">
+                  <input type="input" name="keyword" autocomplete="off" value="" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">商品简单描述</label>
+                <div class="layui-input-block">
+                  <textarea name="goods_brief" class="layui-textarea"></textarea>
+                </div>
+              </div>
+
+            </div>
+            <div class="layui-tab-item">
+              <div class="layui-form-item">
+                <label class="layui-form-label">商品类型</label>
+                <div class="layui-input-block">
+                  <select name="type_id" required lay-verify="required" lay-filter="selectType">
+                    <option value="">选择商品类型</option>
+                    <?php foreach($types as $row) :?>
+                    <option value="<?php echo $row['type_id'];?>"><?php echo $row['type_name'];?></option>
+                    <?php endforeach;?>
+                  </select>
+                </div>
+              </div>
+
+              <div id="tables">
 
 
-        </form>
-    
-  
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-input-block">
+                  <!-- <button type="reset" class="layui-btn layui-btn-normal">确认</button> -->
+                  <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">确认添加</button>
+                  <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+
+                </div>
+              </div>
+            </div>
+            <div class="layui-tab-item">
+
+            </div>
+          </div>
+        </div>
+
+
+      </form>
+
+
     </div>
-  
+
   </div>
 
 
@@ -193,43 +278,55 @@
   <script src="public/layui/layui.js"></script>
   <script src="public/admin/js/common.js"></script>
   <script>
-    
-     //Demo
-  layui.use(['form', 'layedit', 'laydate','element'], function () {
-    
-    var form = layui.form
-      ,layer = layui.layer
-      ,layedit = layui.layedit
-      ,laydate = layui.laydate;
-    laydate.render({
-      elem: '#promoteStratTime'
+    //Demo
+    layui.use(['form', 'layedit', 'laydate', 'element'], function () {
+
+      var form = layui.form,
+        layer = layui.layer,
+        layedit = layui.layedit,
+        laydate = layui.laydate;
+      laydate.render({
+        elem: '#promoteStratTime'
+      });
+      laydate.render({
+        elem: '#promoteEndTime'
+      });
+      //监听提交
+      form.on('submit(formDemo)', function (data) {
+        if (data) {
+
+        }
+        // console.log(JSON.stringify(data.field))
+        layer.msg(JSON.stringify(data.field));
+        // return false;
+      });
+
+      form.on('select(selectType)', function (data) {
+        // console.log(data.elem); //得到select原始DOM对象
+        // console.log(data.value); //得到被选中的值
+        // console.log(data.othis); //得到美化后的DOM对象
+
+        // if (data.value == 1) return;
+        $.ajax({
+          url: "http://php.com/basic/project1/index.php?p=admin&c=attribute&a=getAttrList",
+          type: 'get',
+          data: {
+            type_id: data.value
+          },
+          dataType: 'html',
+          cache: false,
+          success: function (res) {
+            console.log(res)
+
+            $('#tables').html(res);
+            form.render('select');
+          }
+        })
+      });
+
+
+
     });
-    laydate.render({
-      elem: '#promoteEndTime'
-    });
-    //监听提交
-    form.on('submit(formDemo)', function (data) {
-      if (data) {
-
-      }
-      console.log(JSON.stringify(data.field))
-      layer.msg(JSON.stringify(data.field));
-      return false;
-    });
-
-    // 
-    var active = {
-     
-      tabChange: function(){
-  //       //切换到指定Tab项
-          element.tabChange('docDemoTabBrief', '2'); //切换到：用户管理
-      }
-   };
-  
-
-
-  });
-
   </script>
 </body>
 

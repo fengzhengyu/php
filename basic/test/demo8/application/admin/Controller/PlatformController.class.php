@@ -19,7 +19,9 @@
 
       // 列出不需要登录验证的动作列表
       $no_list = array(
-        'Admin' => array('login','check','captcha')
+        'admin' => array(
+          'login','check','captcha'
+        )
       );
 
       // 当前控制器存在当前动作

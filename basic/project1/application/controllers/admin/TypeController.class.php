@@ -52,4 +52,41 @@ class TypeController extends Controller {
         include CUR_VIEW_PATH . 'goods_type_list.html';
     }
 
+    // 展示编辑 页面
+    public function editAction(){
+        $type_id = $_GET['id']+0;
+        $typeModel = new TypeModel('goods_type');
+         $type =  $typeModel->getEdit($type_id);
+
+        include CUR_VIEW_PATH . 'goods_type_edit.html';
+
+    }
+    // 更新数据
+    public function updateAction(){
+        // 接受表单数据
+        $data['type_id'] = trim( $_POST['type_id']);
+        $data['type_name'] = trim( $_POST['type_name']);
+        $typeModel = new TypeModel('goods_type');
+        // 辅助函数
+        $this->helper('input');
+        $data =deepslashes($data);
+        $data = deepspecialchars($data);
+        if( $typeModel->update($data)){
+            $this->jump('index.php?p=admin&c=type&a=index','更新成功',2);
+        }else{
+            $this->jump('index.php?p=admin&c=type&a=edit&id='.$data['type_id'],'更新失败');
+        }
+          
+    }
+     // 删除数据
+     public function deleteAction(){
+        $type_id = $_GET['id']+0;
+        $typeModel = new TypeModel('goods_type');
+        if($typeModel->delete( $type_id)){
+            $this->jump('index.php?p=admin&c=type&a=index   ','删除成功');
+        }else{
+            $this->jump('index.php?p=admin&c=type&a=edit&id='.$data['type_id'],'删除失败');
+        }
+     }
+
 }

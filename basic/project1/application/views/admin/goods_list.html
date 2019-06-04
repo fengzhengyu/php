@@ -52,28 +52,53 @@
       <thead>
 
           <tr >
-            <!-- <th>ID</th> -->
-            <th>分类名称</th>
-            <th>分类数量</th>
-            <th>数量单位</th>
+  
+            <th>商品名称</th>
+            <th>商品编号</th>
+            <th>商品简介</th>
+            <th>所属分类</th>
+            <th>所属品牌</th>
+            <th>售价</th>
+            <th>店价</th>
+            <th>促销价</th>
+            <th>促销开始时间</th>
+            <th>促销结束时间</th>
+            <th>图片</th>
+            <th>库存</th>
+            <th>所属类型</th>
+            <th>热门</th>
+            <th>精品</th>
+            <th>新品</th>
             <th>是否上架</th>
-            <th>排序</th>
+            <th>添加时间</th>
             <th align="center">操作</th>
           
           </tr>
         </thead>
         <tbody>
-            <?php foreach($cats as $row) :?>
-            <tr id="<?php echo $row['parent_id'];?>-<?php echo $row['cat_id'];?>" >
-              <!-- <td><?php echo $row['cat_id'];?></td> -->
-              <td><?php  echo str_repeat("&nbsp;&nbsp;&nbsp;", $row['level']);?><?php  echo $row['cat_name'];?></td>
-              <td>0</td>
-              <td><?php echo $row['unit'];?></td>
-              <td><?php echo $row['is_show']==1?'√':'×';?></td>
+            <?php foreach($goods_list as $row) :?>
+            <tr >
+              <!-- <td><?php echo $row['goods_id'];?></td> -->
+              <td><?php  echo $row['goods_name'];?></td>
+              <td><?php echo $row['goods_cn'];?></td>
+              <td><?php echo $row['goods_brief'];?></td>
+              <td><?php echo $row['cat_id'];?></td>
+              <td><?php echo $row['brand_id'];?></td>
+              <td><?php echo $row['market_price'];?></td>
+              <td><?php echo $row['shop_price'];?></td>
+              <td><?php echo $row['promote_price'];?></td>
+              <td><?php echo $row['promote_start_time'];?></td>
+              <td><?php echo $row['promote_end_time'];?></td>
+              <td><?php echo $row['goods_img'];?></td>
+              <td><?php echo $row['goods_number'];?></td>
+              <td><?php echo $row['type_id'];?></td>
+              <!-- <td><?php echo $row['is_promote'];?></td> -->
+              <td><?php echo $row['is_hot'];?></td>
+              <td><?php echo $row['is_best'];?></td>
+              <td><?php echo $row['is_new'];?></td>
+              <td><?php echo $row['is_onsale']==1?'√':'×';?></td>
+              <td><?php echo $row['add_time'];?></td>
              
-              <td><?php echo $row['cat_order'];?></td>
-              <!-- <td><?php echo $row['goods_desc'];?></td>
-              <td><?php echo $row['goods_recommend'];?></td> -->
               <td>
                 
               <a href="index.php?p=admin&c=category&a=edit&id=<?php echo $row['cat_id'];?>" class="layui-btn layui-btn-primary layui-btn-sm edit">
@@ -90,11 +115,11 @@
               
             </tr>
            <?php endforeach?>
-           <?php if(empty($cats)) :?>
-            <tr align="center"><td colspan="7" >暂无数据</td></tr>
+           <?php if(empty($goods_list)) :?>
+            <tr align="center"><td colspan="19" >暂无数据</td></tr>
             <?php endif;?>
            <tr>
-             <td colspan="7">
+             <td colspan="19">
               
               <!-- <div class="page-wrap">
                   <?php 

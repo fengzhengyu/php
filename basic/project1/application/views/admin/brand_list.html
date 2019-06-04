@@ -25,9 +25,9 @@
     <!-- 面包屑 -->
     <div class="crumbs-nav">
       <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
-        <a href="" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
-        <a href="" class="link">商品管理</a>
-        <a href="" class="link"><cite>添加分类</cite></a>
+        <a href="index.php?p=admin&c=index&a=index" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+        <a href="index.php?p=admin&c=brand&a=index" class="link">品牌管理</a>
+        <a href="index.php?p=admin&c=brand&a=index" class="link"><cite>品牌列表</cite></a>
       </span>
     </div>
     <!--内容  -->
@@ -40,9 +40,9 @@
         </div>
       </form>
       <div class="layui-right">
-        <a href="index.php?p=admin&c=category&a=add" class="layui-btn layui-btn-sm layui-btn-normal">
+        <a href="index.php?p=admin&c=brand&a=add" class="layui-btn layui-btn-sm layui-btn-normal">
           <i class="layui-icon">&#xe654;</i>
-          添加分类
+          添加品牌
         </a>
       </div>
 
@@ -52,49 +52,53 @@
       <thead>
 
           <tr >
-            <!-- <th>ID</th> -->
-            <th>分类名称</th>
-            <th>分类数量</th>
-            <th>数量单位</th>
-            <th>是否上架</th>
+            <th>ID</th>
+            <th>品牌名称</th>
+            <th>品牌logo</th>
+            <th>品牌网址</th>
+            <th width="300">品牌描述</th>
+            <th>是否显示</th>
             <th>排序</th>
+           
             <th align="center">操作</th>
           
           </tr>
         </thead>
         <tbody>
-            <?php foreach($cats as $row) :?>
-            <tr id="<?php echo $row['parent_id'];?>-<?php echo $row['cat_id'];?>" >
-              <!-- <td><?php echo $row['cat_id'];?></td> -->
-              <td><?php  echo str_repeat("&nbsp;&nbsp;&nbsp;", $row['level']);?><?php  echo $row['cat_name'];?></td>
-              <td>0</td>
-              <td><?php echo $row['unit'];?></td>
+            <?php foreach($brands as $row) :?>
+            <tr >
+              <td><?php echo $row['brand_id'];?></td>
+              <td><?php echo $row['brand_name'];?></td>
+              <td><img src="http://php.com/basic/project1/public/uploads/brand/<?php echo $row['brand_logo'];?>" alt="" width="50" height="50"></td>
+              <td><?php echo $row['brand_url'];?></td>
+              <td><?php echo $row['brand_desc'];?></td>
+               
               <td><?php echo $row['is_show']==1?'√':'×';?></td>
              
-              <td><?php echo $row['cat_order'];?></td>
-              <!-- <td><?php echo $row['goods_desc'];?></td>
+              <td><?php echo $row['brand_order'];?></td>
+             <!-- 
               <td><?php echo $row['goods_recommend'];?></td> -->
               <td>
                 
-              <a href="index.php?p=admin&c=category&a=edit&id=<?php echo $row['cat_id'];?>" class="layui-btn layui-btn-primary layui-btn-sm edit">
+              <a href="index.php?p=admin&c=brand&a=edit&id=<?php echo $row['brand_id'];?>" class="layui-btn layui-btn-primary layui-btn-sm edit">
                 <i class="layui-icon">&#xe642;</i>
               </a>
-              <button class="layui-btn layui-btn-primary layui-btn-sm success">
+              <!-- <button class="layui-btn layui-btn-primary layui-btn-sm success">
                 <i class="layui-icon">&#xe605;</i>
-              </button>
+              </button> -->
 
-              <a href="index.php?p=admin&c=category&a=delete&id=<?php echo $row['cat_id'];?>" class="layui-btn layui-btn-primary layui-btn-sm delete">
+              <a href="index.php?p=admin&c=brand&a=delete&id=<?php echo$row['brand_id'];?>" class="layui-btn layui-btn-primary layui-btn-sm delete">
                 <i class="layui-icon">&#xe640;</i>
               </a>
               </td>
               
             </tr>
            <?php endforeach?>
-           <?php if(empty($cats)) :?>
-            <tr align="center"><td colspan="7" >暂无数据</td></tr>
+           <?php if(empty($brands)) :?>
+            <tr align="center"><td colspan="8" >暂无数据</td></tr>
             <?php endif;?>
            <tr>
-             <td colspan="7">
+             <td colspan="8">
               
               <!-- <div class="page-wrap">
                   <?php 

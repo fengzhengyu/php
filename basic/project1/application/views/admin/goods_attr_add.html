@@ -32,6 +32,8 @@
     </div>
     <!--内容  -->
     <div class="add-module-form">
+
+      
       <form class="layui-form wrapper" action="index.php?p=admin&c=attribute&a=insert" method="POST" >
 
       
@@ -48,7 +50,7 @@
           <div class="layui-input-block">
             <select name="type_id" lay-filter="aihao" required lay-verify="required">
               <!-- <option value=""></option> -->
-              <option value="0">请选择</option>
+              <option value="">请选择</option>
                 <?php foreach($types as $type) :?>
                 <option value="<?php echo $type['type_id']?>"><?php echo $type['type_name'];?></option>
                 <?php endforeach;?>
