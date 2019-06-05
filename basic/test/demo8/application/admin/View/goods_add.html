@@ -35,10 +35,11 @@
     <!-- 添加内容 -->
 
     <div class="add-module-form">
-      <form class="layui-form wrapper" action="index.php?p=admin&c=Goods&a=insert" method="POST"  enctype="multipart/form-data">
+      <form class="layui-form wrapper" action="index.php?p=admin&c=Goods&a=insert" method="POST"
+        enctype="multipart/form-data">
 
 
-   
+
         <div class="layui-form-item">
           <label class="layui-form-label">商品名称</label>
           <div class="layui-input-block">
@@ -54,13 +55,13 @@
           </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">复选框</label>
-            <div class="layui-input-block">
-              <input type="checkbox" name="goods_recommend['精品']" title="精品">
-              <input type="checkbox" name="goods_recommend['新品']" title="新品" checked>
-              <input type="checkbox" name="goods_recommend['热销']" title="热销">
-            </div>
+          <label class="layui-form-label">复选框</label>
+          <div class="layui-input-block">
+            <input type="checkbox" name="goods_recommend['精品']" title="精品">
+            <input type="checkbox" name="goods_recommend['新品']" title="新品" checked>
+            <input type="checkbox" name="goods_recommend['热销']" title="热销">
           </div>
+        </div>
 
         <div class="layui-form-item">
           <label class="layui-form-label">库存</label>
@@ -71,12 +72,11 @@
         </div>
 
         <div class="layui-form-item">
-            <label class="layui-form-label">商品图片</label>
-            <div class="layui-input-block">
-              <input type="file" name="goods_image" required lay-verify="required"
-                class="layui-input">
-            </div>
+          <label class="layui-form-label">商品图片</label>
+          <div class="layui-input-block">
+            <input type="file" name="goods_image" required lay-verify="required" class="layui-input">
           </div>
+        </div>
         <div class="layui-form-item layui-form-text">
           <label class="layui-form-label">商品详情</label>
           <div class="layui-input-block">
@@ -123,7 +123,7 @@
         // return false;
       });
 
-     
+
 
     });
   </script>

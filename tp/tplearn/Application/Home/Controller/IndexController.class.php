@@ -7,6 +7,7 @@ class IndexController extends Controller {
     }
 
     public function add(){
+        header('Content-Type:text/html;charset=utf-8;');
         echo '<pre>';
         // var_dump(get_defined_constants(true));
         // $this->display();//当前控制器的当前方法
@@ -14,6 +15,21 @@ class IndexController extends Controller {
         echo __MODULE__ .'<BR>'; //当前分组
         echo __CONTROLLER__ .'<BR>'; //当前控制器
         echo __ACTION__ .'<BR>'; //当前文件地址
+        echo '获取数据库主机'  .  C('DB_HOST');
       
+    }
+
+    public function test(){
+        header('Content-Type:text/html;charset=utf-8;');
+        // $Category = new \Home\Model\CategoryModel();
+        // $Category = M('category'); //实例化父类model
+        $Category = D('category'); // 相当于CategoryModel;
+       $list =  $Category->select();
+       dump( $list);
+    }
+
+    // 当方法找不到 也可以指向这个空操作
+    public function _empty(){
+        echo '非法操作！';
     }
 }

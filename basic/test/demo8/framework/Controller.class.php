@@ -20,7 +20,7 @@
           header('Location:' . $url);
         }else{
           // 延时跳转
-          header("Refresh:$wait;url=$url ");
+          header("Refresh:$wait;url=$url");
           echo $info;
          
         }

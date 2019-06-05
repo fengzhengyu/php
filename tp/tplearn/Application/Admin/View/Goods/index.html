@@ -1,0 +1,116 @@
+<extend name="Layout:base" />
+<block name="content">
+
+  <!-- 面包屑 -->
+  <div class="crumbs-nav">
+    <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
+      <a href="<{:U('Admin/index')}>" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+      <a href="<{:U('Goods/index')}>" class="link">商品管理</a>
+      <a href="<{:U('Goods/index')}>" class="link"><cite>商品别表</cite></a>
+    </span>
+  </div>
+  <!--内容  -->
+  <div class="manage-btn-wrapper">
+    <form action="">
+      <div class="handle-wrap layui-left">
+        <!-- 筛选条件 -->
+
+
+      </div>
+    </form>
+    <div class="layui-right">
+      <a href="index.php?p=admin&c=category&a=add" class="layui-btn layui-btn-sm layui-btn-normal">
+        <i class="layui-icon">&#xe654;</i>
+        添加分类
+      </a>
+    </div>
+
+  </div>
+  <table class="layui-table">
+
+    <thead>
+
+      <tr>
+        <th>序号</th>
+        <th>商品名称</th>
+        <th>商品价格</th>
+        <th width="200">商品图片</th>
+        <th>商品详情</th>
+        <th>商品库存</th>
+        <th>是否上架</th>
+        <th>商品推荐</th>
+        <th>添加人</th>
+        <!-- <th>添加时间</th> -->
+        <th align="center">操作</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        <!-- <if condition="$list eq null">
+            <tr>不是数组</tr>
+            <else />
+            <tr>是数组</tr>
+        </if> -->
+
+      <volist name="list" id="vo">
+        <tr>
+          <td>
+            <{$i}>
+          </td>
+          <td>
+            <{$vo.goods_name}>
+          </td>
+          <td>
+            <{$vo.goods_price}>
+          </td>
+          <td>
+            <img src="<{$vo.goods_image}>" alt="">
+          </td>
+          <td>
+            <{$vo.goods_desc}>
+          </td>
+          <td>
+            <{$vo.goods_number}>
+          </td>
+          <td>
+              <if condition="$vo.goods_status eq 1">
+                  √
+              <else/>
+                  ×
+              </if>   
+          
+          </td>
+          <td>
+            <{$vo.goods_recommend}>
+          </td>
+          <td>
+            <{$vo.create_admin_id}>
+          </td>
+
+          <td>
+
+            <a href="" class="layui-btn layui-btn-primary layui-btn-sm edit">
+              <i class="layui-icon">&#xe642;</i>
+            </a>
+            <button class="layui-btn layui-btn-primary layui-btn-sm success">
+              <i class="layui-icon">&#xe605;</i>
+            </button>
+
+            <a href="" class="layui-btn layui-btn-primary layui-btn-sm delete">
+              <i class="layui-icon">&#xe640;</i>
+            </a>
+          </td>
+        </tr>
+      </volist>
+
+
+
+
+      <tr>
+        <td colspan="10">
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</block>

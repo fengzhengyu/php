@@ -1,0 +1,103 @@
+<extend name="Layout:base" />
+<block name="content">
+  <!-- 面包屑 -->
+  <div class="crumbs-nav">
+    <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
+      <a href="" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+
+      <a href="<{:U('Goods/index')}>" class="link">商品管理</a>
+      <a href="<{:U('Goods/add')}>" class="link"><cite>添加商品</cite></a>
+    </span>
+  </div>
+  <!--内容  -->
+  <!-- 添加内容 -->
+
+  <div class="add-module-form">
+    <form class="layui-form wrapper" action="__SELF__" method="POST"
+      enctype="multipart/form-data">
+
+
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">商品名称</label>
+        <div class="layui-input-block">
+          <input type="text" name="goods_name" required lay-verify="required" placeholder="请输入商品名称" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">商品价格</label>
+        <div class="layui-input-block">
+          <input type="text" name="goods_price" required lay-verify="required" placeholder="请输入价格" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">复选框</label>
+        <div class="layui-input-block">
+          <input type="checkbox" name="goods_recommend['精品']" title="精品">
+          <input type="checkbox" name="goods_recommend['新品']" title="新品" checked>
+          <input type="checkbox" name="goods_recommend['热销']" title="热销">
+        </div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">库存</label>
+        <div class="layui-input-block">
+          <input type="text" name="goods_number" required lay-verify="required" placeholder="" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">商品图片</label>
+        <div class="layui-input-block">
+          <input type="file" name="goods_image" required lay-verify="required" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">商品详情</label>
+        <div class="layui-input-block">
+          <textarea name="goods_desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">发布状态</label>
+        <div class="layui-input-block">
+
+          <input type="checkbox" name="goods_status" lay-skin="switch" lay-text="上架|下架" checked>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" id="submit">确认添加</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          <button type="reset" class="layui-btn layui-btn-primary">返回产品列表</button>
+        </div>
+      </div>
+    </form>
+
+
+  </div>
+  <script>
+      //Demo
+      layui.use(['form', 'upload'], function () {
+        var form = layui.form,
+          $ = layui.jquery,
+          upload = layui.upload;
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+          if (data) {
+            console.log(data)
+          }
+          console.log(JSON.stringify(data.field))
+          // layer.msg(JSON.stringify(data.field));
+          // return false;
+        });
+  
+  
+  
+      });
+    </script>
+
+</block>
