@@ -39,7 +39,10 @@ $(function(){
     });
        //  //左侧菜单选中
     var urlstr = location.href;
+    console.log(urlstr)
+  
     $('.side-nav-child-wrapper a').each(function () {
+      
         if((urlstr).indexOf($(this).attr('href')) != -1 && $(this).attr('href') != "" ){
           
             $(this).parents('dl').siblings('.side-nav-item').addClass('active');

@@ -9,4 +9,21 @@ class AdminController extends Controller {
       $this->assign('data',$data);
       $this->display();
     }
+
+    // 验证码
+    public function verifyImg(){
+
+      $config= array(
+        'imageW'=> 140,
+        'imageH'=> 40,
+        'fontSize'=> 20,
+        'fontttf'=> '4.ttf'
+
+      );
+      $verify= new \Think\Verify( $config);
+      $verify->entry();
+    //  dump( );
+
+
+    }
 }

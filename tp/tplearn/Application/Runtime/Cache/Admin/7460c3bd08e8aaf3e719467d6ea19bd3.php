@@ -92,9 +92,9 @@
       </div>
     </form>
     <div class="layui-right">
-      <a href="index.php?p=admin&c=category&a=add" class="layui-btn layui-btn-sm layui-btn-normal">
+      <a href="<?php echo U('Goods/add');?>" class="layui-btn layui-btn-sm layui-btn-normal">
         <i class="layui-icon">&#xe654;</i>
-        添加分类
+        添加商品
       </a>
     </div>
 
@@ -157,14 +157,11 @@
 
           <td>
 
-            <a href="" class="layui-btn layui-btn-primary layui-btn-sm edit">
+            <a href="<?php echo U('Goods/edit',array('goods_id'=>$vo['goods_id']));?>" class="layui-btn layui-btn-primary layui-btn-sm edit">
               <i class="layui-icon">&#xe642;</i>
             </a>
-            <button class="layui-btn layui-btn-primary layui-btn-sm success">
-              <i class="layui-icon">&#xe605;</i>
-            </button>
-
-            <a href="" class="layui-btn layui-btn-primary layui-btn-sm delete">
+  
+            <a href="<?php echo U('Goods/delete',array('goods_id'=>$vo['goods_id']));?>" class="layui-btn layui-btn-primary layui-btn-sm delete" onclick="return confirm('你确定删除吗？')">
               <i class="layui-icon">&#xe640;</i>
             </a>
           </td>
