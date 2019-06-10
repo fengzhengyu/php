@@ -19,11 +19,11 @@
 
     </div>
     <div class="admin">
-      <p class="admin-name"> 登录人:张三</p>
+      <p class="admin-name"> 登录人:<?php echo ($_SESSION['admin']['admin_name']); ?></p>
       <p>|</p>
       <p class="admin-name">登录身份: 超级管理员</p>
       <p>|</p>
-      <p>安全退出</p>
+      <p><a href="<?php echo U('Login/logout');?>">安全退出</a></p>
 
     </div>
 
@@ -69,7 +69,7 @@
         </li>
      
     </ul>
-  
+    
   </div>
   <div class="admin-body">
     
@@ -125,7 +125,8 @@
       <div class="layui-form-item">
         <label class="layui-form-label">商品图片</label>
         <div class="layui-input-block">
-          <input type="file" name="goods_image" required lay-verify="required" class="layui-input">
+          <input type="file" name="goods_image"  class="layui-input">
+          <!-- required lay-verify="required" -->
         </div>
       </div>
       <div class="layui-form-item layui-form-text">

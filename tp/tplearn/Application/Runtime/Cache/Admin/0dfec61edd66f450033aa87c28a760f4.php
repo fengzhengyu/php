@@ -100,15 +100,15 @@
 
 <body>
   <div class="header">
-    <h1>慧泽天下后台管理</h1>
+    <h1>后台管理系统</h1>
   </div>
   <div class="loginWraper">
     <div id="loginform" class="loginBox">
-      <form class="form form-horizontal" action="{:U('Login/LoginAdmin')}" method="post">
+      <form class="form form-horizontal" action="<?php echo U('Login/LoginAdmin');?>" method="post">
         <div class="layui-row">
           <label class="form-label layui-col-md3  layui-col-sm3 layui-col-xs3"><i class="layui-icon">&#xe612;</i></label>
           <div class="formControls layui-col-md8  layui-col-sm8 layui-col-xs8">
-            <input name="userName" type="text" placeholder="账户" class="input-text">
+            <input name="username" type="text" placeholder="账户" class="input-text">
           </div>
         </div>
         <div class="layui-row">
@@ -120,8 +120,12 @@
        
         <div class="layui-row">
             <label class="form-label layui-col-md3 layui-col-sm3 layui-col-xs3"><i class="layui-icon">&#xe673;</i></label>
-            <div class="formControls layui-col-md8 layui-col-sm8 layui-col-xs8">
-              <img src="<?php echo U('Login/verifyImg');?>" alt="">
+            <div class="formControls layui-col-md4 layui-col-sm4 layui-col-xs4">
+                <input name="authcode" type="text" placeholder="验证码" class="input-text">
+             
+            </div>
+            <div  class="formControls layui-col-md4 layui-col-sm4 layui-col-xs4">
+                <img src="<?php echo U('Login/verifyImg');?>" alt="" onclick="this.src='/tp/tplearn/index.php/Admin/Login/verifyImg'">
             </div>
           </div>
 

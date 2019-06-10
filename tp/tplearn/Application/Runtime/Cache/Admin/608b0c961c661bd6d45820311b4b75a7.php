@@ -19,11 +19,11 @@
 
     </div>
     <div class="admin">
-      <p class="admin-name"> 登录人:张三</p>
+      <p class="admin-name"> 登录人:<?php echo ($_SESSION['admin']['admin_name']); ?></p>
       <p>|</p>
       <p class="admin-name">登录身份: 超级管理员</p>
       <p>|</p>
-      <p>安全退出</p>
+      <p><a href="<?php echo U('Login/logout');?>">安全退出</a></p>
 
     </div>
 
@@ -116,13 +116,17 @@
         <div class="layui-input-block">
           
 
-        <?php if($data['goods_recommend'][0] == 精品 ): ?><input type="checkbox" name="goods_recommend['精品']" title="精品" checked>
-        <?php else: ?> <input type="checkbox" name="goods_recommend['精品']" title="精品"><?php endif; ?>
-         <?php if($data['goods_recommend'][1] == 新品 ): ?><input type="checkbox" name="goods_recommend['新品']" title="新品" checked>
-        <?php else: ?> <input type="checkbox" name="goods_recommend['新品']" title="新品"><?php endif; ?>
-        <?php if($data['goods_recommend'][2] == 热销 ): ?><input type="checkbox" name="goods_recommend['热销']" title="热销" checked>
-        <?php else: ?> <input type="checkbox" name="goods_recommend['热销']" title="热销"><?php endif; ?>
 
+        <?php if($data['goods_recommend'][0] == null ): ?><input type="checkbox" name="goods_recommend['精品']" title="精品">
+            <input type="checkbox" name="goods_recommend['新品']" title="新品">
+            <input type="checkbox" name="goods_recommend['热销']" title="热销">
+          
+        <?php else: ?> 
+       
+          <?php if(is_array($data['goods_recommend'])): foreach($data['goods_recommend'] as $key=>$vo): if($vo ): ?><input type="checkbox" name="goods_recommend['<?php echo ($vo); ?>']" title="<?php echo ($vo); ?>" checked><?php endif; endforeach; endif; endif; ?>
+
+
+    
         
                   
         </div>

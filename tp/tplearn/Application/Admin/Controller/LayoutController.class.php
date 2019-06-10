@@ -5,6 +5,7 @@ class LayoutController extends Controller {
 
   // 基础模板
   public function base(){
+ 
     $this->display();
   }
 }

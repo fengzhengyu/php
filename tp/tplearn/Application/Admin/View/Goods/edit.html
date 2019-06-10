@@ -43,16 +43,25 @@
         <div class="layui-input-block">
           
 
-        <if condition="$data['goods_recommend'][0] eq 精品 "> <input type="checkbox" name="goods_recommend['精品']" title="精品" checked>
-        <else/> <input type="checkbox" name="goods_recommend['精品']" title="精品">
-        </if>
-         <if condition="$data['goods_recommend'][1] eq 新品 "> <input type="checkbox" name="goods_recommend['新品']" title="新品" checked>
-        <else/> <input type="checkbox" name="goods_recommend['新品']" title="新品">
-        </if>
-        <if condition="$data['goods_recommend'][2] eq 热销 "> <input type="checkbox" name="goods_recommend['热销']" title="热销" checked>
-        <else/> <input type="checkbox" name="goods_recommend['热销']" title="热销">
+
+        <if condition="$data['goods_recommend'][0] eq null ">
+            <input type="checkbox" name="goods_recommend['精品']" title="精品">
+            <input type="checkbox" name="goods_recommend['新品']" title="新品">
+            <input type="checkbox" name="goods_recommend['热销']" title="热销">
+          
+        <else/> 
+       
+          <foreach name="data['goods_recommend']" item="vo" >
+              <if condition="$vo "> 
+                <input type="checkbox" name="goods_recommend['<{$vo}>']" title="<{$vo}>" checked>
+               
+              </if>
+             
+          </foreach>
         </if>
 
+
+    
         
                   
         </div>

@@ -1,4 +1,4 @@
-<extend name="Layout:base" />
+<extend name="Layout/base" />
 <block name="content">
   <!-- 面包屑 -->
   <div class="crumbs-nav">
@@ -52,7 +52,8 @@
       <div class="layui-form-item">
         <label class="layui-form-label">商品图片</label>
         <div class="layui-input-block">
-          <input type="file" name="goods_image" required lay-verify="required" class="layui-input">
+          <input type="file" name="goods_image"  class="layui-input">
+          <!-- required lay-verify="required" -->
         </div>
       </div>
       <div class="layui-form-item layui-form-text">

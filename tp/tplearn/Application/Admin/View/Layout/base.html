@@ -19,11 +19,11 @@
 
     </div>
     <div class="admin">
-      <p class="admin-name"> 登录人:张三</p>
+      <p class="admin-name"> 登录人:<{$Think.session.admin.admin_name}></p>
       <p>|</p>
       <p class="admin-name">登录身份: 超级管理员</p>
       <p>|</p>
-      <p>安全退出</p>
+      <p><a href="<{:U('Login/logout')}>">安全退出</a></p>
 
     </div>
 
@@ -69,7 +69,7 @@
         </li>
      
     </ul>
-  
+    
   </div>
   <div class="admin-body">
     <block name="content">

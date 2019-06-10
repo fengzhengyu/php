@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
 <html>
 
 <head>
@@ -8,8 +8,8 @@
   <meta name="viewport"
     content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <link rel="stylesheet" href="__PUBLIC__/layui/css/layui.css">
-  <link rel="stylesheet" href="__PUBLIC__/Admin/css/index.css">
+  <link rel="stylesheet" href="/tp/tplearn/Public/layui/css/layui.css">
+  <link rel="stylesheet" href="/tp/tplearn/Public/Admin/css/index.css">
   <style>
     .header,
     .footer {
@@ -36,14 +36,14 @@
       bottom: 0;
       right: 0;
       z-index: 1;
-      background: #3283AC url(__PUBLIC__/Admin/images/admin-login-bg.jpg) no-repeat center
+      background: #3283AC url(/tp/tplearn/Public/Admin/images/admin-login-bg.jpg) no-repeat center
     }
 
     .loginBox {
       position: absolute;
       width: 617px;
       height: 330px;
-      background: url(__PUBLIC__/Admin/images/admin-loginform-bg.png) no-repeat;
+      background: url(/tp/tplearn/Public/Admin/images/admin-loginform-bg.png) no-repeat;
       left: 50%;
       top: 50%;
       margin-left: -309px;
@@ -104,7 +104,7 @@
   </div>
   <div class="loginWraper">
     <div id="loginform" class="loginBox">
-      <form class="form form-horizontal" action="<{:U('Login/LoginAdmin')}>" method="post">
+      <form class="form form-horizontal" action="<?php echo U('Login/LoginAdmin');?>" method="post">
         <div class="layui-row">
           <label class="form-label layui-col-md3  layui-col-sm3 layui-col-xs3"><i class="layui-icon">&#xe612;</i></label>
           <div class="formControls layui-col-md8  layui-col-sm8 layui-col-xs8">
@@ -125,7 +125,7 @@
              
             </div>
             <div  class="formControls layui-col-md4 layui-col-sm4 layui-col-xs4">
-                <img src="<{:U('Login/verifyImg')}>" alt="" onclick="this.src='__URL__/verifyImg'">
+                <img src="<?php echo U('Login/verifyImg');?>" alt="" onclick="this.src='/tp/tplearn/index.php/Admin/Login/verifyImg'">
             </div>
           </div>
 

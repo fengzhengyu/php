@@ -71,3 +71,7 @@
     
     查询:  M('表名')->select();
     查询:  M('表名')->find(); 只取一条数据
+# 自定义工具类
+    在应用程序目录下（application）新建components 文件夹 /工具类文件
+    引入  namespace Components 。php   new \Components\Page();
+
