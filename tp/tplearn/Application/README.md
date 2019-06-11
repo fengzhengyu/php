@@ -75,3 +75,17 @@
     在应用程序目录下（application）新建components 文件夹 /工具类文件
     引入  namespace Components 。php   new \Components\Page();
 
+# RBAC 基于角色的访问控制（role based access control）
+
+    早期权限
+        编号   管理员   密码   等级 
+        1     Tom      123     0
+        2     Berry    000     1
+        3     ketty    456     2
+        以上方法 用于小网站 管理员少的 
+    RBAC
+        核心技术点就是表的设置
+
+    不同角色显示不同的权限
+    1 在登录成功后，把用户的 id 保存到会话中
+        

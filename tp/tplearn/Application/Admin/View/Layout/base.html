@@ -30,6 +30,27 @@
   </div>
   <div class="admin-side">
     <ul class="side-scroll">
+<!-- 
+     <volist name="info1" id="vo">
+        <li class="side-nav">
+            <div class="side-nav-item">
+              <i class="layui-icon">&#xe63c;</i>
+                <{$vo['auth_name']}>
+              <i class="layui-icon icon-dropdown">&#xe61a;</i>
+            </div>
+            <dl class="side-nav-child">
+              <volist name="info2" id="vo2">
+                <if condition="$vo2['auth_pid'] eq $vo['auth_id']">
+                    <dd class="side-nav-child-wrapper">
+                        <a href="__MODULE__/<{$vo2['auth_c']}>/<{$vo2['auth_a']}>" class="side-nav-child-link">
+                          <span class="side-nav-child-icon"></span> <{$vo2['auth_name']}></a>
+                      </dd>
+                </if>
+                  
+              </volist>
+            </dl>
+        </li>
+     </volist>  -->
       <li class="side-nav">
         <div class="side-nav-item">
           <i class="layui-icon">&#xe735;</i>

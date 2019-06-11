@@ -22,6 +22,8 @@ class LoginController extends Controller {
         $data['admin_pass'] = md5(I('password'));
         if( $res = M('admin')->where($data)->find()){
           session('admin', $res);
+
+          
           $this->redirect('Admin/index','登陆成功');
         }else{
           $this->error('账号或密码错误！');

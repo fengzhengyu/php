@@ -44,7 +44,7 @@ class GoodsController extends CommonController {
   }
    // 商品添加页面
    public function add(){
-  
+    // echo time();
     $this->display();
   }
 

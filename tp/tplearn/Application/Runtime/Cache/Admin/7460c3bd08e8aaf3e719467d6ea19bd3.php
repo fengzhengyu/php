@@ -30,6 +30,20 @@
   </div>
   <div class="admin-side">
     <ul class="side-scroll">
+<!-- 
+     <?php if(is_array($info1)): $i = 0; $__LIST__ = $info1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="side-nav">
+            <div class="side-nav-item">
+              <i class="layui-icon">&#xe63c;</i>
+                <?php echo ($vo['auth_name']); ?>
+              <i class="layui-icon icon-dropdown">&#xe61a;</i>
+            </div>
+            <dl class="side-nav-child">
+              <?php if(is_array($info2)): $i = 0; $__LIST__ = $info2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($i % 2 );++$i; if($vo2['auth_pid'] == $vo['auth_id']): ?><dd class="side-nav-child-wrapper">
+                        <a href="/tp/tplearn/index.php/Admin/<?php echo ($vo2['auth_c']); ?>/<?php echo ($vo2['auth_a']); ?>" class="side-nav-child-link">
+                          <span class="side-nav-child-icon"></span> <?php echo ($vo2['auth_name']); ?></a>
+                      </dd><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+            </dl>
+        </li><?php endforeach; endif; else: echo "" ;endif; ?>  -->
       <li class="side-nav">
         <div class="side-nav-item">
           <i class="layui-icon">&#xe735;</i>
