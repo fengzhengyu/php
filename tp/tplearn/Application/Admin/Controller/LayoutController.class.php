@@ -26,6 +26,7 @@ class LayoutController extends Controller {
     
       // 处理 按类别分类 类别处理权限数据
     }
+    $this->assign('role_name',$role_name);
     $this->assign('info1',$info1);
     $this->assign('info2',$info2);
 

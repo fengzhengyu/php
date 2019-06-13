@@ -1,0 +1,54 @@
+<extend name="Layout:base" />
+<block name="content">
+
+  <!-- 面包屑 -->
+  <div class="crumbs-nav">
+    <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
+      <a href="<{:U('Admin/index')}>" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+      <a href="<{:U('Role/index')}>" class="link">权限管理</a>
+      <a href="<{:U('Role/index')}>" class="link"><cite>分配权限</cite></a>
+    </span>
+  </div>
+  <!--内容  -->
+  <div class="manage-btn-wrapper">
+    <form action="<{:U('Role/dodistribute')}>" method="post">
+      <ul style="padding-left: 50px; ">
+          
+        <volist name="parentInfo" id="vo">
+          <li >
+              <div style="padding-left: 5px;height: 30px;line-height: 30px; font-size: 14px;color: #555;" >
+                  <if condition="in_array($vo['auth_id'],$select_id_array)">
+                      <input type="checkbox" name="auth[]" value="<{$vo['auth_id']}>" checked="checked">
+                    <else/>
+                    <input type="checkbox" name="auth[]"  value="<{$vo['auth_id']}>">
+                  </if>
+                 
+                  <{$vo['auth_name']}>
+               
+              </div>
+              <dl style="padding-left: 30px; ">
+                <volist name="subInfo" id="vo2">
+                  <if condition="$vo2['auth_pid'] eq $vo['auth_id']">
+
+                      <dd  style="height: 30px;line-height: 30px; color: #777;">
+                        <if condition="in_array($vo2['auth_id'],$select_id_array)">
+                            <input type="checkbox" name="auth[]" value="<{$vo2['auth_id']}>" checked="checked">
+                          <else/>
+                          <input type="checkbox" name="auth[]"  value="<{$vo2['auth_id']}>">
+                        </if>
+                        <{$vo2['auth_name']}>
+                      </dd>
+                  </if>
+                    
+                </volist>
+              </dl>
+          </li>
+        </volist> 
+      </ul>
+      <input type="hidden" name="role_id" value="<{$role_id}>">
+      <div style="margin:30px  150px;"><input type="submit" value="提交"></div>
+      
+    </form>
+  </div>
+
+</block>

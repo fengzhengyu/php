@@ -59,6 +59,6 @@ class LoginController extends Controller {
   // 退出登录
   public function logout(){
     session('admin',null);
-    $this->success('安全退出！','Login/login',3);
+    $this->success('安全退出！',U('Login/login'),3);
   }
 }

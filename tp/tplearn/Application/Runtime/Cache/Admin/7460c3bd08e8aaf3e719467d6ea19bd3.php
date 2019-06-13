@@ -44,24 +44,43 @@
                       </dd><?php endif; endforeach; endif; else: echo "" ;endif; ?>
             </dl>
         </li><?php endforeach; endif; else: echo "" ;endif; ?>  -->
+    
       <li class="side-nav">
         <div class="side-nav-item">
           <i class="layui-icon">&#xe735;</i>
-          账号管理
+          角色管理
           <i class="layui-icon icon-dropdown">&#xe61a;</i>
         </div>
         <dl class="side-nav-child">
           <dd class="side-nav-child-wrapper">
-            <a href="<?php echo U('Admin/index');?>" class="side-nav-child-link">
-              <span class="side-nav-child-icon"></span> 管理账号</a>
+            <a href="<?php echo U('Role/index');?>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span> 角色列表</a>
           </dd>
           <dd class="side-nav-child-wrapper">
-            <a href="<?php echo U('Admin/customer');?>" class="side-nav-child-link">
-              <span class="side-nav-child-icon"></span> 客服账号</a>
+            <a href="<?php echo U('Role/add');?>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span> 添加角色</a>
           </dd>
   
         </dl>
       </li>
+      <li class="side-nav">
+          <div class="side-nav-item">
+            <i class="layui-icon">&#xe735;</i>
+            权限管理
+            <i class="layui-icon icon-dropdown">&#xe61a;</i>
+          </div>
+          <dl class="side-nav-child">
+            <dd class="side-nav-child-wrapper">
+              <a href="<?php echo U('Authority/index');?>" class="side-nav-child-link">
+                <span class="side-nav-child-icon"></span> 权限列表</a>
+            </dd>
+            <dd class="side-nav-child-wrapper">
+              <a href="<?php echo U('Authority/add');?>" class="side-nav-child-link">
+                <span class="side-nav-child-icon"></span> 添加权限</a>
+            </dd>
+    
+          </dl>
+        </li>
       <li class="side-nav">
           <div class="side-nav-item">
             <i class="layui-icon">&#xe63c;</i>

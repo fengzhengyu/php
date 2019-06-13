@@ -15,4 +15,13 @@ return array(
 	'DB_PWD'                =>  'root',          // 密码
 	'DB_PORT'               =>  '3306',        // 端口
 	'DB_PREFIX'             =>  'demo_',    // 数据库表前缀
+
+
+	//'DEFAULT_MODULE'        => 'Admin', //默认 分组 
+	'MODULE_ALLOW_LIST'     => array('Admin','Home','Api'),  //允许的分组
+
+	'URL_ROUTER_ON'         =>  false,   // 是否开启URL路由  自定义的 
+  'URL_ROUTE_RULES'       =>  array(
+		'list' => 'Goods/index'     // 默认路由规则 针对模块  
+	),
 );

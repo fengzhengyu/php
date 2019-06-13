@@ -106,107 +106,74 @@
   </div>
   <div class="admin-body">
     
+
   <!-- 面包屑 -->
   <div class="crumbs-nav">
     <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
-      <a href="" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
-
-      <a href="<?php echo U('Goods/index');?>" class="link">商品管理</a>
-      <a href="<?php echo U('Goods/add');?>" class="link"><cite>添加商品</cite></a>
+      <a href="<?php echo U('Admin/index');?>" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+      <a href="<?php echo U('Goods/index');?>" class="link">权限管理</a>
+      <a href="<?php echo U('Goods/index');?>" class="link"><cite>角色列表</cite></a>
     </span>
   </div>
   <!--内容  -->
-  <!-- 添加内容 -->
-
-  <div class="add-module-form">
-    <form class="layui-form wrapper" action="<?php echo U('Goods/doadd');?>" method="POST"
-      enctype="multipart/form-data">
-
+  <div class="manage-btn-wrapper">
+    <form action="">
+      <div class="handle-wrap layui-left">
+        <!-- 筛选条件 -->
 
 
-      <div class="layui-form-item">
-        <label class="layui-form-label">商品名称</label>
-        <div class="layui-input-block">
-          <input type="text" name="goods_name" required lay-verify="required" placeholder="请输入商品名称" autocomplete="off"
-            class="layui-input">
-        </div>
-      </div>
-      <div class="layui-form-item">
-        <label class="layui-form-label">商品价格</label>
-        <div class="layui-input-block">
-          <input type="text" name="goods_price" required lay-verify="required" placeholder="请输入价格" autocomplete="off"
-            class="layui-input">
-        </div>
-      </div>
-      <div class="layui-form-item">
-        <label class="layui-form-label">复选框</label>
-        <div class="layui-input-block">
-          <input type="checkbox" name="goods_recommend['精品']" title="精品">
-          <input type="checkbox" name="goods_recommend['新品']" title="新品" checked>
-          <input type="checkbox" name="goods_recommend['热销']" title="热销">
-        </div>
-      </div>
-
-      <div class="layui-form-item">
-        <label class="layui-form-label">库存</label>
-        <div class="layui-input-block">
-          <input type="text" name="goods_number" required lay-verify="required" placeholder="" autocomplete="off"
-            class="layui-input">
-        </div>
-      </div>
-
-      <div class="layui-form-item">
-        <label class="layui-form-label">商品图片</label>
-        <div class="layui-input-block">
-          <input type="file" name="goods_image"  class="layui-input">
-          <!-- required lay-verify="required" -->
-        </div>
-      </div>
-      <div class="layui-form-item layui-form-text">
-        <label class="layui-form-label">商品详情</label>
-        <div class="layui-input-block">
-          <textarea name="goods_desc" placeholder="请输入内容" class="layui-textarea"></textarea>
-        </div>
-      </div>
-      <div class="layui-form-item">
-        <label class="layui-form-label">发布状态</label>
-        <div class="layui-input-block">
-
-          <input type="checkbox" name="goods_status" lay-skin="switch" lay-text="上架|下架" checked>
-        </div>
-      </div>
-      <div class="layui-form-item">
-        <div class="layui-input-block">
-          <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" id="submit">确认添加</button>
-          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-          <button type="reset" class="layui-btn layui-btn-primary">返回产品列表</button>
-        </div>
       </div>
     </form>
-
+    <div class="layui-right">
+      <a href="<?php echo U('Role/add');?>" class="layui-btn layui-btn-sm layui-btn-normal">
+        <i class="layui-icon">&#xe654;</i>
+        添加角色
+      </a>
+    </div>
 
   </div>
-  <script>
-      //Demo
-      layui.use(['form', 'upload'], function () {
-        var form = layui.form,
-          $ = layui.jquery,
-          upload = layui.upload;
-        //监听提交
-        form.on('submit(formDemo)', function (data) {
-          if (data) {
-            console.log(data)
-          }
-          console.log(JSON.stringify(data.field))
-          // layer.msg(JSON.stringify(data.field));
-          // return false;
-        });
-  
-  
-  
-      });
-    </script>
+  <table class="layui-table">
 
+    <thead>
+
+      <tr>
+        <th>序号</th>
+        <th>角色名称</th>
+        <th>分配权限</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+
+      <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+          <td>
+            <?php echo ($i); ?>
+          </td>
+          <td>
+            <?php echo ($vo['role_name']); ?>
+          </td>
+          <td>
+
+            <a href="<?php echo U('Role/distribute',array('role_id'=>$vo['role_id']));?>" class="layui-btn layui-btn-primary layui-btn-sm edit">
+              权限分配
+            </a>
+  
+            <a href="<?php echo U('Goods/delete',array('goods_id'=>$vo['goods_id']));?>" class="layui-btn layui-btn-primary layui-btn-sm delete" onclick="return confirm('你确定删除吗？')">
+              <i class="layui-icon">&#xe640;</i>
+            </a>
+          </td>
+        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+
+
+
+
+      <tr>
+        <td colspan="10" align="center">
+          <?php echo ($page); ?>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
   </div>
 

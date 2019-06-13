@@ -111,75 +111,65 @@
     <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
       <a href="" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
 
-      <a href="<?php echo U('Goods/index');?>" class="link">商品管理</a>
-      <a href="<?php echo U('Goods/add');?>" class="link"><cite>添加商品</cite></a>
+      <a href="<?php echo U('Goods/index');?>" class="link">权限管理</a>
+      <a href="<?php echo U('Goods/update');?>" class="link"><cite>添加权限</cite></a>
     </span>
   </div>
   <!--内容  -->
   <!-- 添加内容 -->
 
   <div class="add-module-form">
-    <form class="layui-form wrapper" action="<?php echo U('Goods/doadd');?>" method="POST"
+    <form class="layui-form wrapper" action="<?php echo U('Authority/confirmAdd');?>" method="POST"
       enctype="multipart/form-data">
 
-
+      <!-- <div class="layui-form-item">
+        <label class="layui-form-label">权限ID</label>
+        <div class="layui-input-block">
+          <input type="text" name="auth_id"  value="<?php echo ($current_auth['auth_id']); ?>" autocomplete="off" readonly
+            class="layui-input">
+        </div>
+      </div> -->
 
       <div class="layui-form-item">
-        <label class="layui-form-label">商品名称</label>
+        <label class="layui-form-label">权限名称</label>
         <div class="layui-input-block">
-          <input type="text" name="goods_name" required lay-verify="required" placeholder="请输入商品名称" autocomplete="off"
+          <input type="text" name="auth_name" required lay-verify="required" autocomplete="off"
             class="layui-input">
         </div>
       </div>
       <div class="layui-form-item">
-        <label class="layui-form-label">商品价格</label>
-        <div class="layui-input-block">
-          <input type="text" name="goods_price" required lay-verify="required" placeholder="请输入价格" autocomplete="off"
-            class="layui-input">
+        <div class="layui-form-item">
+          <label class="layui-form-label">父级权限</label>
+          <div class="layui-input-block">
+            <select name="auth_pid" lay-filter="" required lay-verify="required">
+             
+              <option value="0">默认父级权限</option>
+              <?php if(is_array($parent_auth)): $i = 0; $__LIST__ = $parent_auth;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['auth_id']); ?>"><?php echo ($vo['auth_name']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+              
+            </select>
+          </div>
         </div>
-      </div>
+    
+
       <div class="layui-form-item">
-        <label class="layui-form-label">复选框</label>
+        <label class="layui-form-label">控制器名</label>
         <div class="layui-input-block">
-          <input type="checkbox" name="goods_recommend['精品']" title="精品">
-          <input type="checkbox" name="goods_recommend['新品']" title="新品" checked>
-          <input type="checkbox" name="goods_recommend['热销']" title="热销">
+          <input type="text" name="auth_c"  placeholder="" autocomplete="off"  class="layui-input">
         </div>
       </div>
 
       <div class="layui-form-item">
-        <label class="layui-form-label">库存</label>
+        <label class="layui-form-label">方法名</label>
         <div class="layui-input-block">
-          <input type="text" name="goods_number" required lay-verify="required" placeholder="" autocomplete="off"
-            class="layui-input">
+          <input type="text" name="auth_a" placeholder="" autocomplete="off"  class="layui-input" >
         </div>
       </div>
-
-      <div class="layui-form-item">
-        <label class="layui-form-label">商品图片</label>
-        <div class="layui-input-block">
-          <input type="file" name="goods_image"  class="layui-input">
-          <!-- required lay-verify="required" -->
-        </div>
-      </div>
-      <div class="layui-form-item layui-form-text">
-        <label class="layui-form-label">商品详情</label>
-        <div class="layui-input-block">
-          <textarea name="goods_desc" placeholder="请输入内容" class="layui-textarea"></textarea>
-        </div>
-      </div>
-      <div class="layui-form-item">
-        <label class="layui-form-label">发布状态</label>
-        <div class="layui-input-block">
-
-          <input type="checkbox" name="goods_status" lay-skin="switch" lay-text="上架|下架" checked>
-        </div>
-      </div>
+      
       <div class="layui-form-item">
         <div class="layui-input-block">
-          <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" id="submit">确认添加</button>
+          <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" id="submit">添加</button>
           <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-          <button type="reset" class="layui-btn layui-btn-primary">返回产品列表</button>
+       
         </div>
       </div>
     </form>
@@ -201,6 +191,8 @@
           // layer.msg(JSON.stringify(data.field));
           // return false;
         });
+
+       
   
   
   

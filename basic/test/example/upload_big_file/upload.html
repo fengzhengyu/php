@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      #parent{
+        width: 500px;
+        height: 20px;
+        border: 3px solid  lightgreen;
+        margin: 20px auto;
+      }
+      #sub{
+        width:0;
+        height: 100%;
+        background: lightcoral;
+       
+      }
+      #submit{
+        width: 500px;
+        margin: 20px auto;
+      }
+      #text{
+        width: 500px;
+        margin: 0px auto;
+        text-align: center;
+      }
+  </style>
+</head>
+<body>
+  
+    <form  method="post" enctype="multipart/form-data" id="submit">
+<!-- action="dispose_file.php" -->
+    <p>用户名： <input type="text" name="user"></p>
+      <p>
+          上传文件：<input type="file" name="file"> 
+      </p>
+
+      <input type="submit" value="提交">
+      <!-- <input type="button" value="提交" > -->
+
+    </form>
+    <div id="text">进度条</div>
+    <div id="parent">
+      <div id="sub"> </div>
+    </div>
+   
+    <script>
+    var fm = document.getElementById('submit');
+      fm.onsubmit=function(){
+        // 利用formData 接受表单信息
+        var data= new FormData(fm);
+        var xhr = new XMLHttpRequest();
+        console.dir(xhr);
+        xhr.onreadystatechange = function(){
+          if(xhr.readyState == 4 && xhr.status==200){
+            console.log(xhr.responseText);
+          }
+        }
+
+        // 设置监听事件 ajax.upload.onprogress
+        xhr.upload.onprogress= function(ev){
+          // 感知附件上传情况,利用事件对象
+          
+          console.log(ev)
+          var loaded = ev.loaded;
+          var total = ev.total;
+          var per = Math.floor((loaded/total)*100);
+          document.getElementById('text').innerHTML = '上传进度'+per+'%';
+          document.getElementById('sub').style.width = per+'%';
+
+        }
+        xhr.open('post','dispose_file.php');
+        xhr.send(data);
+        return false;
+      }
+    
+    </script>
+</body>
+</html>

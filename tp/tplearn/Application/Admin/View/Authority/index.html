@@ -1,0 +1,91 @@
+<extend name="Layout:base" />
+<block name="content">
+
+  <!-- 面包屑 -->
+  <div class="crumbs-nav">
+    <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
+      <a href="<{:U('Admin/index')}>" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+      <a href="<{:U('Goods/index')}>" class="link">权限管理</a>
+      <a href="<{:U('Goods/index')}>" class="link"><cite>权限列表</cite></a>
+    </span>
+  </div>
+  <!--内容  -->
+  <div class="manage-btn-wrapper">
+    <form action="">
+      <div class="handle-wrap layui-left">
+        <!-- 筛选条件 -->
+
+
+      </div>
+    </form>
+    <div class="layui-right">
+      <a href="<{:U('Authority/add')}>" class="layui-btn layui-btn-sm layui-btn-normal">
+        <i class="layui-icon">&#xe654;</i>
+        添加权限
+      </a>
+    </div>
+
+  </div>
+  <table class="layui-table">
+
+    <thead>
+
+      <tr>
+        <th>序号</th>
+        <th>权限名称</th>
+        <th>控制器名</th>
+        <th>方法名</th>
+        <th>全路径</th>
+        <th>权限等级</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+      <volist name="list" id="vo">
+        <tr>
+          <td>
+            <{$i}>
+          </td>
+          <td>
+            <{$vo['auth_name']}>
+          </td>
+          <td>
+            <{$vo['auth_c']}>
+          </td>
+          <td>
+            <{$vo['auth_a']}>
+          </td>
+          <td>
+            <{$vo['auth_path']}>
+          </td>
+          <td>
+              <{$vo['auth_level']}>
+            </td>
+          <td>
+
+            <a href="<{:U('Authority/edit',array('auth_id'=>$vo['auth_id']))}>"
+              class="layui-btn layui-btn-primary layui-btn-sm edit">
+              <i class="layui-icon">&#xe642;</i>
+            </a>
+
+            <a href="<{:U('Goods/delete',array('goods_id'=>$vo['goods_id']))}>"
+              class="layui-btn layui-btn-primary layui-btn-sm delete" onclick="return confirm('你确定删除吗？')">
+              <i class="layui-icon">&#xe640;</i>
+            </a>
+          </td>
+        </tr>
+      </volist>
+
+
+
+
+      <tr>
+        <td colspan="10" align="center">
+          <{$page}>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</block>

@@ -106,106 +106,44 @@
   </div>
   <div class="admin-body">
     
+
   <!-- 面包屑 -->
   <div class="crumbs-nav">
     <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
-      <a href="" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
-
-      <a href="<?php echo U('Goods/index');?>" class="link">商品管理</a>
-      <a href="<?php echo U('Goods/add');?>" class="link"><cite>添加商品</cite></a>
+      <a href="<?php echo U('Admin/index');?>" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+      <a href="<?php echo U('Role/index');?>" class="link">权限管理</a>
+      <a href="<?php echo U('Role/index');?>" class="link"><cite>分配权限</cite></a>
     </span>
   </div>
   <!--内容  -->
-  <!-- 添加内容 -->
-
-  <div class="add-module-form">
-    <form class="layui-form wrapper" action="<?php echo U('Goods/doadd');?>" method="POST"
-      enctype="multipart/form-data">
-
-
-
-      <div class="layui-form-item">
-        <label class="layui-form-label">商品名称</label>
-        <div class="layui-input-block">
-          <input type="text" name="goods_name" required lay-verify="required" placeholder="请输入商品名称" autocomplete="off"
-            class="layui-input">
-        </div>
-      </div>
-      <div class="layui-form-item">
-        <label class="layui-form-label">商品价格</label>
-        <div class="layui-input-block">
-          <input type="text" name="goods_price" required lay-verify="required" placeholder="请输入价格" autocomplete="off"
-            class="layui-input">
-        </div>
-      </div>
-      <div class="layui-form-item">
-        <label class="layui-form-label">复选框</label>
-        <div class="layui-input-block">
-          <input type="checkbox" name="goods_recommend['精品']" title="精品">
-          <input type="checkbox" name="goods_recommend['新品']" title="新品" checked>
-          <input type="checkbox" name="goods_recommend['热销']" title="热销">
-        </div>
-      </div>
-
-      <div class="layui-form-item">
-        <label class="layui-form-label">库存</label>
-        <div class="layui-input-block">
-          <input type="text" name="goods_number" required lay-verify="required" placeholder="" autocomplete="off"
-            class="layui-input">
-        </div>
-      </div>
-
-      <div class="layui-form-item">
-        <label class="layui-form-label">商品图片</label>
-        <div class="layui-input-block">
-          <input type="file" name="goods_image"  class="layui-input">
-          <!-- required lay-verify="required" -->
-        </div>
-      </div>
-      <div class="layui-form-item layui-form-text">
-        <label class="layui-form-label">商品详情</label>
-        <div class="layui-input-block">
-          <textarea name="goods_desc" placeholder="请输入内容" class="layui-textarea"></textarea>
-        </div>
-      </div>
-      <div class="layui-form-item">
-        <label class="layui-form-label">发布状态</label>
-        <div class="layui-input-block">
-
-          <input type="checkbox" name="goods_status" lay-skin="switch" lay-text="上架|下架" checked>
-        </div>
-      </div>
-      <div class="layui-form-item">
-        <div class="layui-input-block">
-          <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" id="submit">确认添加</button>
-          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-          <button type="reset" class="layui-btn layui-btn-primary">返回产品列表</button>
-        </div>
-      </div>
+  <div class="manage-btn-wrapper">
+    <form action="<?php echo U('Role/dodistribute');?>" method="post">
+      <ul style="padding-left: 50px; ">
+          
+        <?php if(is_array($parentInfo)): $i = 0; $__LIST__ = $parentInfo;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li >
+              <div style="padding-left: 5px;height: 30px;line-height: 30px; font-size: 14px;color: #555;" >
+                  <?php if(in_array($vo['auth_id'],$select_id_array)): ?><input type="checkbox" name="auth[]" value="<?php echo ($vo['auth_id']); ?>" checked="checked">
+                    <?php else: ?>
+                    <input type="checkbox" name="auth[]"  value="<?php echo ($vo['auth_id']); ?>"><?php endif; ?>
+                 
+                  <?php echo ($vo['auth_name']); ?>
+               
+              </div>
+              <dl style="padding-left: 30px; ">
+                <?php if(is_array($subInfo)): $i = 0; $__LIST__ = $subInfo;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($i % 2 );++$i; if($vo2['auth_pid'] == $vo['auth_id']): ?><dd  style="height: 30px;line-height: 30px; color: #777;">
+                        <?php if(in_array($vo2['auth_id'],$select_id_array)): ?><input type="checkbox" name="auth[]" value="<?php echo ($vo2['auth_id']); ?>" checked="checked">
+                          <?php else: ?>
+                          <input type="checkbox" name="auth[]"  value="<?php echo ($vo2['auth_id']); ?>"><?php endif; ?>
+                        <?php echo ($vo2['auth_name']); ?>
+                      </dd><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+              </dl>
+          </li><?php endforeach; endif; else: echo "" ;endif; ?> 
+      </ul>
+      <input type="hidden" name="role_id" value="<?php echo ($role_id); ?>">
+      <div style="margin:30px  150px;"><input type="submit" value="提交"></div>
+      
     </form>
-
-
   </div>
-  <script>
-      //Demo
-      layui.use(['form', 'upload'], function () {
-        var form = layui.form,
-          $ = layui.jquery,
-          upload = layui.upload;
-        //监听提交
-        form.on('submit(formDemo)', function (data) {
-          if (data) {
-            console.log(data)
-          }
-          console.log(JSON.stringify(data.field))
-          // layer.msg(JSON.stringify(data.field));
-          // return false;
-        });
-  
-  
-  
-      });
-    </script>
 
 
   </div>
