@@ -1,0 +1,82 @@
+
+  <ul class="side-scroll">
+<!-- 
+   <volist name="info1" id="vo">
+      <li class="side-nav">
+          <div class="side-nav-item">
+            <i class="layui-icon">&#xe63c;</i>
+              <{$vo['auth_name']}>
+            <i class="layui-icon icon-dropdown">&#xe61a;</i>
+          </div>
+          <dl class="side-nav-child">
+            <volist name="info2" id="vo2">
+              <if condition="$vo2['auth_pid'] eq $vo['auth_id']">
+                  <dd class="side-nav-child-wrapper">
+                      <a href="__MODULE__/<{$vo2['auth_c']}>/<{$vo2['auth_a']}>" class="side-nav-child-link">
+                        <span class="side-nav-child-icon"></span> <{$vo2['auth_name']}></a>
+                    </dd>
+              </if>
+                
+            </volist>
+          </dl>
+      </li>
+   </volist>  -->
+  
+    <li class="side-nav">
+      <div class="side-nav-item">
+        <i class="layui-icon">&#xe735;</i>
+        角色管理
+        <i class="layui-icon icon-dropdown">&#xe61a;</i>
+      </div>
+      <dl class="side-nav-child">
+        <dd class="side-nav-child-wrapper">
+          <a href="<{:U('Role/index')}>" class="side-nav-child-link">
+            <span class="side-nav-child-icon"></span> 角色列表</a>
+        </dd>
+        <dd class="side-nav-child-wrapper">
+          <a href="<{:U('Role/add')}>" class="side-nav-child-link">
+            <span class="side-nav-child-icon"></span> 添加角色</a>
+        </dd>
+
+      </dl>
+    </li>
+    <li class="side-nav">
+        <div class="side-nav-item">
+          <i class="layui-icon">&#xe735;</i>
+          权限管理
+          <i class="layui-icon icon-dropdown">&#xe61a;</i>
+        </div>
+        <dl class="side-nav-child">
+          <dd class="side-nav-child-wrapper">
+            <a href="<{:U('Authority/index')}>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span> 权限列表</a>
+          </dd>
+          <dd class="side-nav-child-wrapper">
+            <a href="<{:U('Authority/add')}>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span> 添加权限</a>
+          </dd>
+  
+        </dl>
+      </li>
+    <li class="side-nav">
+        <div class="side-nav-item">
+          <i class="layui-icon">&#xe63c;</i>
+          商品管理
+          <i class="layui-icon icon-dropdown">&#xe61a;</i>
+        </div>
+        <dl class="side-nav-child">
+          <dd class="side-nav-child-wrapper">
+            <a href="<{:U('Goods/index')}>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span>商品列表</a>
+              
+          </dd>
+          <dd class="side-nav-child-wrapper">
+            <a href="<{:U('Goods/add')}>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span>商品添加</a>
+          </dd>
+         
+        </dl>
+      </li>
+   
+  </ul>
+  

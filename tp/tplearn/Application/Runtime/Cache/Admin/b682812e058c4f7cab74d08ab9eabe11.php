@@ -30,7 +30,8 @@
   </div>
   <div class="admin-side">
     <ul class="side-scroll">
-<!-- 
+      
+  
      <?php if(is_array($info1)): $i = 0; $__LIST__ = $info1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="side-nav">
             <div class="side-nav-item">
               <i class="layui-icon">&#xe63c;</i>
@@ -43,8 +44,10 @@
                           <span class="side-nav-child-icon"></span> <?php echo ($vo2['auth_name']); ?></a>
                       </dd><?php endif; endforeach; endif; else: echo "" ;endif; ?>
             </dl>
-        </li><?php endforeach; endif; else: echo "" ;endif; ?>  -->
-    
+        </li><?php endforeach; endif; else: echo "" ;endif; ?> 
+
+      
+<!--     
       <li class="side-nav">
         <div class="side-nav-item">
           <i class="layui-icon">&#xe735;</i>
@@ -99,7 +102,7 @@
             </dd>
            
           </dl>
-        </li>
+        </li> -->
      
     </ul>
     
