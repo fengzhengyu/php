@@ -1,0 +1,16 @@
+<extend name="Index:base" />
+<block name="content">
+
+  <!-- 面包屑 -->
+  <div class="crumbs-nav">
+    <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
+      <a href="<{:U('Index/index')}>" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+      <a href="<{:U('Page/index')}>" class="link">page管理</a>
+      <a href="<{:U('Page/page1')}>" class="link"><cite>page1列表</cite></a>
+    </span>
+  </div>
+  <!--内容  -->
+  <div>
+    page1 页面
+  </div>
+</block>

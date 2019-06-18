@@ -10,7 +10,7 @@ create table demo_admin (
   admin_name varchar(32) not null default '' comment '管理员姓名',
   admin_pass char(32) not null default '' comment '管理员密码 md5加密后的密码',
   -- 权限
-  rele_id int unsigned not null default 0 comment '权限角色id rbac',
+  role_id int unsigned not null default 0 comment '权限角色id rbac',
   -- 登录相关的 
   last_ip varchar(15) not null default 0 comment '上次登录ip',
   last_time int unsigned  not null default 0 comment '上次登录时间',

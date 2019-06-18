@@ -1,0 +1,126 @@
+<extend name="Index:base" />
+<block name="content">
+  <!-- 面包屑 -->
+  <div class="crumbs-nav">
+    <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
+      <a href="<{:U('Index/index')}>" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+
+      <a href="<{:U('User/index')}>" class="link">用户管理</a>
+      <if condition="$info">
+        <a href="javascript:;" class="link"><cite>编辑用户</cite></a>
+        <else />
+        <a href="<{:U('User/add')}>" class="link"><cite>添加用户</cite></a>
+      </if>
+    </span>
+  </div>
+  <!--内容  -->
+  <!-- 添加内容 -->
+
+  <div class="add-module-form">
+    <form class="layui-form wrapper" method="POST" enctype="multipart/form-data">
+
+      <if condition="$info">
+        <div class="layui-form-item">
+          <label class="layui-form-label">用户ID</label>
+          <div class="layui-input-block">
+            <input type="text" name="user_id" required lay-verify="required" autocomplete="off"
+              value="<{$info['user_id']}>" readonly class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">用户名</label>
+          <div class="layui-input-block">
+            <input type="text" name="user_name" required lay-verify="required" autocomplete="off"
+              value="<{$info['user_name']}>" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">密码</label>
+          <div class="layui-input-block">
+            <input type="text" name="user_pass" required lay-verify="required" autocomplete="off"
+              value="<{$info['user_pass']}>" class="layui-input">
+          </div>
+        </div>
+
+        <else />
+        <div class="layui-form-item">
+          <label class="layui-form-label">用户名</label>
+          <div class="layui-input-block">
+            <input type="text" name="user_name" required lay-verify="required" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">密码</label>
+          <div class="layui-input-block">
+            <input type="text" name="user_pass" required lay-verify="required" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+
+
+      </if>
+
+
+
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" id="submit">提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+
+        </div>
+      </div>
+    </form>
+
+
+  </div>
+  <script>
+    //Demo
+    layui.use(['form', 'upload', 'layer'], function () {
+      var form = layui.form,
+        $ = layui.jquery,
+        upload = layui.upload;
+      var layer = layui.layer;
+      //监听提交
+      form.on('submit(formDemo)', function (data) {
+        if (data) {
+          console.log(data)
+          var temp = data.field;
+          var user_name = temp.user_name;
+          var user_pass = temp.user_pass;
+          var user_id = temp.user_id ? temp.user_id : '';
+
+          $.ajax({
+            type: "post",
+            url: "<{:U('User/confirmSet')}>",
+            data: {
+              user_id: user_id,
+              user_name: user_name,
+              user_pass: user_pass
+
+            },
+            dataType: "json",
+            success: function (res) {
+
+              console.log(res)
+              layer.msg(res.msg);
+              if (res.code == 200) {
+                location.href = "<{:U('User/index')}>";
+              }
+            }
+          });
+
+        }
+        console.log(data)
+        return false;
+
+
+
+      });
+
+
+
+
+
+    });
+  </script>
+
+</block>

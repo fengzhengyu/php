@@ -1,0 +1,22 @@
+<extend name="Index/base" />
+<block name="content">
+  <!-- 面包屑 -->
+  <div class="crumbs-nav">
+    <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
+      <a href="<{:U('Index/index')}>" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+
+
+    </span>
+  </div>
+  <!--内容  -->
+  <div class="body-home">
+
+    <h2 class="welcome">欢迎来到当代医药管理系统</h2>
+    <p class="current-time ">当前时间为：
+      <span>
+        <{$data['time']}>
+      </span>
+    </p>
+
+  </div>
+</block>
