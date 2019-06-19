@@ -38,7 +38,8 @@ create table demo_userRole(
 create table demo_auth(
   auth_id int unsigned not null auto_increment primary key ,
   auth_name varchar(32)  not null  comment '权限名',
-  auth_urls varchar(255)  not null comment '权限路径',
+  auth_c varchar(32)  not null comment '模块名',
+  auth_a varchar(32)  not null comment '方法名',
   auth_status int  not null default '1' comment '权限状态 1为有效 0 为无效',
   update_time int not null default '0'  comment '跟新时间 时间戳',
   created_time int not null default '0'  comment '创建时间 时间戳'

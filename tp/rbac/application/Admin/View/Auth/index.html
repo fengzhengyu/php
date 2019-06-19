@@ -33,7 +33,8 @@
       <tr>
         <th>序号</th>
         <th>权限名称</th>
-        <th>权限url</th>
+        <th>控制器名</th>
+        <th>方法名</th>
         <th>操作</th>
       </tr>
     </thead>
@@ -49,18 +50,21 @@
             <{$vo['auth_name']}>
           </td>
           <td>
-              <{$vo['auth_urls']}>
-            </td>
+            <{$vo['auth_c']}>
+          </td>
+          <td>
+            <{$vo['auth_a']}>
+          </td>
+
           <td>
 
             <a href="<{:U('Auth/add',array('auth_id'=>$vo['auth_id']))}>"
               class="layui-btn layui-btn-primary layui-btn-sm edit">
               <i class="layui-icon">&#xe642;</i>
             </a>
-            <a href="<{:U('Role/edit')}>"
-              class="layui-btn layui-btn-primary layui-btn-sm edit">
+            <!-- <a href="<{:U('Role/edit')}>" class="layui-btn layui-btn-primary layui-btn-sm edit">
               设置权限
-            </a>
+            </a> -->
 
             <!-- <a href="<{:U('Goods/delete',array('goods_id'=>$vo['goods_id']))}>"
               class="layui-btn layui-btn-primary layui-btn-sm delete" onclick="return confirm('你确定删除吗？')">

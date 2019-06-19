@@ -2013,3 +2013,239 @@ XXL')
  [2019-06_04 20:32:43] set names utf8
  [2019-06_04 20:32:43] desc `p1_goods_type`
  [2019-06_04 20:32:43] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 10:00:50] set names utf8
+ [2019-06_19 10:00:51] desc `p1_category`
+ [2019-06_19 10:00:51] SELECT * FROM `p1_category`
+ [2019-06_19 10:00:56] set names utf8
+ [2019-06_19 10:00:56] desc `p1_goods`
+ [2019-06_19 10:00:56] SELECT * FROM `p1_goods`
+ [2019-06_19 10:00:59] set names utf8
+ [2019-06_19 10:00:59] desc `p1_category`
+ [2019-06_19 10:00:59] SELECT * FROM `p1_category`
+ [2019-06_19 10:00:59] set names utf8
+ [2019-06_19 10:00:59] desc `p1_brand`
+ [2019-06_19 10:00:59] SELECT * FROM `p1_brand`
+ [2019-06_19 10:00:59] set names utf8
+ [2019-06_19 10:00:59] desc `p1_goods_type`
+ [2019-06_19 10:00:59] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 10:01:18] set names utf8
+ [2019-06_19 10:01:18] desc `p1_attribute`
+ [2019-06_19 10:01:18] select * from `p1_attribute` where type_id= 4
+ [2019-06_19 10:01:39] set names utf8
+ [2019-06_19 10:01:39] desc `p1_goods_type`
+ [2019-06_19 10:01:39] SELECT a.*,COUNT(b.attr_name) AS num  FROM `p1_goods_type` AS a
+         LEFT JOIN p1_attribute AS b 
+         ON a.type_id = b.type_id  GROUP BY a.type_id ORDER BY type_id
+         LIMIT 0 , 10
+ [2019-06_19 10:01:39] select count(*) from `p1_goods_type`
+ [2019-06_19 10:01:40] set names utf8
+ [2019-06_19 10:01:40] desc `p1_goods_type`
+ [2019-06_19 10:01:40] SELECT a.*,COUNT(b.attr_name) AS num  FROM `p1_goods_type` AS a
+         LEFT JOIN p1_attribute AS b 
+         ON a.type_id = b.type_id  GROUP BY a.type_id ORDER BY type_id
+         LIMIT 0 , 10
+ [2019-06_19 10:01:40] select count(*) from `p1_goods_type`
+ [2019-06_19 10:01:44] set names utf8
+ [2019-06_19 10:01:44] desc `p1_attribute`
+ [2019-06_19 10:01:44] set names utf8
+ [2019-06_19 10:01:44] desc `p1_goods_type`
+ [2019-06_19 10:01:44] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 10:01:44] select a.* ,b.type_name from p1_attribute as a inner join 
+        p1_goods_type as b on a.type_id = b.type_id 
+        where a.type_id = 1 limit 0,15
+ [2019-06_19 10:01:44] select count(*) from `p1_attribute` where type_id=1
+ [2019-06_19 10:01:56] set names utf8
+ [2019-06_19 10:01:56] desc `p1_goods_type`
+ [2019-06_19 10:01:56] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 10:03:38] set names utf8
+ [2019-06_19 10:03:38] desc `p1_attribute`
+ [2019-06_19 10:03:38] set names utf8
+ [2019-06_19 10:03:38] desc `p1_goods_type`
+ [2019-06_19 10:03:38] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 10:03:38] select a.* ,b.type_name from p1_attribute as a inner join 
+        p1_goods_type as b on a.type_id = b.type_id 
+        where a.type_id = 0 limit 0,15
+ [2019-06_19 10:03:38] select count(*) from `p1_attribute` where type_id=0
+ [2019-06_19 10:03:45] set names utf8
+ [2019-06_19 10:03:45] desc `p1_goods_type`
+ [2019-06_19 10:03:45] SELECT a.*,COUNT(b.attr_name) AS num  FROM `p1_goods_type` AS a
+         LEFT JOIN p1_attribute AS b 
+         ON a.type_id = b.type_id  GROUP BY a.type_id ORDER BY type_id
+         LIMIT 0 , 10
+ [2019-06_19 10:03:45] select count(*) from `p1_goods_type`
+ [2019-06_19 10:03:49] set names utf8
+ [2019-06_19 10:03:49] desc `p1_attribute`
+ [2019-06_19 10:03:49] set names utf8
+ [2019-06_19 10:03:49] desc `p1_goods_type`
+ [2019-06_19 10:03:49] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 10:03:49] select a.* ,b.type_name from p1_attribute as a inner join 
+        p1_goods_type as b on a.type_id = b.type_id 
+        where a.type_id = 3 limit 0,15
+ [2019-06_19 10:03:49] select count(*) from `p1_attribute` where type_id=3
+ [2019-06_19 10:04:14] set names utf8
+ [2019-06_19 10:04:14] desc `p1_category`
+ [2019-06_19 10:04:14] SELECT * FROM `p1_category`
+ [2019-06_19 10:04:14] set names utf8
+ [2019-06_19 10:04:14] desc `p1_brand`
+ [2019-06_19 10:04:14] SELECT * FROM `p1_brand`
+ [2019-06_19 10:04:14] set names utf8
+ [2019-06_19 10:04:14] desc `p1_goods_type`
+ [2019-06_19 10:04:14] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 10:04:39] set names utf8
+ [2019-06_19 10:04:39] desc `p1_attribute`
+ [2019-06_19 10:04:39] select * from `p1_attribute` where type_id= 1
+ [2019-06_19 10:05:19] set names utf8
+ [2019-06_19 10:05:19] desc `p1_category`
+ [2019-06_19 10:05:19] SELECT * FROM `p1_category`
+ [2019-06_19 10:05:19] set names utf8
+ [2019-06_19 10:05:19] desc `p1_brand`
+ [2019-06_19 10:05:19] SELECT * FROM `p1_brand`
+ [2019-06_19 10:05:19] set names utf8
+ [2019-06_19 10:05:19] desc `p1_goods_type`
+ [2019-06_19 10:05:19] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 10:05:20] set names utf8
+ [2019-06_19 10:05:20] desc `p1_attribute`
+ [2019-06_19 10:05:20] set names utf8
+ [2019-06_19 10:05:20] desc `p1_goods_type`
+ [2019-06_19 10:05:20] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 10:05:20] select a.* ,b.type_name from p1_attribute as a inner join 
+        p1_goods_type as b on a.type_id = b.type_id 
+        where a.type_id = 3 limit 0,15
+ [2019-06_19 10:05:20] select count(*) from `p1_attribute` where type_id=3
+ [2019-06_19 10:05:23] set names utf8
+ [2019-06_19 10:05:23] desc `p1_category`
+ [2019-06_19 10:05:23] SELECT * FROM `p1_category`
+ [2019-06_19 10:05:28] set names utf8
+ [2019-06_19 10:05:28] desc `p1_category`
+ [2019-06_19 10:05:28] SELECT * FROM `p1_category`
+ [2019-06_19 10:05:37] set names utf8
+ [2019-06_19 10:05:37] desc `p1_brand`
+ [2019-06_19 10:05:37] SELECT * FROM `p1_brand`
+ [2019-06_19 10:05:45] set names utf8
+ [2019-06_19 10:05:45] desc `p1_brand`
+ [2019-06_19 10:05:45] select * from `p1_brand` where brand_id = 3
+ [2019-06_19 10:05:56] set names utf8
+ [2019-06_19 10:05:56] desc `p1_brand`
+ [2019-06_19 10:05:56] SELECT * FROM `p1_brand`
+ [2019-06_19 10:06:02] set names utf8
+ [2019-06_19 10:06:02] desc `p1_brand`
+ [2019-06_19 10:06:02] select * from `p1_brand` where brand_id = 2
+ [2019-06_19 10:06:07] set names utf8
+ [2019-06_19 10:06:07] desc `p1_brand`
+ [2019-06_19 10:06:07] SELECT * FROM `p1_brand`
+ [2019-06_19 10:06:11] set names utf8
+ [2019-06_19 10:06:11] desc `p1_brand`
+ [2019-06_19 10:06:12] select * from `p1_brand` where brand_id = 3
+ [2019-06_19 10:06:15] set names utf8
+ [2019-06_19 10:06:15] desc `p1_brand`
+ [2019-06_19 10:06:15] SELECT * FROM `p1_brand`
+ [2019-06_19 10:06:20] set names utf8
+ [2019-06_19 10:06:20] desc `p1_goods_type`
+ [2019-06_19 10:06:20] SELECT a.*,COUNT(b.attr_name) AS num  FROM `p1_goods_type` AS a
+         LEFT JOIN p1_attribute AS b 
+         ON a.type_id = b.type_id  GROUP BY a.type_id ORDER BY type_id
+         LIMIT 0 , 10
+ [2019-06_19 10:06:20] select count(*) from `p1_goods_type`
+ [2019-06_19 10:06:28] set names utf8
+ [2019-06_19 10:06:28] desc `p1_attribute`
+ [2019-06_19 10:06:28] set names utf8
+ [2019-06_19 10:06:28] desc `p1_goods_type`
+ [2019-06_19 10:06:28] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 10:06:28] select a.* ,b.type_name from p1_attribute as a inner join 
+        p1_goods_type as b on a.type_id = b.type_id 
+        where a.type_id = 1 limit 0,15
+ [2019-06_19 10:06:28] select count(*) from `p1_attribute` where type_id=1
+ [2019-06_19 10:06:37] set names utf8
+ [2019-06_19 10:06:37] desc `p1_attribute`
+ [2019-06_19 10:06:37] set names utf8
+ [2019-06_19 10:06:37] desc `p1_goods_type`
+ [2019-06_19 10:06:37] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 10:06:37] select a.* ,b.type_name from p1_attribute as a inner join 
+        p1_goods_type as b on a.type_id = b.type_id 
+        where a.type_id = 4 limit 0,15
+ [2019-06_19 10:06:37] select count(*) from `p1_attribute` where type_id=4
+ [2019-06_19 10:06:46] set names utf8
+ [2019-06_19 10:06:46] desc `p1_goods_type`
+ [2019-06_19 10:06:46] SELECT a.*,COUNT(b.attr_name) AS num  FROM `p1_goods_type` AS a
+         LEFT JOIN p1_attribute AS b 
+         ON a.type_id = b.type_id  GROUP BY a.type_id ORDER BY type_id
+         LIMIT 0 , 10
+ [2019-06_19 10:06:46] select count(*) from `p1_goods_type`
+ [2019-06_19 10:06:54] set names utf8
+ [2019-06_19 10:06:54] desc `p1_goods_type`
+ [2019-06_19 10:06:54] SELECT a.*,COUNT(b.attr_name) AS num  FROM `p1_goods_type` AS a
+         LEFT JOIN p1_attribute AS b 
+         ON a.type_id = b.type_id  GROUP BY a.type_id ORDER BY type_id
+         LIMIT 0 , 10
+ [2019-06_19 10:06:54] select count(*) from `p1_goods_type`
+ [2019-06_19 10:06:58] set names utf8
+ [2019-06_19 10:06:58] desc `p1_attribute`
+ [2019-06_19 10:06:58] set names utf8
+ [2019-06_19 10:06:58] desc `p1_goods_type`
+ [2019-06_19 10:06:58] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 10:06:58] select a.* ,b.type_name from p1_attribute as a inner join 
+        p1_goods_type as b on a.type_id = b.type_id 
+        where a.type_id = 9 limit 0,15
+ [2019-06_19 10:06:58] select count(*) from `p1_attribute` where type_id=9
+ [2019-06_19 10:07:04] set names utf8
+ [2019-06_19 10:07:04] desc `p1_goods_type`
+ [2019-06_19 10:07:04] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 14:26:23] set names utf8
+ [2019-06_19 14:26:23] desc `p1_admin`
+ [2019-06_19 14:26:23] SELECT * FROM  `p1_admin`  where admin_name='admin' AND admin_pass='21232f297a57a5a743894a0e4a801fc3' LIMIT 1
+ [2019-06_19 14:26:31] set names utf8
+ [2019-06_19 14:26:31] desc `p1_category`
+ [2019-06_19 14:26:31] SELECT * FROM `p1_category`
+ [2019-06_19 14:26:39] set names utf8
+ [2019-06_19 14:26:39] desc `p1_category`
+ [2019-06_19 14:26:39] SELECT * FROM `p1_category`
+ [2019-06_19 14:26:55] set names utf8
+ [2019-06_19 14:26:55] desc `p1_brand`
+ [2019-06_19 14:26:55] SELECT * FROM `p1_brand`
+ [2019-06_19 14:27:06] set names utf8
+ [2019-06_19 14:27:06] desc `p1_goods_type`
+ [2019-06_19 14:27:06] SELECT a.*,COUNT(b.attr_name) AS num  FROM `p1_goods_type` AS a
+         LEFT JOIN p1_attribute AS b 
+         ON a.type_id = b.type_id  GROUP BY a.type_id ORDER BY type_id
+         LIMIT 0 , 10
+ [2019-06_19 14:27:06] select count(*) from `p1_goods_type`
+ [2019-06_19 14:27:16] set names utf8
+ [2019-06_19 14:27:16] desc `p1_goods_type`
+ [2019-06_19 14:27:16] SELECT a.*,COUNT(b.attr_name) AS num  FROM `p1_goods_type` AS a
+         LEFT JOIN p1_attribute AS b 
+         ON a.type_id = b.type_id  GROUP BY a.type_id ORDER BY type_id
+         LIMIT 0 , 10
+ [2019-06_19 14:27:16] select count(*) from `p1_goods_type`
+ [2019-06_19 14:27:20] set names utf8
+ [2019-06_19 14:27:20] desc `p1_attribute`
+ [2019-06_19 14:27:20] set names utf8
+ [2019-06_19 14:27:20] desc `p1_goods_type`
+ [2019-06_19 14:27:20] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 14:27:20] select a.* ,b.type_name from p1_attribute as a inner join 
+        p1_goods_type as b on a.type_id = b.type_id 
+        where a.type_id = 1 limit 0,15
+ [2019-06_19 14:27:20] select count(*) from `p1_attribute` where type_id=1
+ [2019-06_19 14:27:40] set names utf8
+ [2019-06_19 14:27:40] desc `p1_goods_type`
+ [2019-06_19 14:27:40] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 14:27:44] set names utf8
+ [2019-06_19 14:27:44] desc `p1_attribute`
+ [2019-06_19 14:27:44] set names utf8
+ [2019-06_19 14:27:44] desc `p1_goods_type`
+ [2019-06_19 14:27:44] SELECT * FROM `p1_goods_type` ORDER BY type_id
+ [2019-06_19 14:27:44] select a.* ,b.type_name from p1_attribute as a inner join 
+        p1_goods_type as b on a.type_id = b.type_id 
+        where a.type_id = 1 limit 0,15
+ [2019-06_19 14:27:44] select count(*) from `p1_attribute` where type_id=1
+ [2019-06_19 14:27:52] set names utf8
+ [2019-06_19 14:27:52] desc `p1_goods`
+ [2019-06_19 14:27:52] SELECT * FROM `p1_goods`
+ [2019-06_19 14:27:54] set names utf8
+ [2019-06_19 14:27:54] desc `p1_category`
+ [2019-06_19 14:27:54] SELECT * FROM `p1_category`
+ [2019-06_19 14:27:54] set names utf8
+ [2019-06_19 14:27:54] desc `p1_brand`
+ [2019-06_19 14:27:54] SELECT * FROM `p1_brand`
+ [2019-06_19 14:27:54] set names utf8
+ [2019-06_19 14:27:54] desc `p1_goods_type`
+ [2019-06_19 14:27:54] SELECT * FROM `p1_goods_type` ORDER BY type_id

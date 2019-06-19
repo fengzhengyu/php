@@ -177,35 +177,49 @@
               value="<?php echo ($info['auth_id']); ?>" readonly class="layui-input">
           </div>
         </div>
-        <div class="layui-form-item">权限名称名
-          <label class="layui-form-label">用户名</label>
+        <div class="layui-form-item">
+          <label class="layui-form-label">权限名称</label>
           <div class="layui-input-block">
             <input type="text" name="auth_name" required lay-verify="required" autocomplete="off"
               value="<?php echo ($info['auth_name']); ?>" class="layui-input">
           </div>
         </div>
         <div class="layui-form-item">
-          <label class="layui-form-label">权限url</label>
+          <label class="layui-form-label">模块名称</label>
           <div class="layui-input-block">
-              <textarea name="auth_urls" class="layui-textarea"><?php echo ($info['auth_urls']); ?></textarea>
+            <input type="text" name="auth_c" required lay-verify="required" autocomplete="off"
+            value="<?php echo ($info['auth_c']); ?>" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">方法名称</label>
+          <div class="layui-input-block">
+            <input type="text" name="auth_a" required lay-verify="required" autocomplete="off" 
+            value="<?php echo ($info['auth_a']); ?>" class="layui-input">
           </div>
         </div>
 
         <?php else: ?>
         <div class="layui-form-item">
-          <label class="layui-form-label">权限名称名</label>
+          <label class="layui-form-label">权限名称</label>
           <div class="layui-input-block">
             <input type="text" name="auth_name" required lay-verify="required" autocomplete="off" class="layui-input">
           </div>
         </div>
         <div class="layui-form-item">
-          <label class="layui-form-label">权限url</label>
+          <label class="layui-form-label">模块名称</label>
           <div class="layui-input-block">
-           <textarea name="auth_urls" class="layui-textarea"></textarea>
+            <input type="text" name="auth_c" required lay-verify="required" autocomplete="off" class="layui-input">
           </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">方法名称</label>
           <div class="layui-input-block">
+            <input type="text" name="auth_a" required lay-verify="required" autocomplete="off" class="layui-input">
+          </div>
+          <!-- <div class="layui-input-block">
               <div class="layui-form-mid layui-word-aux">多个url,以回车结尾</div>
-          </div>
+          </div> -->
         </div><?php endif; ?>
 
 
@@ -232,27 +246,22 @@
       form.on('submit(formDemo)', function (data) {
         if (data) {
           console.log(data)
-          var temp = data.field;
-          var auth_name = temp.auth_name;
-          var auth_urls = temp.auth_urls;
-          var auth_id = temp.auth_id ? temp.auth_id : '';
+          var params = data.field;
+          // var auth_name = temp.auth_name;
+          // var auth_urls = temp.auth_urls;
+          // var auth_id = temp.auth_id ? temp.auth_id : '';
 
           $.ajax({
             type: "post",
             url: "<?php echo U('Auth/confirmSet');?>",
-            data: {
-              auth_id: auth_id,
-              auth_name: auth_name,
-              auth_urls: auth_urls
-
-            },
+            data: params,
             dataType: "json",
             success: function (res) {
 
               console.log(res)
               layer.msg(res.msg);
               if (res.code == 200) {
-                location.href = "<?php echo U('User/index');?>";
+                location.href = "<?php echo U('Auth/index');?>";
               }
             }
           });

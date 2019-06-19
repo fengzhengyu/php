@@ -62,7 +62,7 @@
               <span class="side-nav-child-icon"></span> page4</a>
           </dd>
           <dd class="side-nav-child-wrapper">
-            <a href="<?php echo U('Test/page35');?>" class="side-nav-child-link">
+            <a href="<?php echo U('Test/page5');?>" class="side-nav-child-link">
               <span class="side-nav-child-icon"></span> page5</a>
           </dd>
 
