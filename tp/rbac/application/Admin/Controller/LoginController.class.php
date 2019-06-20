@@ -1,7 +1,7 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
-class LoginController extends Controller{
+class LoginController extends CommonController{
 
   public function login(){
     $this->display();
@@ -15,7 +15,8 @@ class LoginController extends Controller{
       
         if($result = M('user')->where($data)->find()){
 
-            $data['user_pass']=md5(I('password'));
+            // $data['user_pass']=md5(I('password'));
+            $data['user_pass']=I('password');
           
             if($res = M('user')->where($data)->find()){
               session('admin', $res);

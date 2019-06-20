@@ -2,7 +2,7 @@
 namespace Admin\Controller;
 use Think\Controller;
 
-class RoleController extends Controller {
+class RoleController extends CommonController {
 
   public function index(){
     $model =  M('role');
@@ -127,23 +127,20 @@ class RoleController extends Controller {
      * */ 
     $delete_auth_ids = array_diff($assign_auth_ids,$auth_ids);
 
-
-    // dump( $delete_auth_ids);
-  
-
     if($delete_auth_ids){
       // 删除取消勾选的权限
       foreach( $delete_auth_ids as $auth_id){
         $data['auth_id']  = $auth_id;
         M('roleauth')->where($data)->delete();
-      
       }
       
     }
 
     $new_auth_ids = array_diff($auth_ids,$assign_auth_ids);
+    
     // dump( $new_auth_ids);
     // die;
+   
     if( $new_auth_ids){
       foreach( $new_auth_ids as $auth_id){
         $model = M('roleauth');

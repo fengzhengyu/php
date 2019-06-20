@@ -158,8 +158,8 @@
   <div class="crumbs-nav">
     <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
       <a href="<?php echo U('Index/index');?>" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
-      <a href="<?php echo U('Auth/index');?>" class="link">权限管理</a>
-      <a href="<?php echo U('Auth/index');?>" class="link"><cite>权限列表</cite></a>
+      <a href="<?php echo U('User/index');?>" class="link">用户管理</a>
+      <a href="javascript:;" class="link"><cite>设置角色</cite></a>
     </span>
   </div>
   <!--内容  -->
@@ -167,74 +167,95 @@
     <form action="">
       <div class="handle-wrap layui-left">
         <!-- 筛选条件 -->
-
+        <h3>
+          为 <b>
+            <?php echo ($info['user_name']); ?>
+          </b> 设置角色
+        </h3>
 
       </div>
     </form>
-    <div class="layui-right">
-      <a href="<?php echo U('Auth/add');?>" class="layui-btn layui-btn-sm layui-btn-normal">
+    <!-- <div class="layui-right">
+      <a href="<?php echo U('Role/add');?>" class="layui-btn layui-btn-sm layui-btn-normal">
         <i class="layui-icon">&#xe654;</i>
-        添加权限
+        添加角色
       </a>
-    </div>
+    </div> -->
+
 
   </div>
-  <table class="layui-table">
+  <div class="add-module-form">
 
-    <thead>
+    <form class="layui-form wrapper" method="POST" >
+      <div class="layui-form-item" pane="">
+        <label class="layui-form-label">角色列表</label>
+        <div class="layui-input-block">
 
-      <tr>
-        <th>序号</th>
-        <th>权限名称</th>
-        <th>控制器名</th>
-        <th>方法名</th>
-        <th>操作</th>
-      </tr>
-    </thead>
-    <tbody>
+          <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(in_array($vo['role_id'],$role_ids)): ?><input type="checkbox" name="role_ids[]" lay-skin="primary" title="<?php echo ($vo['role_name']); ?>" value="<?php echo ($vo['role_id']); ?>"  checked=""> 
+                <?php else: ?>
+                <input type="checkbox" name="role_ids[]" lay-skin="primary" title="<?php echo ($vo['role_name']); ?>" value="<?php echo ($vo['role_id']); ?>"><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+          <!-- <input type="checkbox" name="like1[write]" lay-skin="primary" title="写作" checked="">
+          <input type="checkbox" name="like1[read]" lay-skin="primary" title="阅读">
+          <input type="checkbox" name="like1[game]" lay-skin="primary" title="游戏" disabled=""> -->
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" id="submit">提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
 
+        </div>
+      </div>
+    </form>
 
-      <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-          <td>
-            <?php echo ($i); ?>
-          </td>
-          <td>
-            <?php echo ($vo['auth_name']); ?>
-          </td>
-          <td>
-            <?php echo ($vo['auth_c']); ?>
-          </td>
-          <td>
-            <?php echo ($vo['auth_a']); ?>
-          </td>
+  </div>
 
-          <td>
+  <script>
+    //Demo
+    layui.use(['form', 'layer'], function () {
+      var form = layui.form,
+        $ = layui.jquery,
+        layer = layui.layer;
+     
+      //监听提交
+      form.on('submit(formDemo)', function (data) {
+        if (data) {
+        
+          var temp = data.field;
+          var arr_ids = [];
+          for(var key in temp){
+            if(key.substr(0,8) == 'role_ids'){
+              arr_ids.push( temp[key]);
+            }
+          }
+       
+          $.ajax({
+            type: "post",
+            url: "<?php echo U('User/userSetRole');?>",
+            data: {
+              role_ids: arr_ids,
+              user_id: "<?php echo ($info['user_id']); ?>"
+             
+            },
+            dataType: "json",
+            success: function (res) {
 
-            <a href="<?php echo U('Auth/add',array('auth_id'=>$vo['auth_id']));?>"
-              class="layui-btn layui-btn-primary layui-btn-sm edit">
-              <i class="layui-icon">&#xe642;</i>
-            </a>
-            <!-- <a href="<?php echo U('Role/edit');?>" class="layui-btn layui-btn-primary layui-btn-sm edit">
-              设置权限
-            </a> -->
+              // console.log(res)
+              layer.msg(res.msg);
+                if(res.code == 200){
+                  location.href= "<?php echo U('User/index');?>";
+                }
+            }
+          });
+         
+        }
+       
 
-            <!-- <a href="<?php echo U('Goods/delete',array('goods_id'=>$vo['goods_id']));?>"
-              class="layui-btn layui-btn-primary layui-btn-sm delete" onclick="return confirm('你确定删除吗？')">
-              <i class="layui-icon">&#xe640;</i>
-            </a> -->
-          </td>
-        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+        return false;
+      });
 
-
-
-
-      <tr>
-        <td colspan="10" align="center">
-          <?php echo ($page); ?>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    });
+  </script>
 
   </div>
 

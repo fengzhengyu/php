@@ -1,7 +1,7 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
-class IndexController extends Controller{
+class IndexController extends CommonController{
 
   public function index(){
    $data['time'] = date('Y-m-d H:i:s');

@@ -35,7 +35,7 @@
 
        -->
       <li class="side-nav">
-        <div class="side-nav-item activ">
+        <div class="side-nav-item active">
           <i class="layui-icon">&#xe735;</i>
           权限页面
           <i class="layui-icon icon-dropdown">&#xe61a;</i>
@@ -69,7 +69,7 @@
         </dl>
       </li>
       <li class="side-nav">
-        <div class="side-nav-item activ">
+        <div class="side-nav-item active">
           <i class="layui-icon">&#xe735;</i>
           系统设置
           <i class="layui-icon icon-dropdown">&#xe61a;</i>
@@ -215,7 +215,7 @@
               class="layui-btn layui-btn-primary layui-btn-sm edit">
               <i class="layui-icon">&#xe642;</i>
             </a>
-            <a href="<?php echo U('Role/edit');?>"
+            <a href="<?php echo U('User/setRole',array('user_id'=>$vo['user_id']));?>"
               class="layui-btn layui-btn-primary layui-btn-sm edit">
               设置角色
             </a>

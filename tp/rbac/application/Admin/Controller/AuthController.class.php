@@ -1,7 +1,7 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
-class AuthController extends Controller {
+class AuthController extends CommonController {
   public function index(){
     $list = M('auth')->select();
 
