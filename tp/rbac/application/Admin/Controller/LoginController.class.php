@@ -15,8 +15,8 @@ class LoginController extends CommonController{
       
         if($result = M('user')->where($data)->find()){
 
-            // $data['user_pass']=md5(I('password'));
-            $data['user_pass']=I('password');
+            $data['user_pass']=md5(I('password'));
+            // $data['user_pass']=I('password');
           
             if($res = M('user')->where($data)->find()){
               session('admin', $res);

@@ -35,7 +35,7 @@
 
        -->
       <li class="side-nav">
-        <div class="side-nav-item activ">
+        <div class="side-nav-item active">
           <i class="layui-icon">&#xe735;</i>
           权限页面
           <i class="layui-icon icon-dropdown">&#xe61a;</i>
@@ -68,28 +68,29 @@
 
         </dl>
       </li>
-      <li class="side-nav">
-        <div class="side-nav-item activ">
-          <i class="layui-icon">&#xe735;</i>
-          系统设置
-          <i class="layui-icon icon-dropdown">&#xe61a;</i>
-        </div>
-        <dl class="side-nav-child">
-          <dd class="side-nav-child-wrapper">
-            <a href="<?php echo U('User/index');?>" class="side-nav-child-link">
-              <span class="side-nav-child-icon"></span> 用户管理</a>
-          </dd>
-          <dd class="side-nav-child-wrapper">
-            <a href="<?php echo U('Role/index');?>" class="side-nav-child-link">
-              <span class="side-nav-child-icon"></span> 角色管理</a>
-          </dd>
-          <dd class="side-nav-child-wrapper">
-            <a href="<?php echo U('Auth/index');?>" class="side-nav-child-link">
-              <span class="side-nav-child-icon"></span> 权限管理</a>
-          </dd>
-
-        </dl>
-      </li>
+      <?php if($_SESSION['admin']['is_admin']== 1): ?><li class="side-nav">
+          <div class="side-nav-item active">
+            <i class="layui-icon">&#xe735;</i>
+            系统设置
+            <i class="layui-icon icon-dropdown">&#xe61a;</i>
+          </div>
+          <dl class="side-nav-child">
+            <dd class="side-nav-child-wrapper">
+              <a href="<?php echo U('User/index');?>" class="side-nav-child-link">
+                <span class="side-nav-child-icon"></span> 用户管理</a>
+            </dd>
+            <dd class="side-nav-child-wrapper">
+              <a href="<?php echo U('Role/index');?>" class="side-nav-child-link">
+                <span class="side-nav-child-icon"></span> 角色管理</a>
+            </dd>
+            <dd class="side-nav-child-wrapper">
+              <a href="<?php echo U('Auth/index');?>" class="side-nav-child-link">
+                <span class="side-nav-child-icon"></span> 权限管理</a>
+            </dd>
+  
+          </dl>
+        </li><?php endif; ?>
+     
 
 
       <!-- <li class="side-nav">
