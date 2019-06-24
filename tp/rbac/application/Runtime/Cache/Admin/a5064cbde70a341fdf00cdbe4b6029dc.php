@@ -35,7 +35,7 @@
 
        -->
       <li class="side-nav">
-        <div class="side-nav-item active">
+        <div class="side-nav-item ">
           <i class="layui-icon">&#xe735;</i>
           权限页面
           <i class="layui-icon icon-dropdown">&#xe61a;</i>
@@ -69,7 +69,7 @@
         </dl>
       </li>
       <?php if($_SESSION['admin']['is_admin']== 1): ?><li class="side-nav">
-          <div class="side-nav-item active">
+          <div class="side-nav-item ">
             <i class="layui-icon">&#xe735;</i>
             系统设置
             <i class="layui-icon icon-dropdown">&#xe61a;</i>
