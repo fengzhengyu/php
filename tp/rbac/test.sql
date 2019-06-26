@@ -36,3 +36,53 @@
 -- | model        | varchar(255) | YES  |     | NULL    |                |
 -- | action       | varchar(255) | YES  |     | NULL    |                |
 -- +--------------+--------------+------+-----+---------+----------------+
+
+-- 商品分类
+-- mysql> desc ddyk_goods_type;
+-- +------------------+------------------+------+-----+---------+----------------+
+-- | Field            | Type             | Null | Key | Default | Extra          |
+-- +------------------+------------------+------+-----+---------+----------------+
+-- | id               | int(11) unsigned | NO   | PRI | NULL    | auto_increment |
+-- | goodsParentsName | varchar(255)     | NO   |     | NULL    |                |
+-- | goodsSunName     | varchar(255)     | NO   |     | NULL    |                |
+-- | parentId         | int(11)          | NO   |     | NULL    |                |
+-- | isShow           | tinyint(4)       | NO   |     | 1       |                |
+-- +------------------+------------------+------+-----+---------+----------------+
+
+-- 商品
+-- mysql> desc ddyk_goods;
+-- +----------------+------------------+------+-----+---------+----------------+
+-- | Field          | Type             | Null | Key | Default | Extra          |
+-- +----------------+------------------+------+-----+---------+----------------+
+-- | id             | int(11) unsigned | NO   | PRI | NULL    | auto_increment |
+-- | memberId       | int(11)          | YES  |     | NULL    |                |
+-- | parentId       | int(11)          | YES  | MUL | NULL    |                |
+-- | sunId          | int(11)          | YES  |     | NULL    |                |
+-- | goodsName      | varchar(255)     | YES  |     | NULL    |                |
+-- | approve        | varchar(255)     | YES  |     | NULL    |                |
+-- | productCompany | varchar(255)     | YES  |     | NULL    |                |
+-- | norms          | varchar(255)     | YES  |     | NULL    |                |
+-- | effect         | varchar(255)     | YES  |     | NULL    |                |
+-- | basis          | varchar(255)     | YES  |     | NULL    |                |
+-- | require        | varchar(255)     | YES  |     | NULL    |                |
+-- | qq             | varchar(255)     | YES  |     | NULL    |                |
+-- | phone          | varchar(255)     | YES  |     | NULL    |                |
+-- | telephone      | varchar(255)     | YES  |     | NULL    |                |
+-- | addressInfo    | varchar(255)     | YES  |     | NULL    |                |
+-- | relationPerson | varchar(255)     | YES  |     | NULL    |                |
+-- | photo          | varchar(255)     | YES  |     | NULL    |                |
+-- | photoUnify     | varchar(255)     | YES  |     | NULL    |                |
+-- | addTime        | int(11)          | YES  |     | NULL    |                |
+-- | passTime       | int(11)          | YES  |     | NULL    |                |
+-- | updateTime     | int(11)          | YES  |     | NULL    |                |
+-- | status         | tinyint(4)       | YES  |     | 0       |                |
+-- | checkType      | tinyint(255)     | YES  |     | 1       |                |
+-- | lineStatus     | tinyint(255)     | YES  |     | 0       |                |
+-- | adType         | tinyint(255)     | YES  |     | NULL    |                |
+-- | jumpUrl        | varchar(255)     | YES  |     | NULL    |                |
+-- | publishTime    | int(11)          | YES  |     | NULL    |                |
+-- | adPassTime     | int(11)          | YES  |     | NULL    |                |
+-- | timeMonth      | varchar(255)     | YES  |     | NULL    |                |
+-- | top            | tinyint(255)     | YES  |     | 0       |                |
+-- | topTime        | int(11)          | YES  |     | NULL    |                |
+-- +----------------+------------------+------+-----+---------+----------------+

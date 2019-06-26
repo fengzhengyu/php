@@ -1,0 +1,95 @@
+<extend name="Index/index" />
+<block name="content">
+
+  <!-- 面包屑 -->
+  <div class="crumbs-nav">
+    <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
+      <a href="<{:U('Index/index')}>" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+      <a href="<{:U('Goods/type')}>" class="link">商品管理</a>
+      <a href="<{:U('Goods/index')}>" class="link"><cite>商品列表</cite></a>
+    </span>
+  </div>
+  <!--内容  -->
+  <div class="manage-btn-wrapper">
+    <form action="">
+      <div class="handle-wrap layui-left">
+        <!-- 筛选条件 -->
+        <form action="<{:U('Admin/Goods/type')}>" method="get">
+          <input type="text" name="" id="" class="search" placeholder="请输入商品名称查找">
+
+          <input type="submit" class="button" value="查找">
+          <!-- <button class="button" >查询</button> -->
+        </form>
+
+      </div>
+    </form>
+    <div class="layui-right">
+      <a href="<{:U('Goods/add')}>" class="layui-btn layui-btn-sm layui-btn-normal">
+        <i class="layui-icon">&#xe654;</i>
+        添加分类
+      </a>
+    </div>
+
+  </div>
+  <table class="layui-table">
+
+    <thead>
+
+      <tr>
+        <th>分类id</th>
+        <th>父类名称</th>
+        <th>子类名称</th>
+        <th>是否显示</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+      <volist name="list" id="vo">
+        <tr>
+          <td>
+            <!-- <{$i}> -->
+            <{$vo['id']}>
+          </td>
+          <td>
+            <{$vo['goods_pname']}>
+          </td>
+          <td>
+            <{$vo['goods_subname']}>
+          </td>
+          <td>
+            <if condition="$vo['is_show'] eq 1">
+              显示
+              <else/>
+              不显示
+            </if>
+        
+          </td>
+          <td>
+
+            <a href="<{:U('Goods/add',array('id'=>$vo['id']))}>"
+              class="layui-btn layui-btn-primary layui-btn-sm edit">
+              <i class="layui-icon">&#xe642;</i>
+            </a>
+           
+
+            <a href="<{:U('Goods/delete',array('goods_id'=>$vo['goods_id']))}>"
+              class="layui-btn layui-btn-primary layui-btn-sm delete" onclick="return confirm('你确定删除吗？')">
+              <i class="layui-icon">&#xe640;</i>
+            </a>
+          </td>
+        </tr>
+      </volist>
+
+
+
+
+      <tr>
+        <td colspan="10" align="center">
+          <{$page}>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</block>

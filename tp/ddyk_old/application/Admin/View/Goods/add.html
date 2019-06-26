@@ -1,0 +1,139 @@
+<extend name="Index/index" />
+<block name="content">
+  <!-- 面包屑 -->
+  <div class="crumbs-nav">
+    <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
+      <a href="<{:U('Index/index')}>" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+
+      <a href="<{:U('Goods/type')}>" class="link">商品管理</a>
+      <if condition="$role_info">
+        <a href="javascript:;" class="link"><cite>编辑角色</cite></a>
+        <else />
+        <a href="<{:U('Goods/add')}>" class="link"><cite>添加商品分类</cite></a>
+      </if>
+    </span>
+  </div>
+  <!--内容  -->
+  <div class="manage-btn-wrapper">
+
+    <div class="layui-right">
+      <a href="<{:U('Goods/addSub')}>" class="layui-btn layui-btn-sm layui-btn-normal">
+        <i class="layui-icon">&#xe654;</i>
+        添加子类分类
+      </a>
+    </div>
+
+  </div>
+  <!-- 添加内容 -->
+
+  <div class="add-module-form">
+    <form class="layui-form wrapper" action="" method="POST" enctype="multipart/form-data">
+
+      <if condition="$type_info">
+        <div class="layui-form-item">
+          <label class="layui-form-label">分类ID</label>
+          <div class="layui-input-block">
+            <input type="text" name="type_id" required lay-verify="required" autocomplete="off"
+              value="<{$type_info['id']}>" readonly class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">分类名称</label>
+          <div class="layui-input-block">
+            <input type="text" name="role_name" required lay-verify="required" autocomplete="off"
+              value="<{$type_info['goods_pname']}>" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">显示状态</label>
+            <div class="layui-input-block">
+
+              <if condition="$type_info['is_show'] eq 1">
+                  <input type="checkbox" name="is_show" lay-skin="switch" lay-text="显示|不显示" checked>
+                <else/>
+                <input type="checkbox" name="is_show" lay-skin="switch" lay-text="显示|不显示">
+              </if>
+          
+            </div>
+          </div>
+        <else />
+        <div class="layui-form-item">
+          <label class="layui-form-label">父类名称</label>
+          <div class="layui-input-block">
+            <input type="text" name="goods_pname" required lay-verify="required" autocomplete="off"
+              placeholder="请输入父类名称" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">显示状态</label>
+          <div class="layui-input-block">
+
+            <input type="checkbox" name="is_show" lay-skin="switch" lay-text="显示|不显示" checked>
+          </div>
+        </div>
+      </if>
+
+     
+
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" id="submit">提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+
+        </div>
+
+      </div>
+    </form>
+
+
+  </div>
+  <script>
+    //Demo
+    layui.use(['form', 'upload', 'layer'], function () {
+      var form = layui.form,
+        $ = layui.jquery,
+        upload = layui.upload;
+      var layer = layui.layer;
+      //监听提交
+      form.on('submit(formDemo)', function (data) {
+        if (data) {
+
+          var temp = data.field;
+          var goods_pname = temp.goods_pname;
+          var is_show = temp.is_show?1:0;
+          var type_id = temp.type_id? temp.type_id: null;
+        
+          $.ajax({
+            type: "post",
+            url: "<{:U('Goods/insertType')}>",
+            data: {
+
+              'id':type_id,
+              'goods_pname': goods_pname,
+              'is_show':is_show
+            },
+            dataType: "json",
+            success: function (res) {
+
+              console.log(res)
+              layer.msg(res.info);
+
+              if (res.flag == 'success') {
+                location.href = "<{:U('Goods/type')}>";
+              }
+            }
+          });
+        }
+
+
+        return false;
+      });
+
+
+
+
+
+    });
+  </script>
+
+</block>

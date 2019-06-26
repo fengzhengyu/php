@@ -1,0 +1,110 @@
+<extend name="Index/index" />
+<block name="content">
+  <!-- 面包屑 -->
+  <div class="crumbs-nav">
+    <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
+      <a href="<{:U('Index/index')}>" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
+
+      <a href="<{:U('Admin/index')}>" class="link">商品管理</a>
+      <if condition="$role_info">
+        <a href="javascript:;" class="link"><cite>编辑管理员</cite></a>
+        <else />
+        <a href="<{:U('Admin/add')}>" class="link"><cite>添加管理员</cite></a>
+      </if>
+    </span>
+  </div>
+  <!-- 添加内容 -->
+
+  <div class="add-module-form">
+    <form class="layui-form wrapper" action="" method="POST" enctype="multipart/form-data">
+
+      <if condition="$type_info">
+        <div class="layui-form-item">
+          <label class="layui-form-label">管理员ID</label>
+          <div class="layui-input-block">
+            <input type="text" name="type_id" required lay-verify="required" autocomplete="off"
+              value="<{$role_info['role_id']}>" readonly class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">角色名称</label>
+          <div class="layui-input-block">
+            <input type="text" name="role_name" required lay-verify="required" autocomplete="off"
+              value="<{$role_info['role_name']}>" class="layui-input">
+          </div>
+        </div>
+      
+        <else />
+        <div class="layui-form-item">
+          <label class="layui-form-label">角色名称</label>
+          <div class="layui-input-block">
+            <input type="text" name="role_name" required lay-verify="required" autocomplete="off"
+              placeholder="请输入角色名称" class="layui-input">
+          </div>
+        </div>
+        
+      </if>
+
+     
+
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" id="submit">提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+
+        </div>
+
+      </div>
+    </form>
+
+
+  </div>
+  <script>
+    //Demo
+    layui.use(['form', 'upload', 'layer'], function () {
+      var form = layui.form,
+        $ = layui.jquery,
+        upload = layui.upload;
+      var layer = layui.layer;
+      //监听提交
+      form.on('submit(formDemo)', function (data) {
+        if (data) {
+
+          var temp = data.field;
+          var role_name = temp.role_name;
+       
+          var role_id = temp.role_id? temp.role_id: null;
+        
+          $.ajax({
+            type: "post",
+            url: "<{:U('Admin/insertRole')}>",
+            data: {
+
+              'role_id':role_id,
+              'role_name': role_name
+            },
+            dataType: "json",
+            success: function (res) {
+
+              console.log(res)
+              layer.msg(res.message);
+
+              if (res.code == 200) {
+                location.href = "<{:U('Admin/roleList')}>";
+              }
+            }
+          });
+        }
+
+
+        return false;
+      });
+
+
+
+
+
+    });
+  </script>
+
+</block>

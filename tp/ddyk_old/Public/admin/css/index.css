@@ -1,0 +1,498 @@
+
+/* 头部样式 */
+.admin-header{
+    width: 100%;
+    height: 60px;
+    background: #2d6dcc;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+   
+}
+.admin-header .logo{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+.admin-header .skin{
+    height: 60px;
+    position: absolute;
+    left: 200px;
+    top: 0;
+    padding: 0 20px;
+    color: #fff;
+    font-size: 0;
+    vertical-align: middle;
+    line-height: 60px;
+
+}
+.skin-info,.skin-child{
+    display: inline-block;
+    font-size: 16px;
+
+}
+.skin-child span{
+    padding: 10px;
+    margin-left: 10px; 
+}
+.admin{
+    height: 60px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0 20px;
+    color: #fff;
+    font-size: 0;
+    vertical-align: middle;
+    line-height: 60px;
+}
+.admin p{
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 15px;
+}
+/* 左边栏样式 */
+.admin-side{
+    padding-top: 10px;
+    width: 200px;
+    
+    position: absolute;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    background: rgba(238,238,238,0.98);
+    border-right: 1px solid #e5e5e5;
+
+}
+.side-scroll{
+    position: relative;
+    width: 200px;
+
+}
+.side-nav{
+
+}
+.side-nav .side-nav-item{
+    height: 38px;
+
+    position: relative;
+    font-size: 14px;
+    line-height: 38px;
+    color: #333;
+    
+    padding-left: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #e5e5e5;
+}
+.side-nav .side-nav-item .layui-icon{
+    color: #b6b7b8;
+    transform: rotate(0deg);
+}
+.side-nav .side-nav-item .icon-dropdown{
+    position: absolute;
+    right: 15px;
+   
+    transition:  0.3s all;
+
+
+
+}
+ .side-nav-item.active{
+    /* background: #005cb1; */
+    /* color: #2d6dcc; */
+}
+.side-nav-item.active .icon-dropdown{   
+     transform: rotate(180deg);
+}
+.side-nav .side-nav-child{
+    width: 100%;
+    color: #666;
+    font-size: 12px;
+    display: none;
+}
+
+.side-nav-child.active{
+  display: block;
+}
+.side-nav-child-wrapper{
+    height: 38px;
+    line-height: 38px;
+    position: relative;
+    cursor: pointer;
+    text-indent: 10px;
+}
+.side-nav-child-link{
+    display: block;
+    padding-left: 50px;
+    height: 100%;
+    color: #666;
+}
+.side-nav-child-link:hover{
+    background: #f1f1f1f1;
+}
+.side-nav-child-icon{
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    position: absolute;
+    top: 17px;
+    left: 50px;
+    border-bottom: 1px solid #666;
+    border-left: 1px solid #666;
+}
+/* 右侧主体 */
+.admin-body{
+    position: absolute;
+    left: 200px;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    z-index: 998;
+    padding: 20px;
+
+
+}
+.body-home{
+    width:100%;
+    text-align: center;  
+    font-size: 18px;
+    color: #555;
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+}
+/* 面包先导航 */
+ .crumbs-nav{
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.crumbs-nav .link{
+    color: #333!important;
+}
+.crumbs-nav:hover .link{
+    color: #2d6dcc!important;
+
+}
+.body-home .current-time{
+    padding: 10px 0;
+    font-size: 16px;
+}
+/*加管理员列表 */
+.manage-list,.member-list{
+    width: 100%;
+}
+.manage-btn-wrapper{
+    overflow: hidden;
+    padding: 20px  5px 5px 5px;
+    min-width: 970px;
+}
+.layui-left{
+    float: left;
+}
+.layui-right{
+    float: right;
+    height: 38px;
+    line-height: 38px;
+}
+.layui-right strong{
+    font-size: 18px;
+}
+.label-btn {
+    display: inline-block;
+    height: 18px;
+    background: #999;
+    padding: 5px 10px;
+    color: #fff;
+    line-height: 18px;
+    border-radius: 5px;
+}
+.label-success{
+    background: #5eb95e;
+}
+
+.edit-context-wrapper{
+    padding: 20px  30px;
+}
+.edit-context-wrapper .wrapper{
+    margin-bottom: 20px
+}
+.edit-context-wrapper  span{
+    display: inline-block;
+    color: #555;
+}
+.edit-context-wrapper .left{
+    width: 120px;
+    margin-top: 3px;
+    cursor: text;
+    text-align: right;
+    padding-right: 10px;
+}
+.edit-context-wrapper .right{
+       /* width: 300px; */
+}
+.edit-context-wrapper .right input{
+    width: 260px;
+    font-size: 14px;
+    height: 26px;
+    line-height: 26px;
+    padding: 4px;
+    outline: none;
+    border: solid 1px #ddd;
+}
+.edit-context-wrapper .right input.error{
+    background-color: #fbe2e2;
+  
+    color: #c00;
+}
+.edit-context-wrapper .manage-select-btn {
+    outline: none;
+
+    color: #666;
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    padding: 4px 
+}
+.edit-context-wrapper  .edit-confirm-btn{
+   
+    padding: 8px 20px;
+    background: #1E9FFF;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+}
+/* 添加管理员 */
+
+.layui-form.wrapper{
+   width: 600px;
+   margin: 20px auto;
+   border: 1px solid #e5e5e5;
+   padding: 10px;
+}
+.layui-form.wrapper .text{
+    float: left;
+    padding: 9px 0!important;
+    line-height: 20px;
+
+}
+.add-manage-form,.add-member-form{
+    width: 100%;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+.add-manage-form .form-context,.add-member-form .form-context{
+    display: inline-block;
+}
+.form-context .wrapper{
+    padding-top: 20px;
+}
+.add-manage-form .wrapper span,.add-member-form  .wrapper span{
+    display: inline-block;
+    
+}
+.add-manage-form .wrapper .left,.add-member-form .wrapper .left{
+    text-align: right;
+    width: 150px;
+}
+.add-manage-form .wrapper .right,.add-member-form .wrapper .right{
+    text-align: left;
+    width: 400px;
+}
+.add-member-form .wrapper .right.member-right{
+    width: 700px;
+}
+
+.add-manage-form .wrapper input{
+    width: 390px;
+    height: 30px;
+    line-height: 30px;
+    padding: 4px ;
+    outline: none;
+    color: #666;
+}
+.add-member-form .wrapper input.text{
+    width: 190px;
+    height: 30px;
+    line-height: 30px;
+    padding: 4px ;
+    outline: none;
+    color: #666;
+}
+.add-member-form .wrapper input.text1{
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    padding: 4px ;
+    outline: none;
+    color: #666;
+}
+.add-member-form .wrapper textarea{
+    width: 680px;
+    height: 80px;
+    outline: none;
+    border: 1px solid #999;
+}
+.add-manage-form .manage-select-btn,.add-member-form .manage-select-btn {
+    outline: none;
+
+    color: #666;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    padding: 4px 
+}
+.manage-confirm-btn{
+    margin: 0 10px;
+    padding: 5px 10px;
+    background: #005cb1;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+
+/*会员列表 */
+.handle-wrap{
+    text-align: center;
+    padding-top: 5px;
+    color: #666;
+}
+.handle-wrap .time{
+    display: inline-block;
+    line-height: 26px;
+    width: 80px;
+    height: 26px;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    font-size: 12px;
+    padding: 0 5px;
+}
+.handle-wrap .select-list{
+    display: inline-block;
+    width: 82px;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    background: #f8f8f8;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    
+}
+.handle-wrap .search{
+    display: inline-block;
+    width: 150px;
+    height: 26px;
+    line-height: 26px;
+    padding-left: 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    background: #f8f8f8;
+    border: 1px solid #ccc;
+}
+.handle-wrap .button{
+    background: #429842;
+    display: inline-block;
+    width: 60px;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    border: 0;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+.management-table  td,th{
+    text-align: center;
+    height: 40px;
+}
+.management-table-option span{
+    margin: 0 10px;
+    padding: 5px 10px;
+    background: #005cb1;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+}
+.management-table-option label{
+    display: inline-block;
+    width: 50px;
+    text-align: center
+}
+/* 删除按钮样式 */
+ .delete-class .layui-layer-btn .layui-layer-btn0{
+    
+    background: #005cb1;
+}
+
+
+/* 上传图片样式 */
+.layui-upload{
+line-height: 38px;
+}
+.layui-upload-img{
+    width: 92px;
+    height: 92px;
+    margin: 0 10px 10px 0;
+    display: none;
+}
+.layui-form-item .layui-input-inline{
+    width: 153px;
+}
+
+*分页样式*/
+.b-page {
+    background:#fff;
+    box-shadow:0 1px 2px 0 #e2e2e2
+}
+.b-page .page {
+     width:100%;
+     padding:25px 15px;
+     background:#fff;
+     text-align:center;
+     overflow:hidden
+ }
+.b-page .page .first,.b-page .page .prev,.b-page .page .current,.b-page .page .num,.b-page .page .current,.b-page .page .next,.b-page .page .end {
+    padding:8px 16px;
+    margin:0 5px;
+    display:inline-block;
+    color:#000;
+    border:1px solid #ccc;
+    border-radius:5px
+}
+.b-page .page .rows{
+    padding: 8px 16px;
+    display: inline-block;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.b-page .page .first:hover,.b-page .page .prev:hover,.b-page .page .current:hover,.b-page .page .num:hover,.b-page .page .current:hover,.b-page .page .next:hover,.b-page .page .end:hover {
+    text-decoration:none;
+    background:#f8f5f5;
+}
+.b-page .page .current {
+    background-color:#1E9FFF;
+    color:#fff;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+.b-page .page .current:hover {
+    text-decoration:none;
+    background:#1E9FFF;
+}
