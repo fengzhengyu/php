@@ -104,6 +104,10 @@
               <span class="side-nav-child-icon"></span> 管理员列表</a>
           </dd>
           <dd class="side-nav-child-wrapper">
+            <a href="<?php echo U('Role/index');?>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span> 角色列表</a>
+          </dd>
+          <dd class="side-nav-child-wrapper">
             <a href="<?php echo U('Authority/add');?>" class="side-nav-child-link">
               <span class="side-nav-child-icon"></span> 添加权限</a>
           </dd>
@@ -117,7 +121,7 @@
           <i class="layui-icon icon-dropdown">&#xe61a;</i>
         </div>
         <dl class="side-nav-child">
-          
+
 
         </dl>
       </li>
@@ -129,16 +133,16 @@
           <i class="layui-icon icon-dropdown">&#xe61a;</i>
         </div>
         <dl class="side-nav-child">
-            <dd class="side-nav-child-wrapper">
-                <a href="<?php echo U('Goods/type');?>" class="side-nav-child-link">
-                  <span class="side-nav-child-icon"></span>商品分类</a>
-              </dd>
-              <dd class="side-nav-child-wrapper">
-                <a href="<?php echo U('Goods/index');?>" class="side-nav-child-link">
-                  <span class="side-nav-child-icon"></span>商品列表</a>
-    
-              </dd>
-             
+          <dd class="side-nav-child-wrapper">
+            <a href="<?php echo U('Goods/type');?>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span>商品分类</a>
+          </dd>
+          <dd class="side-nav-child-wrapper">
+            <a href="<?php echo U('Goods/index');?>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span>商品列表</a>
+
+          </dd>
+
 
         </dl>
       </li>

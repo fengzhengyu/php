@@ -19,7 +19,7 @@ class RoleController extends CommonController{
     $pageModel = new \Think\Mypage($count,10);
     $page = $pageModel->show();
     $limit = $pageModel->firstRow .','.$pageModel->listRows;
-    $list = D('Role')->select($list,$where);
+    $list = D('Role')->select($limit,$where);
 
     $this->assign('search',$search);
     $this->assign('list',$list);
@@ -33,10 +33,10 @@ class RoleController extends CommonController{
   }
   public function insert(){
    $trans = I();
-  $data['role_id'] = $trans ['role_id'];
+    $data['role_id'] = $trans ['role_id'];
 
   // 不为空 且为数字 是编辑
-   if(!empty($data['role_id'])&&is_numeric($data['role_id'])){
+   if(!empty($data['role_id']) && is_numeric($data['role_id'])){
 
    }else{ 
     //  添加

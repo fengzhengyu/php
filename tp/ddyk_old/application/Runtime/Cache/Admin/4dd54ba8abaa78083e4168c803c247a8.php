@@ -157,10 +157,10 @@
     <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
       <a href="<?php echo U('Index/index');?>" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
 
-      <a href="<?php echo U('Goods/type');?>" class="link">商品管理</a>
-      <?php if($role_info): ?><a href="javascript:;" class="link"><cite>编辑角色</cite></a>
+      <a href="<?php echo U('Admin/index');?>" class="link">商品管理</a>
+      <?php if($role_info): ?><a href="javascript:;" class="link"><cite>编辑管理员</cite></a>
         <?php else: ?>
-        <a href="<?php echo U('Goods/add');?>" class="link"><cite>添加商品分类</cite></a><?php endif; ?>
+        <a href="<?php echo U('Admin/add');?>" class="link"><cite>添加管理员</cite></a><?php endif; ?>
     </span>
   </div>
   <!-- 添加内容 -->
@@ -169,7 +169,7 @@
     <form class="layui-form wrapper" action="" method="POST" enctype="multipart/form-data">
 
       <?php if($type_info): ?><div class="layui-form-item">
-          <label class="layui-form-label">角色ID</label>
+          <label class="layui-form-label">管理员ID</label>
           <div class="layui-input-block">
             <input type="text" name="type_id" required lay-verify="required" autocomplete="off"
               value="<?php echo ($role_info['role_id']); ?>" readonly class="layui-input">
@@ -185,10 +185,24 @@
       
         <?php else: ?>
         <div class="layui-form-item">
-          <label class="layui-form-label">角色名称</label>
+          <label class="layui-form-label">管理员账号</label>
           <div class="layui-input-block">
-            <input type="text" name="role_name" required lay-verify="required" autocomplete="off"
-              placeholder="请输入角色名称" class="layui-input">
+            <input type="text" name="admin_name" required lay-verify="required" autocomplete="off"
+              placeholder="请输入账号" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">管理员密码</label>
+          <div class="layui-input-block">
+            <input type="text" name="admin_pass" required lay-verify="required" autocomplete="off"
+              placeholder="请输入密码" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">确认密码</label>
+          <div class="layui-input-block">
+            <input type="text" name="admin_pass_two" required lay-verify="required" autocomplete="off"
+              placeholder="请确认密码" class="layui-input">
           </div>
         </div><?php endif; ?>
 
@@ -218,17 +232,25 @@
         if (data) {
 
           var temp = data.field;
-          var role_name = temp.role_name;
+          var admin_name = temp.admin_name;
+          var admin_pass = temp.admin_pass;
+          var admin_pass_two = temp.admin_pass_two;
+          
+
+          if(admin_pass !=admin_pass_two){
+            layer.msg('密码不一致');
+            return false;
+          }
+          var admin_id = temp.admin_id? temp.admin_id: null;
        
-          var role_id = temp.role_id? temp.role_id: null;
-        
           $.ajax({
             type: "post",
-            url: "<?php echo U('Admin/insertRole');?>",
+            url: "<?php echo U('Admin/insert');?>",
             data: {
 
-              'role_id':role_id,
-              'role_name': role_name
+              'admin_id':admin_id,
+              'admin_name': admin_name,
+              'admin_pass': admin_pass
             },
             dataType: "json",
             success: function (res) {
@@ -237,7 +259,7 @@
               layer.msg(res.message);
 
               if (res.code == 200) {
-                location.href = "<?php echo U('Admin/roleList');?>";
+                location.href = "<?php echo U('Admin/index');?>";
               }
             }
           });

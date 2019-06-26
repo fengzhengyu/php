@@ -25,7 +25,7 @@ class AdminController extends CommonController {
     $page = $pageModel->show();
     $limit = $pageModel->firstRow.','.$pageModel->listRows;
     // $field = "ddold_admin.* ,ddold_role.role_name";
-    $list =  D('Admin')->select($limit,$where, $field );
+    $list =  D('Admin')->select($limit,$where);
     // dump($list );
     $this->assign('search',$search);
     $this->assign('list',$list);
@@ -33,5 +33,35 @@ class AdminController extends CommonController {
     $this->display();
   }
   // 
+  public function add(){
+    $this->display();
+  }
+  public function insert(){
+    $tarns = I();
+
+    
+    $data['admin_id'] = $tarns['admin_id'];
+    if( !empty($data['admin_id']) && is_numeric($data['admin_id'])){
+      // 编辑
+    }else{
+      // 添加
+      $data['admin_name'] = $tarns['admin_name'];
+      $data['admin_pass'] = $tarns['admin_pass'];
+      $data['add_time'] = time();
+
+      // dump( $data);
+      if($info = D('admin')->insert($data)){
+        $res['code'] = 200;
+        $res['message'] = '添加成功';
+        $res['data'] = $info;
+        $this->ajaxReturn($res);
+      }else{
+        $res['code'] = 0;
+        $res['message'] = '添加失败';
+        $this->ajaxReturn($res);
+      }
+    }
+   
+  }
  
 }

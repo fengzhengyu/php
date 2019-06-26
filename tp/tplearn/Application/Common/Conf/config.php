@@ -5,7 +5,7 @@ return array(
 
 	// 'SHOW_PAGE_TRAC' => true,   //调试模式 
 	'TMPL_L_DELIM' => '<{',
-		'TMPL_R_DELIM' => '}>',
+	'TMPL_R_DELIM' => '}>',
 
 	// 连接数据库
 	'DB_TYPE'               =>  'mysql',     // 数据库类型
@@ -21,7 +21,7 @@ return array(
 	'MODULE_ALLOW_LIST'     => array('Admin','Home','Api'),  //允许的分组
 
 	'URL_ROUTER_ON'         =>  false,   // 是否开启URL路由  自定义的 
-  'URL_ROUTE_RULES'       =>  array(
+  	'URL_ROUTE_RULES'       =>  array(
 		'list' => 'Goods/index'     // 默认路由规则 针对模块  
 	),
 );

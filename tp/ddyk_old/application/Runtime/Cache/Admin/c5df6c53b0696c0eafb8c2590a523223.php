@@ -188,9 +188,9 @@
     <thead>
 
       <tr>
-        <th>分类id</th>
-        <th>父类名称</th>
-        <th>子类名称</th>
+        <th>序号/ID</th>
+        <th>管理员名称</th>
+        <th>角色名称</th>
         <th>是否显示</th>
         <th>操作</th>
       </tr>
@@ -201,29 +201,29 @@
       <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
           <td>
             <!-- <?php echo ($i); ?> -->
-            <?php echo ($vo['id']); ?>
+            <?php echo ($vo['admin_id']); ?>
           </td>
           <td>
-            <?php echo ($vo['goods_pname']); ?>
+            <?php echo ($vo['admin_name']); ?>
           </td>
           <td>
-            <?php echo ($vo['goods_subname']); ?>
+            <?php echo ($vo['role_name']); ?>
           </td>
           <td>
-            <?php if($vo['is_show'] == 1): ?>显示
+            <?php if($vo['status'] == 1): ?>显示
               <?php else: ?>
               不显示<?php endif; ?>
         
           </td>
           <td>
 
-            <a href="<?php echo U('Goods/add',array('id'=>$vo['id']));?>"
+            <a href="<?php echo U('Admin/add',array('id'=>$vo['admin_id']));?>"
               class="layui-btn layui-btn-primary layui-btn-sm edit">
               <i class="layui-icon">&#xe642;</i>
             </a>
            
 
-            <a href="<?php echo U('Goods/delete',array('goods_id'=>$vo['goods_id']));?>"
+            <a href="<?php echo U('Admin/remove',array('id'=>$vo['admin_id']));?>"
               class="layui-btn layui-btn-primary layui-btn-sm delete" onclick="return confirm('你确定删除吗？')">
               <i class="layui-icon">&#xe640;</i>
             </a>
@@ -235,7 +235,9 @@
 
       <tr>
         <td colspan="10" align="center">
+        <div class="b-page">
           <?php echo ($page); ?>
+        </div>
         </td>
       </tr>
     </tbody>
