@@ -11,12 +11,13 @@
   </div>
   <!--内容  -->
   <div class="manage-btn-wrapper">
-    <form action="">
+    <form action="<{:U('Goods/type')}>">
       <div class="handle-wrap layui-left">
         <!-- 筛选条件 -->
-        <form action="<{:U('Goods/type')}>" method="get">
+    
           <select name="search"  class="select-list">
             <option value="商品分类">商品分类</option>
+         
             <volist name="types" id="vo">
                 <if condition="$vo['id'] eq $search_id">
                     <option value="<{$vo['id']}>"  selected><{$vo['goods_pname']}></option>
@@ -29,7 +30,7 @@
 
           <!-- <input type="submit" class="button" value="查找"> -->
           <button  type="submit" class="button" >查询</button>
-        </form>
+       
 
       </div>
     </form>
@@ -97,7 +98,8 @@
 
       <tr>
         <td colspan="10" align="center">
-          <{$page}>
+          <div class="b-page">  <{$page}> </div>
+        
         </td>
       </tr>
     </tbody>

@@ -9,7 +9,8 @@ class GoodsController extends CommonController {
   public function type(){
     // 获取搜索数据
     $where['goods_pid'] = 0;
-    $types =  M('goods_type')->where($where)->select();
+    $types = D('Goods')->selectType($where);
+ 
     // 获取搜索框内容 拼接where条件便于搜索
     $trans = I();
     // 不为空 且不是数字
@@ -20,15 +21,20 @@ class GoodsController extends CommonController {
     }else{
       $selectWhere= '';
     }
-   
-    // dump( $selectWhere);
-    // die;
-
-    $list = M('goods_type')->where( $selectWhere)->select();
+    //  计算总数量
+    $count = D('Goods')->pages($selectWhere,'goods_type');
+  
+    // 实例化分页
+    $pageModel = new \Think\Mypage($count,5);
+    $page = $pageModel->show();
+    $limit = $pageModel->firstRow.','.$pageModel->listRows;
+    $condition = ""; //goods_pid asc  排序条件
+    $list = D('Goods')->selectType($selectWhere,$condition,$limit);
 
     $this->assign('list',$list);
     $this->assign('search_id',$search);
     $this->assign('types',$types);
+    $this->assign('page',$page);
     $this->display();
   }
 
@@ -37,7 +43,7 @@ class GoodsController extends CommonController {
     $trans = I();
     if($trans['id']){
 
-      $type_info =  M('goods_type')->find($trans['id']);
+      $type_info =  D('Goods')->find($trans['id'],'goods_type');
       // dump($type_info);
       $this->assign('type_info',$type_info);
     }
@@ -87,7 +93,7 @@ class GoodsController extends CommonController {
   public function addSub(){
     $where['goods_pid'] = 0;
 
-    $sub_list =  M('goods_type')->where($where)->select();
+    $sub_list =  D('Goods')->selectType($where);
     // dump($sub_list);
     $this->assign('sub_list',$sub_list);
     $this->display();
@@ -106,7 +112,7 @@ class GoodsController extends CommonController {
     // 添加
     if(!empty($trans['goods_pid']) && is_numeric($trans['goods_pid']) && !empty($trans['goods_subname']) && !is_numeric($trans['goods_subname'])){
      
-      $type_info = M('goods_type')->find($trans['goods_pid']);
+      $type_info = D('Goods')->find($trans['goods_pid'],'','goods_type');
       if(!$type_info ){
         $res['flag'] = 'error';
         $res['info'] = '父类id错误';
@@ -119,9 +125,9 @@ class GoodsController extends CommonController {
       $data['is_show'] = $trans['is_show'];
       $data['add_time'] = time();
      
-     
+    
 
-      if($id= M('goods_type')->add($data)){
+      if($id= D('Goods')->insert($data,'goods_type')){
         $res['flag'] = 'success';
         $res['info'] = '添加成功';
         $res['data'] = array();

@@ -163,12 +163,13 @@
   </div>
   <!--内容  -->
   <div class="manage-btn-wrapper">
-    <form action="">
+    <form action="<?php echo U('Goods/type');?>">
       <div class="handle-wrap layui-left">
         <!-- 筛选条件 -->
-        <form action="<?php echo U('Goods/type');?>" method="get">
+    
           <select name="search"  class="select-list">
             <option value="商品分类">商品分类</option>
+         
             <?php if(is_array($types)): $i = 0; $__LIST__ = $types;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['id'] == $search_id): ?><option value="<?php echo ($vo['id']); ?>"  selected><?php echo ($vo['goods_pname']); ?></option>
                     <?php else: ?>
                     <option value="<?php echo ($vo['id']); ?>" ><?php echo ($vo['goods_pname']); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
@@ -176,7 +177,7 @@
 
           <!-- <input type="submit" class="button" value="查找"> -->
           <button  type="submit" class="button" >查询</button>
-        </form>
+       
 
       </div>
     </form>
@@ -240,7 +241,8 @@
 
       <tr>
         <td colspan="10" align="center">
-          <?php echo ($page); ?>
+          <div class="b-page">  <?php echo ($page); ?> </div>
+        
         </td>
       </tr>
     </tbody>

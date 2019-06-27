@@ -68,7 +68,7 @@ create table ddold_goods(
   jump_url  varchar(255) not null  comment '跳转地址',
   add_time   int unsigned not null  comment '添加时间',
   pass_time   int unsigned not null  comment '通过时间',
-  update_time   int unsigned not null  comment '更新时间',
+  update_time   int unsigned not null  comment '更新时间'
  
 );
 
