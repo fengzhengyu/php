@@ -72,5 +72,22 @@ create table ddold_goods(
  
 );
 
+-- 会员 
+create table ddold_member(
+  member_id int unsigned not null auto_increment primary key,
+  member_token varchar(64) not null comment '用户唯一表示',
+  member_name varchar(32) not null comment '会员账号',
+  member_pass varchar(32) not null comment '会员密码',
+  member_phone varchar(20) not null comment '手机号',
+  member_email varchar(32) not null comment '会员密码',
+  member_type int unsigned not null default '1' comment '会员级别',
+  member_status int unsigned not null default '1' comment '会员状态',
+  add_time int unsigned not null default '1' comment '添加时间',
+  update_time int unsigned not null default '1' comment '更新时间',
+  nickname varchar(32) not null comment '昵称'
+
+
+);
+
 
 

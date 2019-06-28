@@ -1,0 +1,1049 @@
+[ 2019-06-28T08:45:50+08:00 ] 127.0.0.1 /tp/ddyk_old/Admin/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.273016s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.273016s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T08:45:51+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Login/verifyImg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-28T08:45:59+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Login/LoginAdmin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\LoginController.class.php on line 25 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0410s ]
+SQL: SELECT * FROM `ddold_admin` WHERE `admin_name` = 'admin' AND `admin_pass` = '123456' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2019-06-28T08:45:59+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T09:03:19+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T09:12:26+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T09:12:28+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T09:12:28+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-28T09:12:33+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0610s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T09:12:34+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0120s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-28T09:14:08+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-28T09:14:10+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T09:14:11+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T09:14:11+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-28T09:14:11+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T09:14:25+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Goods/type.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\GoodsModel.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `ddold_goods` [ RunTime:0.1180s ]
+NOTIC: [2] Missing argument 2 for Admin\Model\GoodsModel::selectType(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\GoodsController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\GoodsModel.class.php 第 8 行.
+NOTIC: [2] Missing argument 3 for Admin\Model\GoodsModel::selectType(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\GoodsController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\GoodsModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_goods_type` [ RunTime:0.0230s ]
+NOTIC: [8] Undefined variable: condition F:\work\php\tp\ddyk_old\application\Admin\Model\GoodsModel.class.php 第 9 行.
+NOTIC: [8] Undefined variable: limit F:\work\php\tp\ddyk_old\application\Admin\Model\GoodsModel.class.php 第 9 行.
+SQL: SELECT * FROM `ddold_goods_type` WHERE `goods_pid` = 0  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\GoodsController.class.php on line 15 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\GoodsController.class.php 第 17 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_goods_type` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ddold_goods_type` LIMIT 0,5   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: goods_id F:\work\php\tp\ddyk_old\application\Runtime\Cache\Admin\2751c638931c1fafe1ecfd15f1d3c635.php 第 233 行.
+NOTIC: [8] Undefined index: goods_id F:\work\php\tp\ddyk_old\application\Runtime\Cache\Admin\2751c638931c1fafe1ecfd15f1d3c635.php 第 233 行.
+NOTIC: [8] Undefined index: goods_id F:\work\php\tp\ddyk_old\application\Runtime\Cache\Admin\2751c638931c1fafe1ecfd15f1d3c635.php 第 233 行.
+NOTIC: [8] Undefined index: goods_id F:\work\php\tp\ddyk_old\application\Runtime\Cache\Admin\2751c638931c1fafe1ecfd15f1d3c635.php 第 233 行.
+NOTIC: [8] Undefined index: goods_id F:\work\php\tp\ddyk_old\application\Runtime\Cache\Admin\2751c638931c1fafe1ecfd15f1d3c635.php 第 233 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-28T09:18:43+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T09:18:51+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-28T09:41:11+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Member/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: 无法加载控制器:Member
+
+[ 2019-06-28T13:46:55+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0460s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0760s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T13:47:30+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T13:48:17+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: charId F:\work\php\tp\ddyk_old\application\Runtime\Cache\Admin\c5df6c53b0696c0eafb8c2590a523223.php 第 235 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T13:48:33+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: charId F:\work\php\tp\ddyk_old\application\Runtime\Cache\Admin\c5df6c53b0696c0eafb8c2590a523223.php 第 235 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T13:49:34+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: charId F:\work\php\tp\ddyk_old\application\Runtime\Cache\Admin\c5df6c53b0696c0eafb8c2590a523223.php 第 235 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T13:50:02+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: charId F:\work\php\tp\ddyk_old\application\Runtime\Cache\Admin\c5df6c53b0696c0eafb8c2590a523223.php 第 235 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-28T13:50:56+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-28T13:51:09+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T13:51:10+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Member/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Member
+
+[ 2019-06-28T13:51:11+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Member/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Member
+
+[ 2019-06-28T13:51:13+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-28T13:51:16+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-28T13:51:19+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-28T13:51:40+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-28T13:52:03+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T13:52:42+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T13:53:07+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2019-06-28T13:54:02+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Missing argument 1 for I(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 12 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name F:\work\php\tp\ddyk_old\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [8] Undefined index: search F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php 第 13 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::delete() should be compatible with Think\Model::delete($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::select() should be compatible with Think\Model::select($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::find() should be compatible with Think\Model::find($options = Array) F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 8 行.
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `ddold_admin` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ddold_admin` LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 3 for Admin\Model\AdminModel::select(), called in F:\work\php\tp\ddyk_old\application\Admin\Controller\AdminController.class.php on line 28 and defined F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php 第 11 行.
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\work\php\tp\ddyk_old\application\Admin\Model\AdminModel.class.php on line 14 and defined F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field F:\work\php\tp\ddyk_old\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `ddold_admin` left JOIN ddold_role ON ddold_role.role_id=ddold_admin.role_id  LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2019-06-28T16:34:55+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/Api/checkMessage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Api
+
+[ 2019-06-28T16:35:02+08:00 ] 127.0.0.1 /tp/ddyk_old/index.php/Admin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

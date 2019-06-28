@@ -116,18 +116,6 @@
       </li>
       <li class="side-nav">
         <div class="side-nav-item">
-          <i class="layui-icon">&#xe735;</i>
-          管理
-          <i class="layui-icon icon-dropdown">&#xe61a;</i>
-        </div>
-        <dl class="side-nav-child">
-
-
-        </dl>
-      </li>
-
-      <li class="side-nav">
-        <div class="side-nav-item">
           <i class="layui-icon">&#xe63c;</i>
           商品管理
           <i class="layui-icon icon-dropdown">&#xe61a;</i>
@@ -146,7 +134,20 @@
 
         </dl>
       </li>
+      <li class="side-nav">
+        <div class="side-nav-item">
+          <i class="layui-icon">&#xe735;</i>
+          会员管理
+          <i class="layui-icon icon-dropdown">&#xe61a;</i>
+        </div>
+        <dl class="side-nav-child">
+          <dd class="side-nav-child-wrapper">
+            <a href="<?php echo U('Member/index');?>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span>会员列表</a>
+          </dd>
 
+        </dl>
+      </li>
     </ul>
 
   </div>
@@ -231,7 +232,7 @@
         </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 
 
-
+     
 
       <tr>
         <td colspan="10" align="center">

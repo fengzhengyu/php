@@ -30,6 +30,7 @@ class AdminController extends CommonController {
     $this->assign('search',$search);
     $this->assign('list',$list);
     $this->assign('page',$page);
+ 
     $this->display();
   }
   // 
