@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>canvas 绘制表格</title>
+  <style>
+  #canvas{
+   
+    /* width: 1200px;
+    height: 1200px;     css设置宽高会失真 */
+  }
+  
+  </style>
+</head>
+<body>
+
+  <canvas id="canvas" width="600" height="600">
+
+  </canvas>
+
+  <script>
+    // 获取canva 对象
+    var canvas = document.getElementById('canvas');
+    canvas.style.border = '1px solid #ccc';
+    // 拿到 canvas的上下文  
+    var ctx = canvas.getContext('2d'); // 3D绘图webGL
+    
+
+    // 绘制折线图
+
+      ctx.moveTo(50,100);
+      ctx.lineTo(50,500);
+      ctx.moveTo(50,100);
+      ctx.lineTo(40,110);
+      ctx.moveTo(50,100);
+      ctx.lineTo(60,110);
+
+
+      ctx.moveTo(50,500);
+      ctx.lineTo(500,500);
+      ctx.moveTo(500,500);
+      ctx.lineTo(490,490);
+      ctx.moveTo(500,500);
+      ctx.lineTo(490,510);
+   
+    // ctx.strokeStyle = '#000';
+    ctx.stroke();
+
+
+    
+  </script>
+  
+</body>
+</html>

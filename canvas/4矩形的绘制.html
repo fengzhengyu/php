@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>canvas 绘制矩形</title>
+  <style>
+  #canvas{
+   
+    /* width: 1200px;
+    height: 1200px;     css设置宽高会失真 */
+  }
+  
+  </style>
+</head>
+<body>
+
+  <canvas id="canvas" width="600" height="600">
+
+  </canvas>
+
+  <script>
+    // 获取canva 对象
+    var canvas = document.getElementById('canvas');
+    canvas.style.border = '1px solid #ccc';
+   
+    // 拿到 canvas的上下文  
+    var ctx = canvas.getContext('2d'); // 3D绘图webGL
+    
+
+    //绘制矩形  前两个参数是 x、y坐标 后面是宽高
+    ctx.rect(100,100,50,50);
+
+    ctx.stroke();
+  //  描边矩形
+    ctx.strokeRect(200,200,100,50);
+  //  填充矩形
+    ctx.fillRect(300,300,100,50);
+  //  清除矩形  清除范围内所有的矩形  橡皮檫
+    ctx.clearRect(100,100,200,200)
+  </script>
+  
+</body>
+</html>

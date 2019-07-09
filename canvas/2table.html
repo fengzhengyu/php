@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>canvas 绘制表格</title>
+  <style>
+  #canvas{
+   
+    /* width: 1200px;
+    height: 1200px;     css设置宽高会失真 */
+  }
+  
+  </style>
+</head>
+<body>
+
+  <canvas id="canvas" width="600" height="600">
+
+  </canvas>
+
+  <script>
+    // 获取canva 对象
+    var canvas = document.getElementById('canvas');
+    canvas.style.border = '1px solid #ccc';
+    canvas.width = 800;
+    canvas.height = 800;  //设置宽高  不使用style
+    console.dir(canvas);
+    // 拿到 canvas的上下文  
+    var ctx = canvas.getContext('2d'); // 3D绘图webGL
+    
+
+    // 绘制表格
+    var rectH = 10;
+    var rectW = 10;
+    ctx.lineWidth= .5;
+    // 第一步绘制横线
+
+    for(var i=0;i<  canvas.width /rectH;i++){
+      ctx.moveTo(0,i*rectH);  //如果不设置 当前画笔没位置
+      ctx.lineTo(canvas.width,i*rectH);
+
+      // 绘制竖线
+      ctx.moveTo(i*rectW,0);
+      ctx.lineTo(i*rectW,canvas.height);
+    }
+    ctx.strokeStyle = '#999';
+    ctx.stroke();
+
+
+    
+  </script>
+  
+</body>
+</html>

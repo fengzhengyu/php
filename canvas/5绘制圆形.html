@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>canvas 绘制圆心</title>
+  <style>
+  #canvas{
+   
+    /* width: 1200px;
+    height: 1200px;     css设置宽高会失真 */
+  }
+  
+  </style>
+</head>
+<body>
+
+  <canvas id="canvas" width="600" height="600">
+
+  </canvas>
+
+  <script>
+    // 获取canva 对象
+    var canvas = document.getElementById('canvas');
+    canvas.style.border = '1px solid #ccc';
+   
+    // 拿到 canvas的上下文  
+    var ctx = canvas.getContext('2d'); // 3D绘图webGL
+    
+
+    //绘制圆心 
+    // ctx.arc(x,y,半径,开始弧度,结束弧度,逆时针);
+    //弧度与角度的转换公式  30度*Math.PI/180 = 弧度
+    // ctx.moveTo(300,300);
+    // ctx.arc(300,300,100,0*Math.PI/180,30*Math.PI/180,false);
+    // ctx.closePath();
+    // ctx.fill();
+    // ctx.stroke();
+
+    // 绘制扇形
+    ctx.moveTo(300,300);
+    ctx.fillStyle = 'red';
+    ctx.arc(300,300,100,-90*Math.PI/180,-30*Math.PI/180,false);
+    ctx.fill();
+
+  
+  </script>
+  
+</body>
+</html>

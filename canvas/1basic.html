@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>canvas 基础了解</title>
+  <style>
+  #canvas{
+   
+    /* width: 1200px;
+    height: 1200px;     css设置宽高会失真 */
+  }
+  
+  </style>
+</head>
+<body>
+
+  <canvas id="canvas" width="600" height="600">
+
+  </canvas>
+
+  <script>
+    // 获取canva 对象
+    var canvas = document.getElementById('canvas');
+    canvas.style.border = '1px solid #ccc';
+    // canvas.width = 800;
+    // canvas.height = 800; 设置宽高  不使用style
+    console.dir(canvas);
+    // 拿到 canvas的上下文  
+    var ctx = canvas.getContext('2d'); // 3D绘图webGL
+    
+    // 绘图
+    ctx.moveTo(100,100); //从这个点开始绘图
+    ctx.lineTo(200,100);
+    ctx.lineTo(100,200);
+    ctx.closePath(); //闭合路径
+    
+    // 设置线宽
+    ctx.lineWidth =4;
+
+    ctx.strokeStyle = 'red'; //描边颜色
+    ctx.stroke(); //描边的意思
+    
+    ctx.fillStyle = 'green';  //填充会 覆盖lineWidth的一半
+    ctx.fill();  //填充  默认黑色
+
+  
+  </script>
+  
+</body>
+</html>
