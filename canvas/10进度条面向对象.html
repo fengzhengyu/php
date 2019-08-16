@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>konvahs</title>
+  <script src="https://unpkg.com/konva@3.1.0/konva.js"></script>
+  <style>
+    *{
+      padding: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+   
+  </style>
+</head>
+
+<body>
+
+  <div id="container"></div>
+
+
+  <script>
+    // 创建舞台
+    var stage = new Konva.Stage({
+      container: 'container',
+      width: window.innerWidth,
+      height: window.innerHeight
+    });
+
+    //  创建层
+    var layer = new Konva.Layer();
+    stage.add(layer);
+
+    // 中心店坐标
+    var cenX = stage.width()/2;
+    var cenY = stage.height()/2;
+    // 绘制进度条
+    var x = 1/8 *stage.width();
+    var y = cenY;
+    var maxWidth  = 3/4 *stage.width();
+    var height  = 1/12 *stage.height();
+    var innerRect = new Konva.Rect({
+      x: x,
+      y: y,
+      width: 100,
+      height: height,
+      opacity: .7,
+      fill: 'lightblue',
+      cornerRadius: height/2 , // corner  角落 radius 半径
+    });
+    // 把n内矩形到层
+    layer.add(innerRect);
+    var outerRect = new Konva.Rect({
+      x: x,
+      y: y,
+      width: maxWidth,
+      height: height,
+      stroke: 'yellow',
+      cornerRadius: height/2 , // corner  角落 radius 半径
+      strokeWidth: 4
+    });
+
+
+  
+    layer.add(outerRect);
+    // 把层渲染到舞台
+    layer.draw();
+
+
+
+    
+    // konva 的动画系统
+    innerRect.to({
+      width: maxWidth,
+      duration: 3,
+      onFinish:function(){
+        alert('加载完成')
+      }
+    })
+
+
+
+    var 
+
+  </script>
+
+</body>
+
+</html>

@@ -153,7 +153,16 @@
   </div>
   <div class="admin-body">
     
-        index
+      <div class="body-home">
+
+        <h2 class="welcome">欢迎来到当代医药管理系统</h2>
+        <p class="current-time ">当前时间为：
+          <span>
+            <?php echo ($data['time']); ?>
+          </span>
+        </p>
+    
+      </div>
     
   </div>
 

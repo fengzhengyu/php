@@ -3,9 +3,12 @@ namespace Admin\Controller;
 use Think\Controller;
 class TestController extends CommonController {
   public function index(){
+
     $this->display();
   }
   public function page1(){
+
+
     $this->display();
   }
   public function page2(){
@@ -20,5 +23,10 @@ class TestController extends CommonController {
   public function page5(){
     $this->display();
   }
+  public function confirmAdd(){
+
+    dump($_FILES['user_photo']);
+  }
+ 
  
 }

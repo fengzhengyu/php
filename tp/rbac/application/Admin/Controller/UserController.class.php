@@ -63,6 +63,9 @@ class UserController extends CommonController{
     }
     // 获取用户信息
     $user_info = M('user')->find(I('user_id'));
+    if($user_info['user_info'] == 1){
+      $this->error('你是超级管理员，不需要分配角色！');
+    }
     // 获取所有的角色
     $role_list = M('role')->order('role_id desc')->select();
     // 获取已分配的角色

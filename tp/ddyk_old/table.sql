@@ -85,9 +85,13 @@ create table ddold_member(
   add_time int unsigned not null default '1' comment '添加时间',
   update_time int unsigned not null default '1' comment '更新时间',
   nickname varchar(32) not null comment '昵称'
-
-
 );
-
+-- 会员验证码
+create table ddold_member_auth(
+  id int unsigned not null auto_increment primary key,
+  member_account varchar(32) not null comment '会员账号',
+  member_authCode int unsigned  not null comment '验证码',
+  end_time int  unsigned  not null comment '最后获取时间',
+);
 
 

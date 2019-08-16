@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>canvas 绘制图片</title>
+  <style>
+  #canvas{
+   
+    /* width: 1200px;
+    height: 1200px;     css设置宽高会失真 */
+  }
+  
+  </style>
+</head>
+<body>
+
+  <canvas id="canvas" width="600" height="600">
+
+  </canvas>
+
+  <script>
+    // 获取canva 对象
+    var canvas = document.getElementById('canvas');
+    canvas.style.border = '2px solid #ccc';
+    canvas.height = 600;
+    canvas.width = 600;
+    // 拿到 canvas的上下文  
+    var ctx = canvas.getContext('2d'); // 3D绘图webGL
+  
+    //绘制图片
+    // ctx.drawImage(img,x,y,w,h)
+
+    var img = new Image();
+    img.src = './image/snowman.png';
+    img.onload = function(){
+      // ctx.drawImage(img,100,100)
+      // for(var i=0;i<=10;i++){
+      //   ctx.drawImage(img,100+i*20,100+i*20)
+      // }
+      // 保持等比例缩放 w*oh/ow   
+
+    }
+   
+
+    
+     
+
+  
+  </script>
+  
+</body>
+</html>

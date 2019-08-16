@@ -23,14 +23,66 @@
   <script>
     // 获取canva 对象
     var canvas = document.getElementById('canvas');
-    canvas.style.border = '1px solid #ccc';
-   
+    canvas.style.border = '2px solid #ccc';
+    canvas.height = 600;
+    canvas.width = 600;
     // 拿到 canvas的上下文  
     var ctx = canvas.getContext('2d'); // 3D绘图webGL
   
     //绘制文字
-    
+    // ctx.fillText(); //绘制被填充的文本
+    // ctx.strokeText(); //绘制文本(无填充)
+    // ctx.measureText(); //包含返回文本宽度的对象
+    console.log(ctx.measureText('ssdfds'));  //width:60.125522
+
+    // ctx.moveTo(300,300);
+    // ctx.fillStyle = 'purple';
+    // ctx.font = '20px "微软雅黑"';
+    // ctx.textBaseline = 'bottom';
+    // ctx.textAlign = 'left';
+    // ctx.strokeText('left',450,400);
+    // ctx.fillText('Top.g ',100,300);
+    ctx.lineWidth =1;
+    ctx.strokeStyle = '#999';
+    ctx.moveTo(300,0);
+    ctx.lineTo(300,canvas.height);
+    ctx.moveTo(0,300);
+    ctx.lineTo(canvas.width,300);
+    ctx.fillStyle= '#999';
+    ctx.stroke();
+
+    ctx.fillRect(295,295,10,10)
    
+
+    // 绘制字体
+    ctx.font = '20px "微软雅黑"';
+    ctx.fillStyle = 'red';
+    ctx.textBaseline = 'top';
+    ctx.fillText('Top-g',100,300);
+
+    ctx.textBaseline = 'middle';
+    ctx.fillText('Middle-g',200,300);
+
+    ctx.textBaseline = 'bottom';
+    ctx.fillText('Bottom-g',400,300);
+
+    // 对齐方式
+    ctx.strokeStyle = 'purple';
+    ctx.textAlign = 'left';
+    ctx.strokeText('left',300,350);
+
+    ctx.textAlign = 'right';
+    ctx.strokeText('right',300,400);
+
+    ctx.textAlign = 'start';
+    ctx.strokeText('start',300,450);
+
+    ctx.textAlign = 'end';
+    ctx.strokeText('end',300,500);
+
+    ctx.textAlign = 'center';
+    ctx.strokeText('center',300,550);
+
     
      
 

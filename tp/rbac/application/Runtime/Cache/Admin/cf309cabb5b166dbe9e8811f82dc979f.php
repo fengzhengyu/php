@@ -19,7 +19,8 @@
 
     </div>
     <div class="admin">
-      <p class="admin-name"> 登录人:<?php echo ($_SESSION['admin']['user_name']); ?></p>
+      <p class="admin-name"> 登录人:<?php echo ($_SESSION['admin']['user_name']); ?>
+      </p>
       <p>|</p>
       <p class="admin-name">登录身份: 超级管理员</p>
       <p>|</p>
@@ -34,29 +35,64 @@
 
        -->
       <li class="side-nav">
-        <div class="side-nav-item">
+        <div class="side-nav-item ">
           <i class="layui-icon">&#xe735;</i>
-          系统设置
+          权限页面
           <i class="layui-icon icon-dropdown">&#xe61a;</i>
         </div>
         <dl class="side-nav-child">
           <dd class="side-nav-child-wrapper">
-            <a href="<?php echo U('User/index');?>" class="side-nav-child-link">
-              <span class="side-nav-child-icon"></span> 用户管理</a>
+            <a href="<?php echo U('Test/index');?>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span> 默认页面</a>
           </dd>
           <dd class="side-nav-child-wrapper">
-            <a href="<?php echo U('Role/index');?>" class="side-nav-child-link">
-              <span class="side-nav-child-icon"></span> 角色管理</a>
+            <a href="<?php echo U('Test/page1');?>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span> page1</a>
           </dd>
           <dd class="side-nav-child-wrapper">
-            <a href="<?php echo U('Auth/index');?>" class="side-nav-child-link">
-              <span class="side-nav-child-icon"></span> 权限管理</a>
+            <a href="<?php echo U('Test/page2');?>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span> page2</a>
           </dd>
-  
+          <dd class="side-nav-child-wrapper">
+            <a href="<?php echo U('Test/page3');?>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span> page3</a>
+          </dd>
+          <dd class="side-nav-child-wrapper">
+            <a href="<?php echo U('Test/page4');?>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span> page4</a>
+          </dd>
+          <dd class="side-nav-child-wrapper">
+            <a href="<?php echo U('Test/page5');?>" class="side-nav-child-link">
+              <span class="side-nav-child-icon"></span> page5</a>
+          </dd>
+
         </dl>
       </li>
-      
-    
+      <?php if($_SESSION['admin']['is_admin']== 1): ?><li class="side-nav">
+          <div class="side-nav-item ">
+            <i class="layui-icon">&#xe735;</i>
+            系统设置
+            <i class="layui-icon icon-dropdown">&#xe61a;</i>
+          </div>
+          <dl class="side-nav-child">
+            <dd class="side-nav-child-wrapper">
+              <a href="<?php echo U('User/index');?>" class="side-nav-child-link">
+                <span class="side-nav-child-icon"></span> 用户管理</a>
+            </dd>
+            <dd class="side-nav-child-wrapper">
+              <a href="<?php echo U('Role/index');?>" class="side-nav-child-link">
+                <span class="side-nav-child-icon"></span> 角色管理</a>
+            </dd>
+            <dd class="side-nav-child-wrapper">
+              <a href="<?php echo U('Auth/index');?>" class="side-nav-child-link">
+                <span class="side-nav-child-icon"></span> 权限管理</a>
+            </dd>
+  
+          </dl>
+        </li><?php endif; ?>
+     
+
+
       <!-- <li class="side-nav">
         <div class="side-nav-item">
           <i class="layui-icon">&#xe735;</i>
@@ -112,9 +148,9 @@
            
           </dl>
         </li> -->
-     
+
     </ul>
-    
+
   </div>
   <div class="admin-body">
     

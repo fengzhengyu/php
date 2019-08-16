@@ -9,7 +9,7 @@ class CommonController extends Controller{
     $admin_id = session('admin')['admin_id'];
   
     if(!$admin_id){
-      $this -> error("您还没有登录!");
+      $this -> error("您还没有登录!",U('Login/login'));
     }
 
   }

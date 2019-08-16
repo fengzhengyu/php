@@ -29,24 +29,41 @@
     
 
     // 绘制折线图
+    var x0 = 100;
+    var y0 = 400;
+    var maxH = 300;
+    var arrowW = 10;
+    // 绘制X轴
+      ctx.beginPath();
+      ctx.strokeStyle = 'blue';
+      ctx.moveTo(x0,y0);
+      ctx.lineTo(500,400);
+      ctx.lineTo(500-arrowW,400-arrowW);
+      ctx.moveTo(500,400);
+      ctx.lineTo(500-arrowW,400+arrowW);
+      ctx.stroke();
 
-      ctx.moveTo(50,100);
-      ctx.lineTo(50,500);
-      ctx.moveTo(50,100);
-      ctx.lineTo(40,110);
-      ctx.moveTo(50,100);
-      ctx.lineTo(60,110);
+      // 绘制Y轴
+      ctx.beginPath();
+      ctx.strokeStyle = 'orange';
+      ctx.moveTo(x0,y0);
+      ctx.lineTo(100,0);
+      ctx.lineTo(100-arrowW,arrowW);
+      ctx.moveTo(x0,0);
+      ctx.lineTo(100+arrowW,arrowW);
+      ctx.stroke();
 
-
-      ctx.moveTo(50,500);
-      ctx.lineTo(500,500);
-      ctx.moveTo(500,500);
-      ctx.lineTo(490,490);
-      ctx.moveTo(500,500);
-      ctx.lineTo(490,510);
+      var data = [.4,.5,.9,.3,.2];
+      var pointW  = 400/(data.length+1);
+      ctx.beginPath();
+      ctx.strokeStyle = 'green';
+      for(var i= 0;i<data.length;i++){
+        var x = x0+(i+1)*pointW;
+        var y = y0- data[i]*maxH;
+        ctx.lineTo(x,y)
+      }
+      ctx.stroke();
    
-    // ctx.strokeStyle = '#000';
-    ctx.stroke();
 
 
     

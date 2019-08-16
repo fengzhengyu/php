@@ -10,19 +10,32 @@ function authCode($phone){
 
     $rand = rand(100,999).rand(100,999);
 
-    $arr = array(
-        'memberPhone'=>$phone,
-        'memberAuthCode'=>$rand,
-        'endTime'=>time()+900,
-    );
+    // $arr = array(
+    //     'memberPhone'=>$phone,
+    //     'memberAuthCode'=>$rand,
+    //     'endTime'=>time()+900,
+    // );
 
-    $model = M("member_auth");
-    $data = $model -> where("memberPhone='".$phone."' and endTime>'".time()."'") ->select();
+    // $model = M("member_auth");
+    // $data = $model -> where("memberPhone='".$phone."' and endTime>'".time()."'") ->select();
+    // if(empty($data)){
+    //     $res = $model -> add($arr);
+    //     return $rand;
+    // }else{
+    //     return  $data[0]['memberAuthCode'];
+    // }
+
+    $array = array(
+        'member_phone'=>$phone,
+        'member_authCode'=>$rand,
+        'end_time'=>time()+900
+    );
+    $data = M('member_auth')->where("member_phone='".$phone."' abd end_time>'".time()."'")->select();
     if(empty($data)){
-        $res = $model -> add($arr);
+        $res = $model -> add($array);
         return $rand;
     }else{
-        return  $data[0]['memberAuthCode'];
+        return  $data[0]['member_authCode'];
     }
 
 }

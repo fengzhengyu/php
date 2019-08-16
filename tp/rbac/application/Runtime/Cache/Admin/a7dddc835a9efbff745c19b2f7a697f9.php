@@ -154,19 +154,120 @@
   </div>
   <div class="admin-body">
     
-
   <!-- 面包屑 -->
   <div class="crumbs-nav">
     <span class="layui-breadcrumb" lay-separator=">" style="height: 100px;">
-      <a href="<?php echo U('Index/index');?>" class="link"> <i class="layui-icon">&#xe68e;</i> 首页</a>
-      <a href="<?php echo U('Test/index');?>" class="link">page管理</a>
-      <a href="<?php echo U('Test/index');?>" class="link"><cite>index列表</cite></a>
+      <a href="<?php echo U('Index/index');?>" class="link"> <i class="layui-icon">&#xe68e;</i> 默认首页 </a>
+
+      <a href="<?php echo U('Test/index');?>" class="link">测试管理</a>
+
+      <a href="<?php echo U('Test/add');?>" class="link"><cite>添加图片</cite></a>
+
     </span>
   </div>
   <!--内容  -->
-  <div>
-    默认首页
+  <!-- 添加内容 -->
+
+  <div class="add-module-form">
+    <form class="layui-form wrapper" method="POST" enctype="multipart/form-data">
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-block">
+          <input type="text" name="user_name" required lay-verify="required" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">密码</label>
+        <div class="layui-input-block">
+          <input type="text" name="user_pass" required lay-verify="required" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">头像</label>
+        <div class="layui-input-block">
+          <input type="file" name="user_photo" required lay-verify="required" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo" id="submit">提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+
+        </div>
+      </div>
+    </form>
+
+
   </div>
+  <script>
+    //Demo
+    layui.use(['form', 'upload', 'layer'], function () {
+      var form = layui.form,
+        $ = layui.jquery,
+        upload = layui.upload;
+      var layer = layui.layer;
+      //监听提交
+      form.on('submit(formDemo)', function (data) {
+        if (data) {
+
+          var temp = data.field;
+    
+
+          // return false;
+          // var user_name = temp.user_name;
+          // var user_pass = temp.user_pass;
+          // var user_id = temp.user_id ? temp.user_id : '';
+          var formData = new FormData();
+
+          formData.append('user_name', temp.user_name);
+          formData.append('user_pass', temp.user_pass);
+          formData.append('user_photo', temp.user_photo);
+          console.log(formData);
+       
+          $.ajax({
+            type: "post",
+            url: "<?php echo U('Test/confirmAdd');?>",
+            data: formData,
+            dataType: "json",
+            success: function (res) {
+
+              console.log(res)
+              // layer.msg(res.msg);
+              // if (res.code == 200) {
+              //   location.href = "<?php echo U('User/index');?>";
+              // }
+            },
+            error:function(err){
+
+              console.log(err)
+            }
+          });
+        
+
+        }
+        return false;
+        
+       
+
+
+
+      });
+
+
+
+
+
+    });
+  </script>
+
 
   </div>
 

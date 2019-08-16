@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>konvahs</title>
+  <script src="https://unpkg.com/konva@3.1.0/konva.js"></script>
+  <style>
+    *{
+      padding: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #canvas {
+
+      /* width: 1200px;
+    height: 1200px;     css设置宽高会失真 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container"></div>
+
+
+  <script>
+    // 创建舞台
+    var stage = new Konva.Stage({
+      container: 'container',
+      width: window.innerWidth,
+      height: window.innerHeight
+    });
+
+    //  创建层
+    var layer = new Konva.Layer();
+    stage.add(layer);
+
+    // // 创建一个矩形
+    var box = new Konva.Rect({
+      x: 50,
+      y: 50,
+      width: 100,
+      height: 200,
+      // fill: '#00D2FF',
+      stroke: 'black',
+      // strokeWidth: 4,
+      draggable: true, //可拖拽的
+    });
+
+    var triangle = new Konva.Shape({
+      sceneFunc: function(context) {
+        context.beginPath();
+        context.moveTo(20, 50);
+        context.lineTo(220, 80);
+        context.quadraticCurveTo(150, 100, 260, 170);
+        context.closePath();
+
+        // special Konva.js method
+        context.fillStrokeShape(this);
+      },
+      fill: '#00D2FF',
+      stroke: 'black',
+      strokeWidth: 4
+});
+    // 把矩形添加到层
+    layer.add(triangle);
+    layer.add(box);
+    // 把层渲染到舞台
+    layer.draw();
+  </script>
+
+</body>
+
+</html>
